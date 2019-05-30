@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "company-title": "Irvine Cooling",
+        "company-type": "HVAC",
+        "date": "06/30/19",
+        "repair-request": "Refill Freon Lines and Grease Fan",
+        "price": 279.95
+    },
+    {
+        "id": 2,
+        "company-title": "SoCal Electric",
+        "company-type": "Electric",
+        "date": "05/05/19",
+        "repair-request": "Install New Outlet in Unit 100",
+        "price": 175
+    },
+    {
+        "id": 3,
+        "company-title": "Irvine Cooling",
+        "company-type": "HVAC",
+        "date": "06/30/19",
+        "repair-request": "Refill Freon Lines and Grease Fan",
+        "price": 279.95
+    },
+    {
+        "id": 4,
+        "company-title": "SoCal Electric",
+        "company-type": "Electric",
+        "date": "05/05/19",
+        "repair-request": "Install New Outlet in Unit 100",
+        "price": 175
+    },
+    {
+        "id": 5,
+        "company-title": "SoCal Electric",
+        "company-type": "Electric",
+        "date": "05/05/19",
+        "repair-request": "Install New Outlet in Unit 100",
+        "price": 175
+    }
+]

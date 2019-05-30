@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "report-type": "repair-costs",
+        "repair-companies": 5
+    },
+    {
+        "id": 2,
+        "report-type": "overhead",
+        "overhead-total": 390
+    }
+]
