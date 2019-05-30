@@ -1,0 +1,22 @@
+[
+   {
+        "id": 1,
+        "address": "23302 El Toro Drive",
+        "image": "https://bit.ly/2LVHYAk",
+        "vacancies": 4,
+        "units": 10,
+        "tenants": 4,
+        "manager_name": "Howard",
+        "type": "multi-unit"
+    } ,
+    {
+        "id": 2,
+        "address": "9200 Irvine Center Drive",
+        "image": "https://bit.ly/2LVHYAk",
+        "vacancies": 0,
+        "units": 4,
+        "tenants": 4,
+        "manager_name": "Nick",
+        "type": "single-unit"
+    }
+]
