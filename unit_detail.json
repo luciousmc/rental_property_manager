@@ -1,0 +1,17 @@
+
+  {
+    "unitId": 1,
+    "unitNumber": "100A",
+    "footage": 2000,
+    "rent": 3500,
+    "unitImage": "url.com",
+    "currentTenant": {
+      "tenantID": 1,
+      "name": "Mike Gordan",
+      "phone": 5555555555,
+      "email": "mike@gmail.com",
+      "moveInDate": "03/05/19",
+      "leaseEndDate": "03/01/20"
+    }
+  }
+

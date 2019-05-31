@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "propertyId": 1,
+    "unitNumber": "100A",
+    "footage": 2000,
+    "rent": 3500,
+    "unitImage": "url.com"
+  },
+  {
+    "id": 2,
+    "propertyId": 1,
+    "unitNumber": "100A",
+    "footage": 2000,
+    "rent": 3500,
+    "unitImage": "url.com"
+  }
+]
