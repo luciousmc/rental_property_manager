@@ -13,7 +13,7 @@
   "image": "url.com",
   "units": [
     {
-      "unitId": 1,
+      "id": 1,
       "unitNumber": "100A",
       "footage": 2000,
       "rent": 3500,
