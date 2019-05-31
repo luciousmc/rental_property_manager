@@ -4,3 +4,4 @@ function error_handler($error){
 }
 set_exception_handler('error_handler');
 
+
