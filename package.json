@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/Learning-Fuze/c319_rental_property#readme",
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "reactstrap": "^8.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
