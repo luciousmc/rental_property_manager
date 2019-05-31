@@ -1,0 +1,33 @@
+{
+  "id": 1,
+  "propertyName": "vista complex",
+  "streetAddress": "23002 El Toro Road",
+  "city": "irvine",
+  "state": "ca",
+  "zip": 91101,
+  "footage": 20000,
+  "parkingSpaces": 30,
+  "propertyType": "Multi Unit",
+  "managerContact": "Joe",
+  "managerPhone": 8008888888,
+  "image": "url.com",
+  "units": [
+    {
+      "unitId": 1,
+      "unitNumber": "100A",
+      "footage": 2000,
+      "rent": 3500,
+      "unitImage": "url.com",
+      "currentTenant": {
+        "tenantID": 1,
+        "businessName": "NAME",
+        "contactName": "Mike Gordan",
+        "phone": 5555555555,
+        "email": "mike@gmail.com",
+        "moveInDate": "03/01/19",
+        "leaseEndDate": "03/31/20",
+        "rentDueDate": "04/01/19"
+      }
+    }
+  ]
+}

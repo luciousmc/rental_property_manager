@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "streetAddress": "23002 El Toro Road",
+    "city": "irvine",
+    "state": "ca",
+    "zip": 91101,
+    "image": "url.com",
+    "type": "multi",
+    "units": 4,
+    "vacancies": 2
+  },
+  {
+    "id": 2,
+    "streetAddress": "23002 El Toro Road",
+    "city": "irvine",
+    "state": "ca",
+    "zip": 91101,
+    "image": "url.com",
+    "type": "multi",
+    "units": 4,
+    "vacancies": 2
+  }
+]
