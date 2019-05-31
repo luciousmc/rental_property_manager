@@ -1,6 +1,13 @@
 header {
-    background: firebrick;
+    background-color: firebrick;
+    height: 10vh;
 }
-main-container {
-    background: green;
+.content-container {
+    min-height: 75vh;
+}
+.manager-icon, .tenant-icon {
+    width: 65%;
+}
+.tenant-icon {
+    transform: scale(1.5);
 }
