@@ -1,5 +1,6 @@
 <?php
 function error_handler($error){
+    http_response_code(500);
     $output = [
         "success" => false,
         "error" => $error -> getMessage()
@@ -8,8 +9,6 @@ function error_handler($error){
     print($json_output);
 }
 set_exception_handler('error_handler');
-http_response_code(500);
-
 function startup(){
     header('Content-Type: application/json');
 }
