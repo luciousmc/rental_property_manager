@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { Container, Row, Col, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Badge } from 'reactstrap';
 
 
 export default class Header extends React.Component{
@@ -21,7 +21,7 @@ export default class Header extends React.Component{
             <Navbar color="danger" light>
               <NavbarBrand href="/" className="text-white mr-auto">Moore Properties</NavbarBrand>
               <div className="text-white mr-4">Hello Howie!</div>
-              <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+              <NavbarToggler onClick={this.toggleNavbar} className="mr-2" /><Badge color="primary mb-4">4</Badge>
               <Collapse isOpen={!this.state.collapsed} navbar>
                 <Nav navbar>
                   <NavItem>
@@ -31,7 +31,7 @@ export default class Header extends React.Component{
                     <NavLink href="./invoices">Invoices</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="./maintenance">Maintenance</NavLink>
+                    <NavLink href="./maintenance">Maintenance<Badge color="primary ml-2">4</Badge></NavLink>
                   </NavItem>
                 </Nav>
               </Collapse>
