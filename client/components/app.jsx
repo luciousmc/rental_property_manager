@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './header';
+import AddProperty from './addProperty';
 import { Container, Row, Col, Card, CardBody, CardTitle, CardImg, Button } from 'reactstrap';
 
 export default class App extends React.Component{
@@ -19,27 +20,41 @@ export default class App extends React.Component{
     render(){
         if (this.state.view.name === 'landing'){
             return(
-                <Container>
+              <Container>
                     <Row>
                         <header className="col">
-                            <Header /> 
+                            <Header/> 
                         </header>
                     </Row>
-                    <Row>
+                    {/* ***Testing out the form component */}
+                <body>
+                  <AddProperty/>
+                </body>
+                {/* ************ */}
+                    {/* <body>
+                    
                         <Row md={{size: 8, offset: 2}}>
-                            <Col>
-                                <Card>
-                                    <CardImg top width="100%" src="images/manager_icon.png" />
+                            <Col className="mr-auto">
+                                <Card style={{ width: '18rem' }}>
+                                    <CardImg  width="100%" src="images/manager_icon.png" fluid/>
                                     <CardBody>
                                         <CardTitle>Property Manager</CardTitle>
+                                        <Button href="./form.jsx">Go to Portal</Button>
+                                    </CardBody>
+                                </Card>
+                            </Col>
+                            <Col width="50%">
+                            <Card className="mr-auto" style={{width: '18rem' }}>
+                                    <CardImg width="100%" src="images/manager_icon.png" fluid />
+                                    <CardBody>
+                                        <CardTitle>Tenant</CardTitle>
                                         <Button>Go to Portal</Button>
                                     </CardBody>
                                 </Card>
                             </Col>
-                            <Col></Col>
-                        </Row>
-                    </Row>
-                </Container>
+                      </Row>
+                    </body> */}
+                    </Container>
             );
         }
         

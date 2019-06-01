@@ -1,11 +1,12 @@
 header {
-    background-color: firebrick;
+    z-index: 1;
     height: 10vh;
 }
 .content-container {
     min-height: 75vh;
 }
 .manager-icon, .tenant-icon {
+    
     width: 65%;
 }
 .tenant-icon {
