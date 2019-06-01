@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './header';
 import AddProperty from './addProperty';
+import AddUnit from './addUnit';
 import { Container, Row, Col, Card, CardBody, CardTitle, CardImg, Button } from 'reactstrap';
 
 export default class App extends React.Component{
@@ -28,7 +29,8 @@ export default class App extends React.Component{
                     </Row>
                     {/* ***Testing out the form component */}
                 <body>
-                  <AddProperty/>
+                  <AddUnit/>
+                  {/* <AddProperty/> */}
                 </body>
                 {/* ************ */}
                     {/* <body>
