@@ -1,7 +1,8 @@
 import React from 'react';
+import { Container, Row, Col, Card, CardImg, CardTitle, CardBody } from 'reactstrap';
 
 function PropertyListItem(props){
-    if (props.properties.length < 1){
+    if (props.propertyList.length < 1){
         return(
             <Container>
                 <Row>
@@ -11,7 +12,38 @@ function PropertyListItem(props){
             </Container>
         );
     }
-    
+    const outputList = props.propertyList.map(property=>{
+        return(
+            <Container className="mb-3">
+                <Card  key={property.id} >
+                    <Row>
+                        <Col sm="3">
+                            <CardImg left src={property.image} className="property-img" />
+                        </Col>
+                        <Col>
+                            <CardBody>
+                                <CardTitle tag="h3">{property.streetAddress}</CardTitle>
+                                <Row>
+                                    <Col>
+                                        <p className="text-muted">Type: {property.type}</p>
+                                    </Col>
+                                    <Col>
+                                        <p className="text-muted">Units: {property.units}</p>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col>
+                                        <p className="text-muted">Vacancies: {property.vacancies}</p>
+                                    </Col>
+                                </Row>
+                            </CardBody>
+                        </Col>
+                    </Row>
+                </Card>
+            </Container>
+        );
+    })
+    return outputList;
 }
 
 export default PropertyListItem;

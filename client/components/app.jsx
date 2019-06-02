@@ -1,13 +1,15 @@
 import React from 'react';
 import Header from './header';
 import { Container, Row, Col, Card, CardBody, CardTitle, CardImg, Button } from 'reactstrap';
+import PropertyList from './property_list';
+import AddProperty from './addProperty';
 
 export default class App extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
             view:{
-                name: 'landing',
+                name: 'manager-main',
                 params: {},
             },
             properties: {}
@@ -15,25 +17,23 @@ export default class App extends React.Component{
         this.setView = this.setView.bind(this);
     }
     setView( view, obj ){
-        this.setState({ view, obj });
+        this.setState({ view:{ name: view, params: obj} });
     }
     render(){
         if (this.state.view.name === 'landing'){
             return(
                 <React.Fragment>
                     <Row>
-                        <header className="col">
-                            <Header/> 
-                        </header>
+                        <Header/> 
                     </Row>
-                    <Container style={{ height: 100% }}>
+                    <Container>
                         <Row className="col-8 offset-2">
                             <Col className="mr-auto">
                                 <Card style={{ width: '18rem' }}>
                                     <CardImg  width="100%" src="images/manager_icon.png" />
                                     <CardBody>
                                         <CardTitle>Property Manager</CardTitle>
-                                        <Button onClick={this.setView('manager-main', {})}>Go to Portal</Button>
+                                        <Button onClick={()=>this.setView('manager-main', {})}>Go to Portal</Button>
                                     </CardBody>
                                 </Card>
                             </Col>
@@ -53,15 +53,13 @@ export default class App extends React.Component{
         } else if (this.state.view.name === 'add-property'){
             return(
                 <React.Fragment>
-                    <Row>
-                        <header className="col">
-                            <Header/> 
-                        </header>
+                    <Row>                            
+                        <Header/> 
                     </Row>
                     <Row>
                         <Container>
                             <div className="form-container col-8 offset-2">
-                                 <AddProperty/>
+                                 <AddProperty />
                             </div>
                         </Container>
                     </Row>
@@ -71,12 +69,10 @@ export default class App extends React.Component{
             return(
                 <React.Fragment>
                     <Row>
-                        <header className="col">
-                            <Header/> 
-                        </header>
+                        <Header/> 
                     </Row>
                     <Container>
-                        <ProductList setView={this.setView} />
+                        <PropertyList setView={this.setView} />
                     </Container>
                 </React.Fragment>
             );

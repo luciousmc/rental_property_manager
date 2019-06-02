@@ -17,7 +17,7 @@ export default class Header extends React.Component{
       }
       render() {
         return (
-          <div>
+          <header className="col mb-5">
             <Navbar color="danger" light>
               <NavbarBrand href="/" className="text-white mr-auto">Moore Properties</NavbarBrand>
               <div className="text-white mr-4">Hello Howie!</div>
@@ -36,7 +36,7 @@ export default class Header extends React.Component{
                 </Nav>
               </Collapse>
             </Navbar>
-          </div>
+          </header>
         );
       }
     }

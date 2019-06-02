@@ -73,8 +73,8 @@ export default class AddProperty extends React.Component {
               <Label for="select">Unit Type</Label>
               <Input type="select" name="select" id="select">
                 <option>Choose One</option>
-                <option>Multi</option>
-                <option>Single</option>
+                <option>Multi-Unit</option>
+                <option>Single Unit</option>
               </Input>
             </FormGroup>
           </Col>
