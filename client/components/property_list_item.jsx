@@ -17,10 +17,10 @@ function PropertyListItem(props){
             <Container className="mb-3">
                 <Card  key={property.id} >
                     <Row>
-                        <Col sm="3">
+                        <Col sm="4">
                             <CardImg left src={property.image} className="property-img" />
                         </Col>
-                        <Col>
+                        <Col sm="8">
                             <CardBody>
                                 <CardTitle tag="h3">{property.streetAddress}</CardTitle>
                                 <Row>

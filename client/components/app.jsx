@@ -9,7 +9,7 @@ export default class App extends React.Component{
         super(props);
         this.state = {
             view:{
-                name: 'manager-main',
+                name: 'landing',
                 params: {},
             },
             properties: {}
@@ -59,7 +59,7 @@ export default class App extends React.Component{
                     <Row>
                         <Container>
                             <div className="form-container col-8 offset-2">
-                                 <AddProperty />
+                                <AddProperty />
                             </div>
                         </Container>
                     </Row>
@@ -72,7 +72,11 @@ export default class App extends React.Component{
                         <Header/> 
                     </Row>
                     <Container>
-                        <PropertyList setView={this.setView} />
+                        <Row>
+                            <Col className="col-8 offset-2">
+                                <PropertyList setView={this.setView} />
+                            </Col>
+                        </Row>
                     </Container>
                 </React.Fragment>
             );

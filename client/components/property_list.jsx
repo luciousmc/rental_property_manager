@@ -15,39 +15,39 @@ class PropertyList extends React.Component{
     getProperties(){
         const dummyList = [
             {
-              "id": 1,
-              "streetAddress": "23002 El Toro Road",
-              "city": "irvine",
-              "state": "ca",
-              "zip": 91101,
-              "image": "images/business_default_image.jpg",
-              "type": "multi-unit",
-              "units": 4,
-              "vacancies": 2
+            "id": 1,
+            "streetAddress": "23002 El Toro Road",
+            "city": "irvine",
+            "state": "ca",
+            "zip": 91101,
+            "image": "images/business_default_image.jpg",
+            "type": "multi-unit",
+            "units": 4,
+            "vacancies": 2
             },
             {
-              "id": 2,
-              "streetAddress": "9200 Irvine Center Drive",
-              "city": "irvine",
-              "state": "ca",
-              "zip": 91101,
-              "image": "images/business_default_image.jpg",
-              "type": "multi-unit",
-              "units": 6,
-              "vacancies": 0
+            "id": 2,
+            "streetAddress": "9200 Irvine Center Drive",
+            "city": "irvine",
+            "state": "ca",
+            "zip": 91101,
+            "image": "images/business_default_image.jpg",
+            "type": "multi-unit",
+            "units": 6,
+            "vacancies": 0
             }
         ];
         this.setState({ properties: dummyList });
     }
     render(){
         return(
-           <div>
+            <div>
                 <Row>
-                    <h1>Your Properties</h1>
+                    <h1 className="mx-auto mb-4">Your Properties</h1>
                 </Row>
                 <Row>
                     <Container>
-                        <Row>
+                        <Row className="col-8 offset-2">
                             <Nav tabs>
                                 <NavItem>
                                     <NavLink href="#" onClick={()=>this.props.setView('add-property', {})}>Add Property</NavLink>
@@ -60,12 +60,12 @@ class PropertyList extends React.Component{
                                 </NavItem>
                             </Nav>
                         </Row>
-                        <Row size="5">
+                        <Row>
                             <PropertyListItem propertyList={this.state.properties} />
                         </Row>
                     </Container>
                 </Row>
-           </div>
+            </div>
         );
     }
 }
