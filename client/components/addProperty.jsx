@@ -8,6 +8,9 @@ export default class AddProperty extends React.Component {
     render() {
     return (
       <Form>
+        <Row>
+        <h1 className="mx-auto mb-4">Add Property</h1>
+        </Row>
         <Row form>
           <Col md={6}>
             <FormGroup>
@@ -99,7 +102,9 @@ export default class AddProperty extends React.Component {
             </FormGroup>  
           </Col>
         </Row>
-        <Button color="info">Submit</Button>
+
+        <Button color="primary" href="#" onClick={()=>this.props.setView('manager-main', {})}>Go Back</Button>
+        <Button color="info" href="#" onClick={()=>this.props.setView('add-unit', {})}>Add Unit</Button>
       </Form>
     );
   }
