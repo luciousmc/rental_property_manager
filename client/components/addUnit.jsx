@@ -8,6 +8,9 @@ export default class AddUnit extends React.Component{
     render(){
         return(
             <Form>
+                <Row>
+                <h1 className="mx-auto mb-4">Add Unit</h1>
+                </Row>
                 <Row form>
                     <Col md={6}>
                         <FormGroup>

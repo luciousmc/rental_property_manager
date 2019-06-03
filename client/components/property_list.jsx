@@ -1,10 +1,8 @@
 import React from 'react';
 import { Row, Container, Nav, NavItem, NavLink } from 'reactstrap';
 import PropertyListItem from './property_list_item';
-// import {Link} from "react-router";
 
-
-export default class PropertyList extends React.Component{
+class PropertyList extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -52,7 +50,7 @@ export default class PropertyList extends React.Component{
                         <Row className="col-8 offset-2">
                             <Nav tabs>
                                 <NavItem>
-                                    <NavLink><Link to="./addProperty"></Link>Add Property</NavLink>
+                                    <NavLink href="#" onClick={()=>this.props.setView('add-property', {})}>Add Property</NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink href="#">Remove Property</NavLink>
@@ -70,5 +68,6 @@ export default class PropertyList extends React.Component{
             </div>
         );
     }
-};
+}
 
+export default PropertyList;

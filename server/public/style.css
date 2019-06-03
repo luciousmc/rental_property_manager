@@ -1,6 +1,5 @@
-header {
-    z-index: 1;
-    height: 10vh;
+body {
+    min-height: 100vh;
 }
 .content-container {
     min-height: 75vh;
@@ -11,4 +10,7 @@ header {
 }
 .tenant-icon {
     transform: scale(1.5);
+}
+.property-img {
+    width: 200px;
 }
