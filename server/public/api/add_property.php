@@ -13,8 +13,7 @@ $cName = $_POST[manager_contact];
 $phone = $_POST[manager_phone];
 $park = $_POST[parking_spaces];
 $query= "INSERT INTO `properties`(`property_name`, `street_address`, `city`, `state`, `zip`, `sqft`, `property_type`, `manager_contact`, `manager_phone`, `parking_spaces`) 
-VALUES ($pName, $street, $city, $state, $zip, $sqft, $type, $cName, $phone, $park)";
-
+VALUES ('$pName', '$street', '$city', '$state', '$zip', '$sqft', '$type', '$cName', '$phone', '$park')";
 $result = mysqli_query($conn, $query);
 
 
