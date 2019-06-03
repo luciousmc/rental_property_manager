@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './header';
 import { Container, Row, Col, Card, CardBody, CardTitle, CardImg, Button } from 'reactstrap';
 import PropertyList from './property_list';
+import PropertyDetails from './property_details';
 import AddProperty from './addProperty';
 
 export default class App extends React.Component{
@@ -9,7 +10,7 @@ export default class App extends React.Component{
         super(props);
         this.state = {
             view:{
-                name: 'landing',
+                name: 'manager-main',
                 params: {},
             },
             properties: {}
@@ -50,6 +51,21 @@ export default class App extends React.Component{
                     </Container>
                 </React.Fragment>
             );
+        } else if (this.state.view.name === 'manager-main'){
+            return(
+                <React.Fragment>
+                    <Row>
+                        <Header/> 
+                    </Row>
+                    <Container>
+                        <Row>
+                            <Col className="col-8 offset-2">
+                                <PropertyList setView={this.setView} />
+                            </Col>
+                        </Row>
+                    </Container>
+                </React.Fragment>
+            );
         } else if (this.state.view.name === 'add-property'){
             return(
                 <React.Fragment>
@@ -65,7 +81,7 @@ export default class App extends React.Component{
                     </Row>
                 </React.Fragment>
             );
-        } else if (this.state.view.name === 'manager-main'){
+        } else if (this.state.view.name === 'property-details'){
             return(
                 <React.Fragment>
                     <Row>
@@ -74,7 +90,7 @@ export default class App extends React.Component{
                     <Container>
                         <Row>
                             <Col className="col-8 offset-2">
-                                <PropertyList setView={this.setView} />
+                                <PropertyDetails />
                             </Col>
                         </Row>
                     </Container>
