@@ -99,7 +99,12 @@ export default class AddProperty extends React.Component {
             </FormGroup>  
           </Col>
         </Row>
-        <Button color="info">Submit</Button>
+        <Row form>
+          <Col>
+            <Button className="mr-2" color="primary">Cancel</Button>
+            <Button color="info">Submit</Button>
+          </Col>
+        </Row>
       </Form>
     );
   }
