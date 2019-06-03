@@ -8,7 +8,6 @@ import  AddProperty  from './add-property';
 import  TenantMain from './tenant-main';
 // import PropertyDetails from '../page/PropertyDetails';
 import PropertyList from './property_list';
-import AddProperty from './addProperty';
 import AddUnit from './addUnit';
 
 
