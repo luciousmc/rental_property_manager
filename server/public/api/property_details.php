@@ -41,27 +41,75 @@ while ($row = mysqli_fetch_assoc($result)) {
     unset($row['move_in_date']);
     unset($row['lease_end_date']);
     unset($row['rent_due_date']);
-    if(empty($output[$row['tenant_id']])) {
-        $row['tenants'] = [];
-        $row['tenants'][] =  $tenantData;
-        $output[$row['tenant_id']] = $row;
-    }
-    else {
-        $output[$row['tenants_id']]['tenants'][] = $tenantData;
-    }
-    
+
     $unitData = [];
     $unitData['unit_id'] = $row['unit_id'];
     $unitData['unitNumber'] = $row['unit_number'];
     $unitData['rent'] = $row['rent'];
     $unitData['image'] = $row['image'];
     $unitData['unit_sqft'] = $row['unit_sqft'];
+
     unset($row['unit_id']);
     unset($row['unit_sqft']);
     unset($row['unit_number']);
     unset($row['rent']);
     unset($row['image']);
+//    $propertyData = [];
+//    $propertyData['id'] = $row['id'];
+//    $propertyData['property_name'] = $row['property_name'];
+//    $propertyData['street_address'] = $row['street_address'];
+//    $propertyData['city'] = $row['city'];
+//    $propertyData['state'] = $row['state'];
+//    $propertyData['zip'] = $row['zip'];
+//    $propertyData['sqft'] = $row['sqft'];
+//    $propertyData['parking_spaces'] = $row['parking_spaces'];
+//    $propertyData['property_type'] = $row['property_type'];
+//    $propertyData['manager_contact'] = $row['manager_contact'];
+//    $propertyData['manager_phone'] = $row['manager_phone'];
+//    $propertyData['units'] = $unitData;
+//    unset($row['id']);
+//    unset($row['property_name']);
+//    unset($row['street_address']);
+//    unset($row['city']);
+//    unset($row['state']);
+//    unset($row['zip']);
+//    unset($row['sqft']);
+//    unset($row['parking_spaces']);
+//    unset($row['property_type']);
+//    unset($row['manager_contact']);
+//    unset($row['manager_phone']);
+
+//
+//    if(empty($output[$row['tenant_id']])) {
+//        $tentesst['tenants'] = [];
+//        $tentesst['tenants'][] =  $tenantData;
+//        //$output[$row['tenant_id']] = $row;
+//        $tentesst['tenant_id'] = $row;
+//
+//    }
+//    else {
+//        $tentesst['tenants_id']['tenants'][] = $tenantData;
+//    }
+//    if(empty($output[$row['unit_id']])) {
+//        $row['units'] = [];
+//        $row['units'][] =  $unitData;
+//        $output[$row['unit_id']] = $row;
+//    }
+//    else {
+//        $output[$row['unit_id']]['units'][] = $unitData;
+//    }
+//    if(empty($output[$row['id']])) {
+//
+//    }
+//    else {
+//        $output[$row['unit_id']]['units'][] = $unitData;
+//    }
+    if(empty($output[$row['id']])) {
+    $unitData['tenants'] = $tenantData;
+}
+
     if(empty($output[$row['unit_id']])) {
+
         $row['units'] = [];
         $row['units'][] =  $unitData;
         $output[$row['unit_id']] = $row;
@@ -69,6 +117,21 @@ while ($row = mysqli_fetch_assoc($result)) {
     else {
         $output[$row['unit_id']]['units'][] = $unitData;
     }
+    //}
+//    if(empty($output[$row['unit_id']['tenant_id']])) {
+//        $row['tenants'] = [];
+//        $row['tenants'][] =  $tenantData;
+//        //$output[$row['tenant_id']] = $row;
+//        //$output[$row['tenant_id']] = $row;
+//        $output[$row['unit_id']['tenants_id']] = $row;
+//
+//    }
+//    else {
+//        //$output[$row['tenants_id']]['tenants'][] = $tenantData;
+//        $output[$row[['unit_id']['units']]['tenants_id']]['tenants'][] = $unitData;
+//    }
+
+
 };
 
 
