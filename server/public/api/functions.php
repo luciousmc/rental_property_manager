@@ -9,6 +9,7 @@ function error_handler($error){
     print($json_output);
 }
 set_exception_handler('error_handler');
+
 function startup(){
     header('Content-Type: application/json');
 }
