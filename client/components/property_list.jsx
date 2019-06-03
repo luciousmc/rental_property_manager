@@ -20,7 +20,7 @@ class PropertyList extends React.Component{
             "city": "irvine",
             "state": "ca",
             "zip": 91101,
-            "image": "images/business_default_image.jpg",
+            "image": "../../server/public/images/business_default_image.jpg",
             "type": "multi-unit",
             "units": 4,
             "vacancies": 2
@@ -31,7 +31,7 @@ class PropertyList extends React.Component{
             "city": "irvine",
             "state": "ca",
             "zip": 91101,
-            "image": "images/business_default_image.jpg",
+            "image": "../../server/public/images/business_default_image.jpg",
             "type": "multi-unit",
             "units": 6,
             "vacancies": 0
@@ -50,7 +50,7 @@ class PropertyList extends React.Component{
                         <Row className="col-8 offset-2">
                             <Nav tabs>
                                 <NavItem>
-                                    <NavLink href="#" onClick={()=>this.props.setView('add-property', {})}>Add Property</NavLink>
+                                    <NavLink href="/add-property">Add Property</NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink href="#">Remove Property</NavLink>

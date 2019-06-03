@@ -13,7 +13,7 @@ export const LandingPage = ()=>(
                             <CardTitle>Property Manager</CardTitle>
                             {/* <Button onClick={()=>this.setView('manager-main', {})}>Go to Portal</Button> */}
                            <Button className="btn btn-secondary">
-                                <Link to="/manager/main">
+                                <Link to="/manager-main">
                                     Go to Portal
                                 </Link>
                            </Button>
