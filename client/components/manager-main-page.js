@@ -7,7 +7,7 @@ export default ()=>(
         <Container>
             <Row>
                 <Col className="col-8 offset-2">
-                    <PropertyList setView={this.setView} />
+                    <PropertyList />
                 </Col>
             </Row>
         </Container>
