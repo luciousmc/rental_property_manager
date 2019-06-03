@@ -1,6 +1,6 @@
 <?php
-require_once('../../credentials.php');
-require_once('functions.php');
+require_once('../../../credentials.php');
+require_once('../functions.php');
 startup();
 $pName = $_POST['property_name'];
 $street = $_POST['street_address'];
