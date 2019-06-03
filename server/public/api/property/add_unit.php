@@ -1,7 +1,7 @@
 <?php
 
-require_once('../../credentials.php');
-require_once('functions.php');
+require_once('../../../credentials.php');
+require_once('../functions.php');
 startup();
 
 $pID = $_POST['property_id'];
