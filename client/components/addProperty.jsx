@@ -103,7 +103,7 @@ export default class AddProperty extends React.Component {
           </Col>
         </Row>
 
-        <Button color="primary" href="#" onClick={()=>this.props.setView('manager-main', {})}>Go Back</Button>
+        <Button className="mr-2" color="primary" href="#" onClick={()=>this.props.setView('manager-main', {})}>Go Back</Button>
         <Button color="info" href="#" onClick={()=>this.props.setView('add-unit', {})}>Add Unit</Button>
       </Form>
     );

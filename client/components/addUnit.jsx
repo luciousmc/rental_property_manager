@@ -58,7 +58,8 @@ export default class AddUnit extends React.Component{
                         </FormGroup>
                     </Col>
                 </Row>
-                <Button color="info">Submit</Button>
+                <Button className="mr-2" color="primary" href="#" onClick={()=>this.props.setView('add-property', {})}>Go Back</Button>
+                <Button color="info" href="#" onClick={()=>this.props.setView('property_list', {})}>Submit</Button>
             </Form>
         );
     }
