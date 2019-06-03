@@ -3,6 +3,7 @@ import Header from './header';
 import { Container, Row, Col, Card, CardBody, CardTitle, CardImg, Button } from 'reactstrap';
 import PropertyList from './property_list';
 import AddProperty from './addProperty';
+import AddUnit from './addUnit';
 
 export default class App extends React.Component{
     constructor(props) {
@@ -59,13 +60,28 @@ export default class App extends React.Component{
                     <Row>
                         <Container>
                             <div className="form-container col-8 offset-2">
-                                <AddProperty />
+                                <AddProperty setView={this.setView}/>
                             </div>
                         </Container>
                     </Row>
                 </React.Fragment>
             );
-        } else if (this.state.view.name === 'manager-main'){
+        } else if (this.state.view.name === 'add-unit'){
+            return(
+                <React.Fragment>
+                    <Row>                            
+                        <Header/> 
+                    </Row>
+                    <Row>
+                        <Container>
+                            <div className="form-container col-8 offset-2">
+                                <AddUnit setView={this.setView}/>
+                            </div>
+                        </Container>
+                    </Row>
+                </React.Fragment>
+            );
+        }else if (this.state.view.name === 'manager-main'){
             return(
                 <React.Fragment>
                     <Row>
