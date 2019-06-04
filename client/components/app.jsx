@@ -7,7 +7,13 @@ import ManagerMain from './manager-main-page';
 import PropertyDetails from './property-detail-page';
 import  AddProperty  from './add-property-page';
 // import  TenantMain from './tenant-main';
+<<<<<<< HEAD
 import AddUnit from './addUnit';
+=======
+// import PropertyDetails from '../page/PropertyDetails';
+import PropertyList from './property_list';
+import AddUnit from './add-unit-page';
+>>>>>>> dev
 
 export default class App extends React.Component{
     constructor(props) {
@@ -16,6 +22,13 @@ export default class App extends React.Component{
             properties: {}
         }
     }
+<<<<<<< HEAD
+=======
+    setView( view, obj ){
+        this.setState({ view:{ name: view, params: obj} });
+    }
+    
+>>>>>>> dev
     render(){
         return(
             <React.Fragment>
@@ -28,7 +41,7 @@ export default class App extends React.Component{
                         <Route path="/manager-main" component={ManagerMain} />
                         <Route path="/property/:id" component ={PropertyDetails} />
                         <Route path="/add-property" component ={AddProperty} />
-                        <Route path="/addUnit" component ={AddUnit} />
+                        <Route path="/add-unit-page" component ={AddUnit} />
                         {/* <Route path="/tenant/main" component ={TenantMain} />                     */}
                     </Switch>
                 </Router>

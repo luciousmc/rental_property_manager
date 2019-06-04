@@ -1,47 +1,33 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import PropertyDetails from './property_detail';
 
-export default class PropertyDetail{
+export default class PropertyDetailPage{
     constructor(props){
         super(props);
         this.state = {
             property: null
         }
     }
+    componentDidMount(){
+        this.getPropertyDetails();
+    }
+    getPropertyDetails(id){
+        fetch('/api/property/property_details.php')
+            .then(response=>response.json())
+            .then(propertyDetailsAll=>{
+                console.log('the full property details are as follows: ', propertyDetailsAll);
+            })
+    }
     render(){
         return(
             <React.Fragment>
                 <Row>
-                    <Col>
-                        <h1>23002 El Toro Road</h1>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <h2>Proptery Summary</h2>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <div>image</div>
-                    </Col>
-                    <Col>
-                        <h2>Property summary detilas</h2>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <h1>Property Details</h1>
-                    </Col>
-                </Row>
-                <Row>
-                    <Container>
-                        <Row>
-                            
-                        </Row>
-                    </Container>
-                </Row>
+
+                    <PropertyDetails propertyDetail={this.state.property} />
+                </Row>                    
             </React.Fragment>
         );
     }
 }
+            

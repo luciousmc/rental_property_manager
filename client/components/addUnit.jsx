@@ -1,5 +1,7 @@
 import React from 'react';
-import { Col, Row, Button, Form, FormGroup, Label, Input} from 'reactstrap';
+import { Col, Row, Button, Form, FormGroup, Label, Input, CustomInput} from 'reactstrap';
+import { Link } from 'react-router-dom';
+// import { Link } from '.react-router';
 
 export default class AddUnit extends React.Component{
     constructor(props){
@@ -38,28 +40,23 @@ export default class AddUnit extends React.Component{
                 <Col md={4}>
                         <FormGroup>
                             <Label for="rent">Monthly Rent</Label>
-                            <Input type="text" name="rent" id="rent" placeholder="$" />
+                            <Input type="text" name="rent" id="rentAmount" placeholder="$" />
                         </FormGroup>
                 </Col>
                     <Col md={4}>
                         <FormGroup>
                             <Label for="rent">Due Date</Label>
-                            <Input type="date" name="rent" id="rent" placeholder="" />
+                            <Input type="date" name="rent" id="rentDate" placeholder="" />
                         </FormGroup>
                     </Col>
                 </Row>
-                <Row>
-                    <Col>
-                        <FormGroup check>
-                            <Label >
-                            <Input type="checkbox" />{' '}
-                            Occupied
-                            </Label>
-                        </FormGroup>
-                    </Col>
-                </Row>
-                <Button className="mr-2" color="primary" href="#" onClick={()=>this.props.setView('add-property', {})}>Go Back</Button>
-                <Button color="info" href="#" onClick={()=>this.props.setView('property_list', {})}>Submit</Button>
+                <CustomInput className="mb-2"  type="switch" id="customSwitch" name="customSwitch" label="Vacant"  />
+                <Button className="mr-2" color="danger">
+                    <Link to="add-property" style={{color: "white"}}>Back to Add Property</Link>
+                </Button>
+                <Button color="info">
+                    <Link to="manager-main"style={{color: "white"}} >Create New Property</Link>
+                    </Button>
             </Form>
         );
     }
