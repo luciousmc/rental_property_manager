@@ -15,10 +15,10 @@ function PropertyListItem(props){
     const outputList = props.propertyList.map(property=>{
         return(
             <Container className="mb-3">
-                <Card  key={property.id} >
+                <Card key={property.id} >
                     <Row>
                         <Col sm="4">
-                            <CardImg src="images/business_default_image.jpg" className="property-img" />
+                            <CardImg src={property.image} className="property-img" />
                         </Col>
                         <Col sm="8">
                             <CardBody>

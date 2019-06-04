@@ -12,7 +12,6 @@ class PropertyList extends React.Component{
     }
     componentDidMount(){
         this.getProperties();
-        this.getProperty();
     }
     getProperties(){
         //////////////////////////////////////////////////////////////////////
