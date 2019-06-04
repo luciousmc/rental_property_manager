@@ -34,7 +34,7 @@ export default class App extends React.Component{
                         {/* <Route path="/manager/property-details" component ={PropertyDetails} /> */}
                         <Route path="/add-property" component ={AddProperty} />
                         <Route path="/addUnit" component ={AddUnit} />
-                        {/* <Route path="/tenant/main" component ={TenantMain} />                     */}
+                        {/* <Route path="/tenant-main" component ={TenantMain} />                     */}
                     </Switch>
                 </Router>
             </React.Fragment>

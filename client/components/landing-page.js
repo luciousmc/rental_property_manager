@@ -25,7 +25,11 @@ export const LandingPage = ()=>(
                         <CardImg width="100%" src="images/tenant_icon.png" />
                         <CardBody>
                             <CardTitle>Tenant</CardTitle>
-                            <Button>Go to Portal</Button>
+                            <Button>
+                                <Link to="/tenant-main">
+                                Go to Portal
+                                </Link>
+                            </Button>
                         </CardBody>
                     </Card>
                 </Col>

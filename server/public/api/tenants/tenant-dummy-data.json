@@ -1,0 +1,11 @@
+{
+    "id": 1,
+    "unit_id": 1,
+    "business_name": "Nick Inc.",
+    "contact_name": "Mike Gordon",
+    "tenant_phone": 5555555555,
+    "tenant_email": "mike@nickinc.com",
+    "move_in_date": "03/01/19",
+    "lease_end_date": "03/04/20",
+    "rent_due_date": "04/01/19",
+}
