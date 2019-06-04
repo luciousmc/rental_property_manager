@@ -1,0 +1,16 @@
+body {
+    min-height: 100vh;
+}
+.content-container {
+    min-height: 75vh;
+}
+.manager-icon, .tenant-icon {
+    
+    width: 65%;
+}
+.tenant-icon {
+    transform: scale(1.5);
+}
+.property-img {
+    width: 200px;
+}
