@@ -1,9 +1,32 @@
 import React from 'react';
-import { Col, Row, Button, Form, FormGroup, Label, Input} from 'reactstrap';
+import { Col, Row, Button, Form, FormGroup, Label, Input, } from 'reactstrap';
+import {Link} from 'react-router-dom';
 
 export default class AddProperty extends React.Component {
     constructor(props){
         super(props);
+        this.state = {
+          propertyName: "",
+          propertyType: {
+            multi: "multi-unit",
+            single: "single unit"
+          },
+          managerContact: "",
+          managerPhone: null,
+          address: {
+            streetAddress: "",
+            city: "",
+            state: "",
+            zip: null
+          },
+          parking: null,
+          size: null,
+        }
+    }
+    changeHandler(e){
+        let nam = e.target.name;
+        let val = e.target.value;
+        this.setState({[nam]: val})
     }
     render() {
     return (
@@ -12,69 +35,16 @@ export default class AddProperty extends React.Component {
         <h1 className="mx-auto mb-4">Add Property</h1>
         </Row>
         <Row form>
-          <Col md={6}>
+          <Col md={8}>
             <FormGroup>
-              <Label for="firstName">First Name</Label>
-              <Input type="text" name="first" id="first" placeholder="First Name" />
+              <Label for="property">Property Name</Label>
+              <Input type="text" name="propertyName" id="property_name" placeholder="Moore Properties" onChange={this.changeHandler} />
             </FormGroup>
           </Col>
-          <Col md={6}>
+          <Col md={4}>
             <FormGroup>
-              <Label for="lastName">Last Name</Label>
-              <Input type="text" name="last" id="last" placeholder="Last Name" />
-            </FormGroup>
-          </Col>
-        </Row>
-
-        <Row form>
-          <Col md={6}>
-            <FormGroup>
-              <Label for="email">Email</Label>
-              <Input type="email" name="email" id="email" placeholder="email address" />
-            </FormGroup>
-          </Col>
-          <Col md={6}>
-            <FormGroup>
-              <Label for="password">Password</Label>
-              <Input type="password" name="password" id="password" placeholder="password" />
-            </FormGroup>
-          </Col>
-        </Row>
-        <Row form>
-          <Col md={6}>
-            <FormGroup>
-              <Label for="businessName">Property Name</Label>
-              <Input type="text" name="business" id="business" placeholder="" />
-            </FormGroup>
-          </Col>
-          <Col md={6}>
-            <FormGroup>
-              <Label for="BusinessPhone">Business Phone</Label>
-              <Input type="text" name="phone" id="phone" placeholder="" />
-            </FormGroup>
-          </Col>
-        </Row>
-        <FormGroup>
-          <Label for="address">Address</Label>
-          <Input type="text" name="address" id="address" placeholder="1234 Main St"/>
-        </FormGroup>
-        <Row form>
-          <Col md={6}>
-            <FormGroup>
-              <Label for="address2">Address 2</Label>
-              <Input type="text" name="first" id="first" placeholder="Apartment, suite, floor" />
-            </FormGroup>
-          </Col>
-          <Col md={3}>
-            <FormGroup>
-              <Label for="units">Sq ft.</Label>
-              <Input type="text" name="units" id="units" />
-            </FormGroup>
-          </Col>
-          <Col md={3}>
-          <FormGroup>
-              <Label for="select">Unit Type</Label>
-              <Input type="select" name="select" id="select">
+            <Label for="select">Property Type</Label>
+              <Input type="select" name="propertyType" id="property_type" onChange={this.changeHandler}>
                 <option>Choose One</option>
                 <option>Multi-Unit</option>
                 <option>Single Unit</option>
@@ -82,30 +52,70 @@ export default class AddProperty extends React.Component {
             </FormGroup>
           </Col>
         </Row>
+
         <Row form>
-          <Col md={6}>
+          <Col md={8}>
             <FormGroup>
-              <Label for="city">City</Label>
-              <Input type="text" name="city" id="City"/>
+            <Label for="businessName">Manager Name</Label>
+              <Input type="text" name="managerContact" id="manager_contact" placeholder="First and Last Name" onChange={this.changeHandler}/>
             </FormGroup>
           </Col>
           <Col md={4}>
             <FormGroup>
-              <Label for="state">State</Label>
-              <Input type="text" name="state" id="State"/>
+            <Label for="BusinessPhone">Phone</Label>
+              <Input type="tel" name="managerPhone" id="manager_phone" placeholder="" onChange={this.changeHandler}/>
             </FormGroup>
           </Col>
-          <Col md={2}>
+        </Row>
+        <Row form>
+          <Col md={12}>
+            <FormGroup>
+              <Label for="address">Street Address</Label>
+              <Input type="text" name="streetAddress" id="street_address" placeholder="123 main st" onChange={this.changeHandler}/>
+            </FormGroup>
+          </Col>
+          </Row>
+          <Row form>
+          <Col md={6}>
+            <FormGroup>
+              <Label for="city">City</Label>
+              <Input type="text" name="city" id="City" onChange={this.changeHandler}/>
+            </FormGroup>
+          </Col>
+          <Col md={3}>
+            <FormGroup>
+              <Label for="state">State</Label>
+              <Input type="text" name="state" id="State" onChange={this.changeHandler}/>
+            </FormGroup>
+          </Col>
+          <Col md={3}>
             <FormGroup>
               <Label for="zip">Zip</Label>
-              <Input type="text" name="zip" id="Zip"/>
+              <Input type="text" name="zip" id="Zip" onChange={this.changeHandler}/>
             </FormGroup>  
           </Col>
         </Row>
-
-        <Button className="mr-2" color="primary" href="#" onClick={()=>this.props.setView('manager-main', {})}>Go Back</Button>
-        <Button color="info" href="#" onClick={()=>this.props.setView('add-unit', {})}>Add Unit</Button>
-      </Form>
+        <Row form>
+          <Col md={4}>
+            <FormGroup>
+              <Label for="parking">Parking Spaces</Label>
+              <Input type="text" name="parking" id="parking_spaces" placeholder="# of spots available" onChange={this.changeHandler}/>
+            </FormGroup>
+          </Col>
+          <Col md={4}>
+            <FormGroup>
+              <Label for="units">Sq ft.</Label>
+              <Input type="text" name="size" id="sqft" placeholder=""onChange={this.changeHandler}/>
+            </FormGroup>
+          </Col>
+          </Row>
+            <Button className="mr-2" color="primary">
+              <Link to="/manager-main" style={{color: "white"}}>Go Back</Link>
+            </Button>
+            <Button color="info">
+              <Link to={"/add-unit-page"} style={{color: "white"}}>Add Units</Link>
+            </Button>
+        </Form>
     );
   }
 }

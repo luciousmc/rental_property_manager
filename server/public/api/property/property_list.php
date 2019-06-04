@@ -1,6 +1,6 @@
 <?php
 require_once('../functions.php');
-require_once('../../../credentials.php');
+require_once('../credentials.php');
 startup();
 
 $query = "SELECT p.id, p.street_address AS streetAddress, p.city, p.state,p.zip, p.property_type AS type, p.sqft, COUNT(`u`.`property_id`) AS units, GROUP_CONCAT(DISTINCT images.url) AS image

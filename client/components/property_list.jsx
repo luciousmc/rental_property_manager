@@ -1,6 +1,7 @@
 import React from 'react';
-import { Row, Container, Nav, NavItem, NavLink } from 'reactstrap';
+import { Row, Container, Nav, NavItem, NavLink, Button } from 'reactstrap';
 import PropertyListItem from './property_list_item';
+import {Link} from 'react-router-dom';
 
 class PropertyList extends React.Component{
     constructor(props){
@@ -11,37 +12,63 @@ class PropertyList extends React.Component{
     }
     componentDidMount(){
         this.getProperties();
+        this.getProperty();
     }
     getProperties(){
-        const dummyList = [
-            {
-            "id": 1,
-            "streetAddress": "23002 El Toro Road",
-            "city": "irvine",
-            "state": "ca",
-            "zip": 91101,
-            "image": "../../server/public/images/business_default_image.jpg",
-            "type": "multi-unit",
-            "units": 4,
-            "vacancies": 2
-            },
-            {
-            "id": 2,
-            "streetAddress": "9200 Irvine Center Drive",
-            "city": "irvine",
-            "state": "ca",
-            "zip": 91101,
-            "image": "../../server/public/images/business_default_image.jpg",
-            "type": "multi-unit",
-            "units": 6,
-            "vacancies": 0
-            }
-        ];
-        this.setState({ properties: dummyList });
+        //////////////////////////////////////////////////////////////////////
+        ///////////////// Dummy Property List ////////////////////////////////
+        // const dummyList = [
+        //     {
+        //     "id": 1,
+        //     "streetAddress": "23002 El Toro Road",
+        //     "city": "irvine",
+        //     "state": "ca",
+        //     "zip": 91101,
+        //     "image": "../../server/public/images/business_default_image.jpg",
+        //     "type": "multi-unit",
+        //     "units": 4,
+        //     "vacancies": 2
+        //     },
+        //     {
+        //     "id": 2,
+        //     "streetAddress": "9200 Irvine Center Drive",
+        //     "city": "irvine",
+        //     "state": "ca",
+        //     "zip": 91101,
+        //     "image": "../../server/public/images/business_default_image.jpg",
+        //     "type": "multi-unit",
+        //     "units": 6,
+        //     "vacancies": 0
+        //     }
+        // ];
+        //   this.setState({ properties: dummyList });
+        ////////////////////////////////////////////////////////////////////////
+
+        fetch('/api/property/property_list.php')
+        .then(response=>response.json())
+        .then(propertyList=>{
+            this.setState({ properties: propertyList });
+        })
     }
+    getProperty(){
+        fetch('/add_property.php')
+            .then(properties => properties.json())
+            .then(properties => {
+                this.setState({
+                    properties: properties
+                });
+            });
+    }
+  
     render(){
         return(
             <div>
+                
+                <Row>
+                <Button size="sm" color="primary">
+                <Link to="/" style={{color: "white"}}>Back to Main Page</Link>
+                </Button>
+                </Row>
                 <Row>
                     <h1 className="mx-auto mb-4">Your Properties</h1>
                 </Row>
@@ -49,7 +76,7 @@ class PropertyList extends React.Component{
                     <Container>
                         <Row className="col-8 offset-2">
                             <Nav tabs>
-                                <NavItem>
+                            <NavItem>
                                     <NavLink href="/add-property">Add Property</NavLink>
                                 </NavItem>
                                 <NavItem>
