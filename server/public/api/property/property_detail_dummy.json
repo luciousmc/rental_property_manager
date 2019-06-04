@@ -31,3 +31,25 @@
     }
   ]
 }
+"id": "1",
+"property_name": "vista complex",
+"street_address": "23002 El Toro Road",
+"city": "irvine",
+"state": "ca",
+"zip": "91101",
+"sqft": "20000",
+"parking_spaces": "30",
+"property_type": "Multi Unit",
+"manager_contact": "Joe",
+"manager_phone": "8008888888",
+"unit_number": "100A",
+"unit_sqft": "2000",
+"rent": "3500",
+"business_name": "Nick Inc",
+"contact_name": "Nike Gordan",
+"tenant_phone": "5555555555",
+"tenant_email": "nike@gmail.com",
+"move_in_date": "2003-01-19",
+"lease_end_date": "2003-04-20",
+"rent_due_date": "2004-01-19",
+"releaseData": [
