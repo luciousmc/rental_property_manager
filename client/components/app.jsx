@@ -4,9 +4,9 @@ import { Container, Row, Col, Card, CardBody, CardTitle, CardImg, Button } from 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { LandingPage } from './landing-page';
 import ManagerMain from './manager-main-page';
+import PropertyDetails from './property-detail-page';
 import  AddProperty  from './add-property-page';
 // import  TenantMain from './tenant-main';
-// import PropertyDetails from '../page/PropertyDetails';
 import AddUnit from './addUnit';
 
 export default class App extends React.Component{
@@ -15,9 +15,6 @@ export default class App extends React.Component{
         this.state = {
             properties: {}
         }
-    }
-    setView( view, obj ){
-        this.setState({ view:{ name: view, params: obj} });
     }
     render(){
         return(
@@ -29,7 +26,7 @@ export default class App extends React.Component{
                     <Switch>
                         <Route exact path="/" component={LandingPage} />
                         <Route path="/manager-main" component={ManagerMain} />
-                        {/* <Route path="/manager/property-details" component ={PropertyDetails} /> */}
+                        <Route path="/property/:id" component ={PropertyDetails} />
                         <Route path="/add-property" component ={AddProperty} />
                         <Route path="/addUnit" component ={AddUnit} />
                         {/* <Route path="/tenant/main" component ={TenantMain} />                     */}
