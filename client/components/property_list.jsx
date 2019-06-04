@@ -50,16 +50,7 @@ class PropertyList extends React.Component{
             this.setState({ properties: propertyList });
         })
     }
-    getProperty(){
-        fetch('/add_property.php')
-            .then(properties => properties.json())
-            .then(properties => {
-                this.setState({
-                    properties: properties
-                });
-            });
-    }
-  
+
     render(){
         return(
             <div>
