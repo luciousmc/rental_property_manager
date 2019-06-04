@@ -1,16 +1,14 @@
 import React from 'react';
-import { Container, Row, Button } from 'reactstrap';
-import AddProperty from './addProperty';
-
+import { Container, Row } from 'reactstrap';
+import AddUnit from './addUnit';
 
 export default ()=>(
 <React.Fragment>
     <Row>
         <Container>
             <div className="form-container col-8 offset-2">
-                <AddProperty />  
+                <AddUnit />
             </div>
-            
         </Container>
     </Row>
 </React.Fragment>
