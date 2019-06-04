@@ -1,5 +1,5 @@
 <?php
-require_once('../../../credentials.php');
+require_once('../credentials.php');
 require_once('../functions.php');
 startup();
 $id = $_GET['id'];

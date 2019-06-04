@@ -1,5 +1,5 @@
 <?php
-require_once('../../../credentials.php');
+require_once('../credentials.php');
 require_once('../functions.php');
 startup();
 $pName = $_POST['property_name'];
@@ -22,5 +22,5 @@ if(!$result){
     print(mysqli_error());
 }
 
-
+print("success");
 
