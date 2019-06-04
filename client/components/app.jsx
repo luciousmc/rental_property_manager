@@ -8,7 +8,7 @@ import  AddProperty  from './add-property-page';
 import  TenantMain from './tenant-main-page';
 // import PropertyDetails from '../page/PropertyDetails';
 import PropertyList from './property_list';
-import AddUnit from './addUnit';
+import AddUnit from './add-unit-page';
 
 
 export default class App extends React.Component{
@@ -21,6 +21,7 @@ export default class App extends React.Component{
     setView( view, obj ){
         this.setState({ view:{ name: view, params: obj} });
     }
+    
     render(){
         return(
             <React.Fragment>
@@ -35,6 +36,8 @@ export default class App extends React.Component{
                         <Route path="/add-property" component ={AddProperty} />
                         <Route path="/addUnit" component ={AddUnit} />
                         <Route path="/tenant-main" component ={TenantMain} />                    
+                        <Route path="/add-unit-page" component ={AddUnit} />
+                        {/* <Route path="/tenant/main" component ={TenantMain} />                     */}
                     </Switch>
                 </Router>
             </React.Fragment>
