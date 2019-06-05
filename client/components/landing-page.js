@@ -25,7 +25,11 @@ export const LandingPage = ()=>(
                         <CardImg width="100%" src="images/tenant_icon.png" />
                         <CardBody>
                             <CardTitle>Tenant</CardTitle>
-                            <Button color="info">Go to Portal</Button>
+                            <Button color="info">
+                                <Link to="/tenant-main" style={{color: 'white'}} >
+                                Go to Portal
+                                </Link>
+                            </Button>
                         </CardBody>
                     </Card>
                 </Col>
