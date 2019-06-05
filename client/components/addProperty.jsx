@@ -76,19 +76,19 @@ export default class AddProperty extends React.Component {
     addProperty(e){
       debugger;
       e.preventDefault();
-      
-      let data = {
-        property_name: this.state.propertyName,
-        street_address: this.state.streetAddress,
-        city: this.state.city,
-        state: this.state.state,
-        zip: this.state.zip,
-        sqft: this.state.sqft,
-        property_type: "Multi Unit",
-        manager_contact: this.state.managerContact,
-        manager_phone: this.state.managerPhone,
-        parking_spaces: this.state.parking
-      }
+
+        let data = {
+            property_name: this.state.propertyName,
+            street_address: this.state.streetAddress,
+            city: this.state.city,
+            state: this.state.state,
+            zip: this.state.zip,
+            sqft: this.state.sqft,
+            property_type: 'Multi Unit',
+            manager_contact: this.state.managerContact,
+            manager_phone: this.state.managerPhone,
+            parking_spaces: this.state.parking
+        }
       fetch('/api/property/add_property.php',{
         method: 'POST',
         headers: {'content-type': 'applications/json'},
