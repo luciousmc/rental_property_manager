@@ -90,7 +90,18 @@ export default class AddUnit extends React.Component{
                         </FormGroup>
                     </Col>
                 </Row>
-                <CustomInput className="mb-2"  type="switch" id="customSwitch" name="customSwitch" label="Vacant"  />
+                <Row form>
+                    <Col md={4}>
+                        <FormGroup>
+                            <Label for="status">Unit Status</Label>
+                            <Input type="select" name="status" id="status" onChange={this.handleStatusChange.bind(this)}>
+                                <option value={'Vacant'}>Vacant</option>
+                                <option value={'Occupied'}>Occupied</option>
+                                <option value={'Pending'}>Pending</option>
+                            </Input>
+                        </FormGroup>
+                    </Col>
+                </Row>
                 <Button className="mr-2" color="danger">
                     <Link to="add-property" style={{color: "white"}}>Back to Add Property</Link>
                 </Button>
