@@ -17,8 +17,9 @@ VALUES ('$pID', '$unitNum', '$sqft', '$rent', '$status')";
 
 $result = mysqli_query($conn, $query);
 
+
 print(json_encode(
     [
-        'result' => true
+        'result' => true,
     ]
 ));

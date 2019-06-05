@@ -31,6 +31,7 @@ export default class AddUnit extends React.Component{
 
     createUnit(event){
         event.preventDefault();
+        debugger;
         let data = {
             property_id: 2,
             unit_number: this.state.unit_number,
@@ -38,13 +39,13 @@ export default class AddUnit extends React.Component{
             rent: this.state.rent,
             status: this.state.status
             };
-
         fetch('/api/unit/add_unit.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         })
-        .then(res => res.json());
+
+            .then(res => res.json());
     }
     render(){
         return(
