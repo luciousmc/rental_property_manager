@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Container, Nav, NavItem, NavLink, Button } from 'reactstrap';
 import {Link} from 'react-router-dom';
 
-export default class TenantMain extends React.Component{
+export default class TenantOwner extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -29,7 +29,7 @@ export default class TenantMain extends React.Component{
                             <Link to="/" style={{color: "white"}}>Back to Main Page</Link>
                         </Button>
                     </Row>
-                    </Container>
+                </Container>
                     <Row className="col-7 offset-4">
                         <h1>Your Tenant Info</h1>
                     </Row>
@@ -39,10 +39,10 @@ export default class TenantMain extends React.Component{
                         <Row className="col-8 offset-2">
                             <Nav tabs>
                                 <NavItem>
-                                    <NavLink className='active' href="/tenant-main">Tenant Summary</NavLink>
+                                    <NavLink href="/tenant-main">Tenant Summary</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="/tenant-owner">Owner Information</NavLink>
+                                    <NavLink className='active' href="/tenant-owner">Owner Information</NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink href="#">Request Repairs</NavLink>

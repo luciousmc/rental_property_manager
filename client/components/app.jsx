@@ -6,6 +6,7 @@ import { LandingPage } from './landing-page';
 import ManagerMain from './manager-main-page';
 import  AddProperty  from './add-property-page';
 import  TenantMain from './tenant-main-page';
+import TenantOwner from './tenant-owner-page';
 // import PropertyDetails from '../page/PropertyDetails';
 import PropertyList from './property_list';
 import AddUnit from './add-unit-page';
@@ -37,7 +38,7 @@ export default class App extends React.Component{
                         <Route path="/addUnit" component ={AddUnit} />
                         <Route path="/tenant-main" component ={TenantMain} />                    
                         <Route path="/add-unit-page" component ={AddUnit} />
-                        {/* <Route path="/tenant/main" component ={TenantMain} />                     */}
+                        <Route path="/tenant-owner" component ={TenantOwner} />                    
                     </Switch>
                 </Router>
             </React.Fragment>
