@@ -2,6 +2,10 @@
 require_once('../credentials.php');
 require_once('../functions.php');
 startup();
+
+$input = file_get_contents('php://input');
+$_POST = json_decode($input, true);
+// print($_POST);
 $pName = $_POST['property_name'];
 $street = $_POST['street_address'];
 $city = $_POST['city'];
@@ -18,9 +22,12 @@ VALUES ('$pName', '$street', '$city', '$state', '$zip', '$sqft', '$type', '$cNam
 
 $result = mysqli_query($conn, $query);
 
-if(!$result){
-    print(mysqli_error());
-}
+// if(!$result){
+//     print(mysqli_error());
+// }
+print(json_encode([
+    'result' => true
+]));
 
-print("success");
+
 
