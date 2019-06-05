@@ -22,5 +22,5 @@ if(!$result){
     print(mysqli_error());
 }
 
-print("success");
+
 
