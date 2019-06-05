@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './header';
-import { Container, Row, Col, Card, CardBody, CardTitle, CardImg, Button } from 'reactstrap';
+import { Row } from 'reactstrap';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { LandingPage } from './landing-page';
 import ManagerMain from './manager-main-page';

@@ -26,7 +26,7 @@ export const LandingPage = ()=>(
                         <CardBody>
                             <CardTitle>Tenant</CardTitle>
                             <Button color="info">
-                                <Link to="/tenant-main">
+                                <Link to="/tenant-main" style={{color: 'white'}} >
                                 Go to Portal
                                 </Link>
                             </Button>
