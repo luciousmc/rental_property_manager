@@ -55,7 +55,7 @@ CREATE TABLE `properties` (
   `sqft` bigint(20) UNSIGNED NOT NULL,
   `property_type` enum('Single Unit','Multi Unit') COLLATE utf8_unicode_ci NOT NULL,
   `manager_contact` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
-  `manger_phone` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
+  `manager_phone` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
   `parking_spaces` tinyint(3) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
