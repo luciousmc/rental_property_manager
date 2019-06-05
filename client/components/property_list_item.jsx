@@ -15,11 +15,7 @@ function PropertyListItem(props){
     const outputList = props.propertyList.map(property=>{
         return(
             <Container className="mb-3">
-<<<<<<< HEAD
-                <Card  key={property.id} className="property-card" onClick={()=>props.setView('property-details', {})}>
-=======
-                <Card key={property.id} >
->>>>>>> dev
+                <Card key={property.id} onClick={()=>window.location = "/property/"+property.id}>
                     <Row>
                         <Col sm="4">
                             <CardImg src={property.image} className="property-img" />
