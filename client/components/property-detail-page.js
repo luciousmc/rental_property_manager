@@ -10,7 +10,8 @@ export default class PropertyDetailPage extends React.Component{
         }
     }
     componentDidMount(){
-        this.getPropertyDetails();
+        const { id } = this.props.match.params;
+        this.getPropertyDetails(id);
     }
     getPropertyDetails(id){
         fetch("/api/property/property_details.php?id=$id")
