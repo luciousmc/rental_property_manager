@@ -4,7 +4,7 @@ import { Container, Row, Col, Card, CardBody, CardTitle, CardImg, Button } from 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { LandingPage } from './landing-page';
 import ManagerMain from './manager-main-page';
-import PropertyDetails from './property-detail-page';
+import { PropertyDetailPage } from './property-detail-page';
 import  AddProperty  from './add-property-page';
 import AddUnit from './add-unit-page';
 
@@ -25,7 +25,7 @@ export default class App extends React.Component{
                     <Switch>
                         <Route exact path="/" component={LandingPage} />
                         <Route path="/manager-main" component={ManagerMain} />
-                        <Route path="/property/:id" component ={PropertyDetails} />
+                        <Route path="/property/:id" component ={PropertyDetailPage} />
                         <Route path="/add-property" component ={AddProperty} />
                         <Route path="/add-unit-page" component ={AddUnit} />
                     </Switch>
