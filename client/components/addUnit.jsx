@@ -11,24 +11,21 @@ export default class AddUnit extends React.Component{
         this.addunit();
     }
 
-    addunit(){
+    addunit(event){
+        event.preventDefault();
         let data = {
-            property_id: 3,
-            unit_number: 555,
-            sqft: 5555,
-            rent: 5555,
-            status: 'Occupied'
+            property_id: 2,
+            unit_number: 7777,
+            sqft: 7777,
+            rent: 7777,
+            status: 'Vacant'
             };
         fetch('/api/unit/add_unit.php', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         })
-            .then(res => {
-                console.log(res.text())
-                return res.json();
-            })
-            .then((res)=> console.log(res,'hit'));
+            .then(res => res.json());
     }
     render(){
         return(

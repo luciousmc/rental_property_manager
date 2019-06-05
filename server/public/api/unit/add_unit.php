@@ -2,7 +2,9 @@
 
 require_once('../credentials.php');
 require_once('../functions.php');
-//startup();
+startup();
+$input = file_get_contents('php://input');
+$_POST = json_decode($input, true);
 
 $pID = $_POST['property_id'];
 $unitNum = $_POST['unit_number'];
@@ -15,5 +17,8 @@ VALUES ('$pID', '$unitNum', '$sqft', '$rent', '$status')";
 
 $result = mysqli_query($conn, $query);
 
-print('{result: true}');
-//print("$pID $unitNum $sqft $rent $status");
+print(json_encode(
+    [
+        'result' => true
+    ]
+));
