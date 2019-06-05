@@ -7,6 +7,29 @@ export default class AddUnit extends React.Component{
     constructor(props){
         super(props)
     }
+    componentDidMount() {
+        this.addunit();
+    }
+
+    addunit(){
+        let data = {
+            property_id: 3,
+            unit_number: 555,
+            sqft: 5555,
+            rent: 5555,
+            status: 'Occupied'
+            };
+        fetch('/api/unit/add_unit.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: JSON.stringify(data)
+        })
+            .then(res => {
+                console.log(res.text())
+                return res.json();
+            })
+            .then((res)=> console.log(res,'hit'));
+    }
     render(){
         return(
             <Form>
