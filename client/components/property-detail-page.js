@@ -6,7 +6,7 @@ export default class PropertyDetailPage extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            property: null
+            property: {}
         }
     }
     componentDidMount(){
@@ -14,10 +14,11 @@ export default class PropertyDetailPage extends React.Component{
         this.getPropertyDetails(id);
     }
     getPropertyDetails(id){
-        fetch("/api/property/property_details.php?id=$id")
+        fetch(`/api/property/property_details.php?id=${id}`)
             .then(response=>response.json())
             .then(propertyDetailsAll=>{
                 console.log('the full property details are as follows: ', propertyDetailsAll);
+                this.setState({ property: propertyDetailsAll }, console.log('property details after setstate ', propertyDetailsAll))
             })
     }
     render(){

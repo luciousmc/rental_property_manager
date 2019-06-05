@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 31, 2019 at 07:22 PM
+-- Generation Time: Jun 05, 2019 at 02:02 AM
 -- Server version: 5.7.26-0ubuntu0.18.04.1
 -- PHP Version: 7.2.17-0ubuntu0.18.04.1
 
@@ -55,7 +55,7 @@ CREATE TABLE `properties` (
   `sqft` bigint(20) UNSIGNED NOT NULL,
   `property_type` enum('Single Unit','Multi Unit') COLLATE utf8_unicode_ci NOT NULL,
   `manager_contact` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
-  `manger_phone` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
+  `manager_phone` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
   `parking_spaces` tinyint(3) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -93,15 +93,18 @@ CREATE TABLE `tenants` (
   `tenant_email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `move_in_date` date NOT NULL,
   `lease_end_date` date NOT NULL,
-  `rent_due_date` date NOT NULL
+  `rent_due_date` date NOT NULL,
+  `monthly_rent` smallint(5) UNSIGNED NOT NULL,
+  `unit_number` varchar(10) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `tenants`
 --
 
-INSERT INTO `tenants` (`id`, `unit_id`, `business_name`, `contact_name`, `tenant_phone`, `tenant_email`, `move_in_date`, `lease_end_date`, `rent_due_date`) VALUES
-(1, 1, 'Nick Inc', 'Nike Gordan', '5555555555', 'nike@gmail.com', '2003-01-19', '2003-04-20', '2004-01-19');
+INSERT INTO `tenants` (`id`, `unit_id`, `business_name`, `contact_name`, `tenant_phone`, `tenant_email`, `move_in_date`, `lease_end_date`, `rent_due_date`, `monthly_rent`, `unit_number`) VALUES
+(1, 1, 'Nick Inc', 'Nike Gordan', '5555555555', 'nike@gmail.com', '2003-01-19', '2003-04-20', '2004-01-19', 2200, '100B'),
+(2, 1, 'Howie Inc', 'Howie Gordan', '6666666666', 'Hiwifusion@howie.com', '2003-01-19', '2003-04-20', '2004-01-19', 1800, '100A');
 
 -- --------------------------------------------------------
 
@@ -218,7 +221,7 @@ ALTER TABLE `property_images`
 -- AUTO_INCREMENT for table `tenants`
 --
 ALTER TABLE `tenants`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tenant_images`
 --

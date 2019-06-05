@@ -11,11 +11,11 @@ export const LandingPage = ()=>(
                         <CardImg  width="100%" src="images/manager_icon.png" />
                         <CardBody>
                             <CardTitle>Property Manager</CardTitle>
-                           <Button color="info">
+                            <Button color="info">
                                 <Link to="/manager-main" style={{color: 'white'}}>
                                     Go to Portal
                                 </Link>
-                           </Button>
+                            </Button>
                         </CardBody>
                     </Card>
                 </Col>
@@ -24,7 +24,11 @@ export const LandingPage = ()=>(
                         <CardImg width="100%" src="images/tenant_icon.png" />
                         <CardBody>
                             <CardTitle>Tenant</CardTitle>
-                            <Button color="info">Go to Portal</Button>
+                            <Button color="info">
+                                <Link to="/tenant-main" style={{color: 'white'}} >
+                                Go to Portal
+                                </Link>
+                            </Button>
                         </CardBody>
                     </Card>
                 </Col>

@@ -33,7 +33,9 @@ while ($row = mysqli_fetch_assoc($result)) {
         'tenant_email' => $row['tenant_email'],
         'move_in_date' => $row['move_in_date'],
         'lease_end_date' => $row['lease_end_date'],
-        'rent_due_date' => $row['rent_due_date']
+        'rent_due_date' => $row['rent_due_date'],
+        'monthly_rent' => $row['monthly_rent'],
+        'unit_number' => $row['unit_number']
     ];
 
     $unitData = [

@@ -20,3 +20,7 @@ body {
 .property-img {
     width: 200px;
 }
+.property-detail-header {
+    background: #937777;
+    height: 10vh;
+}

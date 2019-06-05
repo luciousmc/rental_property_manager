@@ -1,13 +1,11 @@
 import React from 'react';
-import { Row, Col } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 
 export default (props)=>(
-    <React.Fragment>
+    <div>
         <Row>
-            <Col>
-                <h1>{props.propertyDetail.streetAddress}</h1>
-            </Col>
+            <h1 className=" property-detail-header">{props.propertyDetail.street_address}</h1>
         </Row>
         <Row>
             <Col>
@@ -42,5 +40,5 @@ export default (props)=>(
                 </Row>
             </Container>
         </Row>
-    </React.Fragment>
+    </div>
 );
