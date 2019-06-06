@@ -8,57 +8,59 @@ export default (props)=>(
             <h1 className="property-detail-header mx-auto">{props.propertyDetail.street_address}</h1>
         </Row>
         <Row>
-            <Col>
-                <Nav pills>
-                    <NavItem>
-                        <NavLink href="#" active>Property Summary</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink href="#">Unit Info</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink href="#">Maintenece Providers</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink href="#">Repair Requests</NavLink>
-                    </NavItem>
-                </Nav>
+            <Col className="details-header text-center py-2">
+                <Container>
+                    <Nav pills>
+                        <Col>
+                            <a className="detail-link p-2 my-1" href="#">Property Summary</a>
+                        </Col>
+                        <Col>
+                            <a className="detail-link p-2 my-1" href="#">Unit Info</a>
+                        </Col>
+                        <Col>
+                            <a className="detail-link p-2 my-1" href="#">Maintenence</a>
+                        </Col>
+                        <Col>
+                            <a className="detail-link p-2 my-1" href="#">Repair Requests</a>
+                        </Col>
+                    </Nav>
+                </Container>
             </Col>
         </Row>
-        <Row>
+        <Row className="p-5">
             <Col>
                 <div>{props.propertyDetail.image}</div>
             </Col>
             <Col>
                 <Row>
-                    <h4>Property: {props.propertyDetail.property_name}</h4>
+                    <h5>Property: {props.propertyDetail.property_name}</h5>
                 </Row>
                 <Row>
-                    <h4>Address: {props.propertyDetail.street_address} {props.propertyDetail.city}, {props.propertyDetail.state} {props.propertyDetail.zip}</h4>
+                    <h5>Address: {props.propertyDetail.street_address} {props.propertyDetail.city}, {props.propertyDetail.state} {props.propertyDetail.zip}</h5>
                 </Row>
                 <Row>
-                    <h4>Property Type: {props.propertyDetail.property_type}</h4>
+                    <h5>Property Type: {props.propertyDetail.property_type}</h5>
                 </Row>
                 <Row>
-                    <h4>Units: </h4>
+                    <h5>Units: </h5>
                 </Row>
                 <Row>
-                    <h4>Square ft: {props.propertyDetail.footage}</h4>
+                    <h5>Square ft: {props.propertyDetail.footage}</h5>
                 </Row>
                 <Row>
-                    <h4>Parking Spaces: {props.propertyDetail.parking_spaces} </h4>
+                    <h5>Parking Spaces: {props.propertyDetail.parking_spaces} </h5>
                 </Row>
                 <Row>
-                    <h4>Manager Name: {props.propertyDetail.manager_contact} </h4>
+                    <h5>Manager Name: {props.propertyDetail.manager_contact} </h5>
                 </Row>
                 <Row>
-                    <h4>Manager Number: {props.propertyDetail.manager_phone} </h4>
+                    <h5>Manager Number: {props.propertyDetail.manager_phone} </h5>
                 </Row>
             </Col>
         </Row>
         <Row>
             <Col>
-                <h1 className="text-center">Unit Details</h1>
+                <h2 className="text-center details-header">Unit Details</h2>
             </Col>
         </Row>
         <Container>

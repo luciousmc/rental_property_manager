@@ -1,6 +1,9 @@
 body {
     min-height: 100vh;
 }
+.header-bar {
+    height: 2vh;
+}
 .content-container {
     min-height: 75vh;
 }
@@ -23,8 +26,17 @@ body {
 .property-detail-header {
     height: 10vh;
 }
-.property-summary-header {
-    height: 10vh;
+.property-summary-header, .details-header {
+    /* height: 10vh; */
     background: #937777;
     color:white;
+}
+.detail-link, .details-header {
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 1px 1px 5px black;
+}
+.detail-link:hover {
+    text-decoration: none;
+    background: yellow;
 }
