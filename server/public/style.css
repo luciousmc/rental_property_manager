@@ -11,6 +11,20 @@ body {
 .tenant-icon {
     transform: scale(1.5);
 }
+.property-card {
+    box-shadow: 1px 1px 5px gray;
+}
+.property-card:hover {
+    cursor: pointer;
+}
 .property-img {
     width: 200px;
+}
+.property-detail-header {
+    height: 10vh;
+}
+.property-summary-header {
+    height: 10vh;
+    background: #937777;
+    color:white;
 }

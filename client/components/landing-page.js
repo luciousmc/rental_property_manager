@@ -11,12 +11,11 @@ export const LandingPage = ()=>(
                         <CardImg  width="100%" src="images/manager_icon.png" />
                         <CardBody>
                             <CardTitle>Property Manager</CardTitle>
-                            {/* <Button onClick={()=>this.setView('manager-main', {})}>Go to Portal</Button> */}
-                           <Button color="info">
+                            <Button color="info">
                                 <Link to="/manager-main" style={{color: 'white'}}>
                                     Go to Portal
                                 </Link>
-                           </Button>
+                            </Button>
                         </CardBody>
                     </Card>
                 </Col>

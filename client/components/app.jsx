@@ -4,12 +4,12 @@ import { Row } from 'reactstrap';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { LandingPage } from './landing-page';
 import ManagerMain from './manager-main-page';
+import PropertyDetailPage from './property-detail-page';
 import  AddProperty  from './add-property-page';
 import  TenantMain from './tenant-main-page';
 // import PropertyDetails from '../page/PropertyDetails';
 import PropertyList from './property_list';
 import AddUnit from './add-unit-page';
-
 
 export default class App extends React.Component{
     constructor(props) {
@@ -18,10 +18,6 @@ export default class App extends React.Component{
             properties: {}
         }
     }
-    setView( view, obj ){
-        this.setState({ view:{ name: view, params: obj} });
-    }
-    
     render(){
         return(
             <React.Fragment>
@@ -32,12 +28,11 @@ export default class App extends React.Component{
                     <Switch>
                         <Route exact path="/" component={LandingPage} />
                         <Route path="/manager-main" component={ManagerMain} />
-                        {/* <Route path="/manager/property-details" component ={PropertyDetails} /> */}
+                        <Route path="/property/:id" component ={PropertyDetailPage} />
                         <Route path="/add-property" component ={AddProperty} />
                         <Route path="/addUnit" component ={AddUnit} />
                         <Route path="/tenant-main" component ={TenantMain} />                    
                         <Route path="/add-unit-page" component ={AddUnit} />
-                        {/* <Route path="/tenant/main" component ={TenantMain} />                     */}
                     </Switch>
                 </Router>
             </React.Fragment>

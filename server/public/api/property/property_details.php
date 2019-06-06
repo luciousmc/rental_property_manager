@@ -12,9 +12,9 @@ if(empty($_GET['id'])){
 
 $query = "SELECT p.`id`, p.`property_name`, p.`street_address`, p.`city`, p.`state`, p.`zip`, p.`sqft`, p.`parking_spaces`, p.`property_type`, p.`manager_contact`, p.manager_phone, u.`id` AS unit_id, u.`unit_number`, u.`sqft` AS unit_sqft, u.`rent`, t.id AS tenant_id, t.business_name, t.contact_name, t.tenant_phone, t.tenant_email, t.`move_in_date`, t.lease_end_date, t.rent_due_date
     FROM `properties` AS p
-    JOIN `units` AS u
+    LEFT JOIN `units` AS u
     ON u.property_id = p.id
-    JOIN `tenants` AS t 
+    LEFT JOIN `tenants` AS t 
     ON t.`unit_id` = u.id " . $whereClause;
 
 $result = mysqli_query($conn, $query);
@@ -33,9 +33,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         'tenant_email' => $row['tenant_email'],
         'move_in_date' => $row['move_in_date'],
         'lease_end_date' => $row['lease_end_date'],
-        'rent_due_date' => $row['rent_due_date'],
-        'monthly_rent' => $row['monthly_rent'],
-        'unit_number' => $row['unit_number']
+        'rent_due_date' => $row['rent_due_date']
     ];
 
     $unitData = [
