@@ -2,22 +2,22 @@ import React from 'react';
 import { Row, Container, Nav, NavItem, NavLink, Button } from 'reactstrap';
 import {Link} from 'react-router-dom';
 
-export default class TenantMain extends React.Component{
+export default class TenantOwner extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            tenantInfo: []
+            ownerInfo: []
         };
-        this.getTenantInfo = this.getTenantInfo.bind(this);
+        this.getOwnerInfo = this.getOwnerInfo.bind(this);
     }
     componentDidMount(){
-        this.getTenantInfo();
+        this.getOwnerInfo();
     }
-    getTenantInfo(){
-        fetch('/api/tenants/tenant-info.php')
+    getOwnerInfo(){
+        fetch('/api/tenants/tenant-owner.php')
         .then(response=>response.json())
         .then(tenantList=>{
-            this.setState({ tenantInfo: tenantList });
+            this.setState({ ownerInfo: tenantList });
         })
     }
     render(){
@@ -29,7 +29,7 @@ export default class TenantMain extends React.Component{
                             <Link to="/" style={{color: "white"}}>Back to Main Page</Link>
                         </Button>
                     </Row>
-                    </Container>
+                </Container>
                     <Row className="col-7 offset-4">
                         <h1>Your Tenant Info</h1>
                     </Row>
@@ -39,10 +39,10 @@ export default class TenantMain extends React.Component{
                         <Row className="col-8 offset-2">
                             <Nav tabs>
                                 <NavItem>
-                                    <NavLink className='active' href="/tenant-main">Tenant Summary</NavLink>
+                                    <NavLink href="/tenant-main">Tenant Summary</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="/tenant-owner">Property Information</NavLink>
+                                    <NavLink className='active' href="/tenant-owner">Property Information</NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink href="#">Request Repairs</NavLink>
@@ -52,37 +52,40 @@ export default class TenantMain extends React.Component{
                         <Row className='col-4 offset-2'><h4>Contact Information: </h4></Row>
                         <Row className='col-4 offset-4'>
                             <div className='col-sm-auto'>
-                                <b>Business Name:</b> {this.state.tenantInfo.business_name}
+                                <b>Property Name:</b> {this.state.ownerInfo.property_name}
                             </div>
                             <div className='col-sm-auto'>
-                                <b>Contact Name: </b> {this.state.tenantInfo.contact_name}
+                                <b>Manager Contact: </b> {this.state.ownerInfo.manager_contact}
                             </div>
                             <div className='col-sm-auto'>
-                                <b>Tenant Phone: </b> {this.state.tenantInfo.tenant_phone}
+                                <b>Manager Phone: </b> {this.state.ownerInfo.manager_phone}
                             </div>
                             <div className='col-sm-auto'>
-                                <b>Tenant Email: </b> {this.state.tenantInfo.tenant_email}
+                                <b>Manager Email: </b> {this.state.ownerInfo.manager_email ? this.state.ownerInfo.manager_email : 'N/A'}
                             </div>
                         </Row>
-                        <Row className='col-4 offset-2'><h4>Important Dates: </h4></Row>
+                        <Row className='col-4 offset-2'><h4>Property Info: </h4></Row>
                         <Row className='col-4 offset-4'>
                             <div className='col-auto'>
-                                <b>Move in Date: </b> {this.state.tenantInfo.move_in_date}
+                                <b>Street Address: </b> {this.state.ownerInfo.street_address}
                             </div>
                             <div className='col-auto'>
-                                <b>Lease End Date: </b> {this.state.tenantInfo.lease_end_date}
+                                <b>City: </b> {this.state.ownerInfo.city}
                             </div>
                             <div className='col-auto'>
-                                <b>Rent Due Date: </b> {this.state.tenantInfo.rent_due_date}
+                                <b>State: </b> {this.state.ownerInfo.state}
+                            </div>
+                            <div className='col-auto'>
+                                <b>Zip: </b> {this.state.ownerInfo.zip}
                             </div>
                         </Row>
-                        <Row className='col-4 offset-2'><h4>Home Information: </h4></Row>
+                        <Row className='col-4 offset-2'><h4>Additional Info: </h4></Row>
                         <Row className='col-4 offset-4'>
                             <div className='col-auto'>
-                                <b>Monthly Rent: </b> ${this.state.tenantInfo.rent}
+                                <b>Parking Spaces: </b> {this.state.ownerInfo.parking_spaces}
                             </div>
                             <div className='col-auto'>
-                                <b>Unit Number: </b> {this.state.tenantInfo.unit_number}
+                                <b>Square Footage: </b> {this.state.ownerInfo.sqft}
                             </div>
                         </Row>
                     </Container>
