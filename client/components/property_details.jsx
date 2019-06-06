@@ -58,12 +58,12 @@ export default (props)=>(
         </Row>
         <Row>
             <Col>
-                <h1>Unit Details</h1>
+                <h1 className="text-center">Unit Details</h1>
             </Col>
         </Row>
         <Container>
             <Row>
-                <UnitItems unitList={props.propertyDetail['units']} />
+                <UnitItems unitList={props.unitList} />
             </Row>
         </Container>
     </div>
