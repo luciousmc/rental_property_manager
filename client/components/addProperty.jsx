@@ -105,7 +105,7 @@ export default class AddProperty extends React.Component {
           <Col md={4}>
             <FormGroup>
               <Label for="units">Sq ft.</Label>
-              <Input type="text" name="size" id="sqft" placeholder=""onChange={this.changeHandler}/>
+              <Input type="text" name="size" id="sqft" placeholder="" onChange={this.changeHandler}/>
             </FormGroup>
           </Col>
           </Row>

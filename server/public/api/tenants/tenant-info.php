@@ -3,22 +3,30 @@ require_once('../credentials.php');
 require_once('../functions.php');
 startup();
 
-$id = $_GET['id'];
 
-if(empty($_GET['id'])){
-    $whereClause = '';
-} else {
-    $whereClause = " WHERE t.unit_id = $id";
-}
+//Keep to Hard-Code for Later Features
+// $id = $_GET['id'];
 
-$query = "SELECT * FROM `tenants` AS t" . $whereClause;
+// if(empty($_GET['id'])){
+//     $idClause = '';
+// } else {
+//     $idClause = $id;
+// }
+
+$idClause = 1;
+
+$query = "SELECT business_name, contact_name, tenant_phone, tenant_email, move_in_date, lease_end_date, rent_due_date, unit_number, rent 
+FROM `tenants` AS t 
+JOIN `units` AS u 
+JOIN `properties` AS p 
+WHERE t.unit_id = u.id AND t.id = " . $idClause;
 
 $result = mysqli_query($conn, $query);
+$output = [];
+
 if (!$result) {
     throw new Exception (mysqli_error($conn));
 }
-
-$output = [];
 
 while ($row = mysqli_fetch_assoc($result)) {
     $tenantData = [
@@ -29,11 +37,10 @@ while ($row = mysqli_fetch_assoc($result)) {
         'move_in_date' => $row['move_in_date'],
         'lease_end_date' => $row['lease_end_date'],
         'rent_due_date' => $row['rent_due_date'],
-        'monthly_rent' => $row['monthly_rent'],
-        'unit_number' => $row['unit_number']
+        'unit_number' => $row['unit_number'],
+        'rent' => $row['rent']
     ];
         $output = $tenantData;
-    
 };
 
 
