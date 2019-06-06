@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, NavItem, Nav, NavLink } from 'reactstrap';
+import {Container, Row, Col, NavItem, Nav, NavLink, CardImg} from 'reactstrap';
 import UnitItems from './unit_items';
 
 export default (props)=>(
@@ -27,7 +27,7 @@ export default (props)=>(
         </Row>
         <Row>
             <Col>
-                <div>{props.propertyDetail.image}</div>
+                <CardImg src={props.propertyDetail.image}/>
             </Col>
             <Col>
                 <Row>
@@ -43,7 +43,7 @@ export default (props)=>(
                     <h4>Units: </h4>
                 </Row>
                 <Row>
-                    <h4>Square ft: {props.propertyDetail.footage}</h4>
+                    <h4>Square ft: {props.propertyDetail.sqft}</h4>
                 </Row>
                 <Row>
                     <h4>Parking Spaces: {props.propertyDetail.parking_spaces} </h4>
