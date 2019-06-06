@@ -59,7 +59,7 @@ export default (props)=>(
             </Col>
         </Row>
         <Row>
-            <Col>
+            <Col className="mb-5">
                 <h2 className="text-center details-header">Unit Details</h2>
             </Col>
         </Row>
