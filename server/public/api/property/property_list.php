@@ -2,11 +2,11 @@
 require_once('../functions.php');
 require_once('../credentials.php');
 startup();
-$query = "SELECT p.id, p.street_address AS streetAddress, p.city, p.state,p.zip, p.property_type AS type, p.sqft, COUNT(`u`.`property_id`) AS units, sum( status = 'Vacant' ) vacancies, GROUP_CONCAT(DISTINCT images.url) AS image
+$query = "SELECT p.id, p.street_address AS streetAddress, p.city, p.state,p.zip, p.property_type AS type, p.sqft, COUNT(`u`.`property_id`) AS units, sum( status = 'Vacant' ) AS vacancies, GROUP_CONCAT(DISTINCT images.url) AS image
     FROM `properties` AS p 
-    JOIN `units` AS `u`
+    LEFT JOIN `units` AS `u`
     ON `u`.`property_id` = `p`.`id`
-    JOIN `images` ON images.property_id = p.id
+    LEFT JOIN `images` ON images.property_id = p.id
     GROUP BY p.id";
 $result = mysqli_query($conn, $query);
 if (!$result){

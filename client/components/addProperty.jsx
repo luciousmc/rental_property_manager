@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Row, Button, Form, FormGroup, Label, Input, } from 'reactstrap';
 import {Link} from 'react-router-dom';
+import AddUnit from './addUnit';
 
 export default class AddProperty extends React.Component {
     constructor(props){
@@ -183,12 +184,11 @@ export default class AddProperty extends React.Component {
             <Button className="mr-2" color="primary">
               <Link to="/manager-main" style={{color: "white"}}>Go Back</Link>
             </Button>
-            <Button color="info">
+            <Button  onClick={this.addProperty} propertyName={""} color="info">
               <Link to={"/add-unit-page"} style={{color: "white"}}>Add Units</Link>
+              
             </Button>
-            <Button onClick={this.addProperty}>Test
-
-            </Button>
+            
         </Form>
     );
     

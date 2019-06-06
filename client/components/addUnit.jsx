@@ -17,7 +17,8 @@ export default class AddUnit extends React.Component{
                     <Col md={6}>
                         <FormGroup>
                             <Label for="propertyName">Property Name</Label>
-                            <Input type="text" name="property" id="property_id" placeholder="" />
+                            <Input type="text" name="property" id="property_id" />
+                            
                         </FormGroup>
                     </Col>
                 </Row>

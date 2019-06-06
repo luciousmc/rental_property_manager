@@ -8,7 +8,7 @@ export default ()=>(
     <Row>
         <Container>
             <div className="form-container col-8 offset-2">
-                <AddProperty />  
+                <AddProperty/>  
             </div>
             
         </Container>

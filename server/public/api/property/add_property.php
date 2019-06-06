@@ -22,9 +22,10 @@ VALUES ('$pName', '$street', '$city', '$state', '$zip', '$sqft', '$type', '$cNam
 
 $result = mysqli_query($conn, $query);
 
-// if(!$result){
-//     print(mysqli_error());
-// }
+if(!$result){
+    print(mysqli_error($conn));
+    exit();
+}
 print(json_encode([
     'result' => true
 ]));
