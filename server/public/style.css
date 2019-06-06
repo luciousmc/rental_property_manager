@@ -21,6 +21,10 @@ body {
     width: 200px;
 }
 .property-detail-header {
-    background: #937777;
     height: 10vh;
+}
+.property-summary-header {
+    height: 10vh;
+    background: #937777;
+    color:white;
 }

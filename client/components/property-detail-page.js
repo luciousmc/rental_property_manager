@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import PropertyDetails from './property_detail';
+import PropertyDetails from './property_details';
 
 export default class PropertyDetailPage extends React.Component{
     constructor(props){
@@ -22,11 +22,10 @@ export default class PropertyDetailPage extends React.Component{
             })
     }
     render(){
+        console.log('the unitlist is : ', this.state.property);
         return(
             <React.Fragment>
-                <Row>
-                    <PropertyDetails propertyDetail={this.state.property} />
-                </Row>                    
+                <PropertyDetails propertyDetail={this.state.property} />
             </React.Fragment>
         );
     }
