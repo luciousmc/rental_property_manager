@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './header';
+import Footer from './footer'
 import { Row } from 'reactstrap';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { LandingPage } from './landing-page';
@@ -35,9 +36,11 @@ export default class App extends React.Component{
                         <Route path="/tenant-main" component ={TenantMain} />                    
                         <Route path="/add-unit-page" component ={AddUnit} />
                         <Route path="/tenant-owner" component ={TenantOwner} />
-
                     </Switch>
                 </Router>
+                <Row>
+                    <Footer />
+                </Row>
             </React.Fragment>
         );
     }
