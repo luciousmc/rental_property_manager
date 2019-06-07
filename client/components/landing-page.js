@@ -20,7 +20,7 @@ export const LandingPage = ()=>(
                 </Button>
             </Col>
             </Row>
-            <Row style={{marginBottom: '200px'}}>
+            <Row >
             <Col className="col-sm-auto offset-sm-1 ">
                 <h2>Tenants</h2>
                 <h6 style={{marginBottom: '35px'}}>The Tenant Portal helps to manage your current living situation and make your life a lot easier when it comes to contacting the owner.<br /> You can use this portal to view your housing details, request maintenance repairs on the property, and contact the owner when needed.</h6>
