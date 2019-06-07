@@ -15,7 +15,7 @@ body {
     transform: scale(1.5);
 }
 .property-card {
-    box-shadow: 1px 1px 5px gray;
+    box-shadow: 2px 2px 10px gray;
 }
 .property-card:hover {
     cursor: pointer;
@@ -28,7 +28,7 @@ body {
 }
 .property-summary-header, .details-header {
     /* height: 10vh; */
-    background: #937777;
+    background: grey;
     color:white;
 }
 .detail-link, .details-header {

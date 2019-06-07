@@ -12,10 +12,10 @@ export default (props)=>(
                 <Container>
                     <Nav pills>
                         <Col>
-                            <a className="detail-link p-2 my-1" href="#">Property Summary</a>
+                            <a className="detail-link p-2 my-1" href="/manager-main">Property Summary</a>
                         </Col>
                         <Col>
-                            <a className="detail-link p-2 my-1" href="#">Unit Info</a>
+                            <a className="detail-link p-2 my-1" href="/add-unit-page">Add Unit</a>
                         </Col>
                         <Col>
                             <a className="detail-link p-2 my-1" href="#">Maintenence</a>
