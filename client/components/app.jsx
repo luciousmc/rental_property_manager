@@ -31,9 +31,9 @@ export default class App extends React.Component{
                         <Route path="/manager-main" component={ManagerMain} />
                         <Route path="/property/:id" component ={PropertyDetailPage} />
                         <Route path="/add-property" component ={AddProperty} />
-                        <Route path="/addUnit" component ={AddUnit} />
+                        {/* <Route path="/property/1/add-unit" component ={AddUnit} /> */}
                         <Route path="/tenant-main" component ={TenantMain} />                    
-                        <Route path="/add-unit-page" component ={AddUnit} />
+                        <Route path="/add-unit/:id" component ={AddUnit} />
                         <Route path="/tenant-owner" component ={TenantOwner} />
 
                     </Switch>
