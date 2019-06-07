@@ -1,8 +1,32 @@
 import React from 'react';
-import {Container, Row, Col, NavItem, Nav, NavLink, CardImg} from 'reactstrap';
+import {Container, Row, Col, NavItem, Nav, NavLink, CardImg, FormGroup, CustomInput, Label, Card} from 'reactstrap';
 import UnitItems from './unit_items';
 
 export default (props)=> {
+    let image = null;
+    if (!props.propertyDetail.image){
+       image = (
+           <form>
+               <Col className="col-sm-auto offset-sm-1">
+                       <Card className="mr-auto" style={{ width: '18rem' }}>
+                           <CardImg width="100%" src="https://bolde.in/uploads/business_images/default_business.jpg"/>
+                       </Card>
+               </Col>
+               <Col md={5}>
+                   <FormGroup>
+                       <Label for="image_upload">Add Property Image</Label>
+                       <CustomInput type="file" name="image_file" id="image_upload" />
+                   </FormGroup>
+               </Col>
+           </form>
+    );
+    } else {
+        image = (
+            <Col>
+                <CardImg src={props.propertyDetail.image}/>
+            </Col>);
+    }
+
     return (
         <div>
             <Row>
@@ -29,9 +53,7 @@ export default (props)=> {
             </Col>
             </Row>
             <Row>
-                <Col>
-                    <CardImg src={props.propertyDetail.image}/>
-                </Col>
+                {image}
                 <Col>
                     <Row>
                         <h4>Property: {props.propertyDetail.property_name}</h4>
