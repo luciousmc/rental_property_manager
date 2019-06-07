@@ -7,7 +7,7 @@ export default ()=>(
     <Row>
         <Container>
             <div className="form-container col-8 offset-2">
-                <AddUnit />
+                <AddUnit/>
             </div>
         </Container>
     </Row>
