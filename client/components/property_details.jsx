@@ -33,10 +33,10 @@ export default (props)=>(
             </Col>
             <Col>
                 <Row>
-                    <h5>Property: {props.propertyDetail.property_name}</h5>
+                    <h5>Property Name: {props.propertyDetail.property_name}</h5>
                 </Row>
                 <Row>
-                    <h5>Address: {props.propertyDetail.street_address} {props.propertyDetail.city}, {props.propertyDetail.state} {props.propertyDetail.zip}</h5>
+                    <h5>Address: {props.propertyDetail.street_address}, {props.propertyDetail.city}, {props.propertyDetail.state} {props.propertyDetail.zip}</h5>
                 </Row>
                 <Row>
                     <h5>Property Type: {props.propertyDetail.property_type}</h5>
@@ -45,7 +45,7 @@ export default (props)=>(
                     <h5>Units: </h5>
                 </Row>
                 <Row>
-                    <h5>Square ft: {props.propertyDetail.footage}</h5>
+                    <h5>Square ft: {props.propertyDetail.sqft}</h5>
                 </Row>
                 <Row>
                     <h5>Parking Spaces: {props.propertyDetail.parking_spaces} </h5>
