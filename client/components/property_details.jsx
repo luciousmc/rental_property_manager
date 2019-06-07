@@ -9,11 +9,11 @@ export default (props)=> {
                 <h1 className="property-detail-header mx-auto">{props.propertyDetail.street_address}</h1>
             </Row>
             <Row>
-            <Col className="details-header danger text-center py-2">
+            <Col className="details-header text-center py-2">
                 <Container>
                     <Nav pills>
                         <Col>
-                            <a className="detail-link p-2 my-1" href="#">Property Summary</a>
+                            <a className="detail-link p-2 my-1" href="/manager-main">Property Summary</a>
                         </Col>
                         <Col>
                             <a className="detail-link p-2 my-1" href={`/add-unit/${props.propertyDetail.id}`}>Add Unit</a>
@@ -62,8 +62,16 @@ export default (props)=> {
             <Row>
                 <Col className="mb-5">
                     <h1 className="text-center details-header">Unit Details</h1>
+
                 </Col>
             </Row>
+            <Container>
+                <Col>
+                    <h4>
+                        <a href={`/add-unit/${props.propertyDetail.id}`}>+ Add Unit</a>
+                    </h4>
+                </Col>
+            </Container>
             <Container>
                 <Row>
                     <UnitItems unitList={props.unitList} />
