@@ -27,7 +27,6 @@ body {
     height: 10vh;
 }
 .property-summary-header, .details-header {
-    /* height: 10vh; */
     background: grey;
     color:white;
 }
@@ -42,7 +41,5 @@ body {
     background: grey;
     color:white;
     transform: scale(2);
-    /* border-right: 1px solid black;
-    border-left: 1px solid black; */
     border-bottom: 4px solid black;
 }

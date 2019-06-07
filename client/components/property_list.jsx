@@ -14,35 +14,6 @@ class PropertyList extends React.Component{
         this.getProperties();
     }
     getProperties(){
-        //////////////////////////////////////////////////////////////////////
-        ///////////////// Dummy Property List ////////////////////////////////
-        // const dummyList = [
-        //     {
-        //     "id": 1,
-        //     "streetAddress": "23002 El Toro Road",
-        //     "city": "irvine",
-        //     "state": "ca",
-        //     "zip": 91101,
-        //     "image": "../../server/public/images/business_default_image.jpg",
-        //     "type": "multi-unit",
-        //     "units": 4,
-        //     "vacancies": 2
-        //     },
-        //     {
-        //     "id": 2,
-        //     "streetAddress": "9200 Irvine Center Drive",
-        //     "city": "irvine",
-        //     "state": "ca",
-        //     "zip": 91101,
-        //     "image": "../../server/public/images/business_default_image.jpg",
-        //     "type": "multi-unit",
-        //     "units": 6,
-        //     "vacancies": 0
-        //     }
-        // ];
-        //   this.setState({ properties: dummyList });
-        ////////////////////////////////////////////////////////////////////////
-
         fetch('/api/property/property_list.php')
         .then(response=>response.json())
         .then(propertyList=>{
