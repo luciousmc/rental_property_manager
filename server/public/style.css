@@ -28,7 +28,7 @@ body {
 }
 .property-summary-header, .details-header {
     /* height: 10vh; */
-    background: #937777;
+    background: grey;
     color:white;
 }
 .detail-link, .details-header {

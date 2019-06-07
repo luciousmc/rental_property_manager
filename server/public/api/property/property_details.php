@@ -16,8 +16,16 @@ $query = "SELECT p.`id`, p.`property_name`, p.`street_address`, p.`city`, p.`sta
     ON u.property_id = p.id
     LEFT JOIN `tenants` AS t 
     ON t.`unit_id` = u.id " . $whereClause;
+$query1 = "SELECT p.`id`, p.`property_name`, p.`street_address`, p.`city`, p.`state`, p.`zip`, p.`sqft`, p.`parking_spaces`, p.`property_type`, p.`manager_contact`, p.manager_phone, i.url AS image, u.`id` AS unit_id, u.`unit_number`, u.`sqft` AS unit_sqft, u.`rent`, t.id AS tenant_id, t.business_name, t.contact_name, t.tenant_phone, t.tenant_email, t.`move_in_date`, t.lease_end_date, t.rent_due_date
+    FROM `properties` AS p
+    LEFT JOIN `images` AS i 
+    ON i.property_id = p.id
+   LEFT JOIN `units` AS u
+    ON u.property_id = p.id
+    LEFT JOIN `tenants` AS t 
+    ON t.`unit_id` = u.id " . $whereClause;
 
-$result = mysqli_query($conn, $query);
+$result = mysqli_query($conn, $query1);
 if (!$result) {
     throw new Exception (mysqli_error($conn));
 }
@@ -53,6 +61,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             'state' => $row['state'],
             'zip' => $row['zip'],
             'sqft' => $row['sqft'],
+            'image' => $row['image'],
             'parking_spaces' => $row['parking_spaces'],
             'property_type' => $row['property_type'],
             'manager_contact' => $row['manager_contact'],
