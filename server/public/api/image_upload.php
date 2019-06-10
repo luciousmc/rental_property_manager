@@ -4,7 +4,7 @@ require_once('functions.php');
 $target_dir = "images/";
 $target_file = $target_dir . basename($_FILES["imageToUpload"]["name"]);
 $uploadOk = 1;
-//$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 //if(isset($_POST["submit"])) {
 //    $check = getimagesize($_FILES["imageToUpload"]["tmp_name"]);
 //    if($check !== false) {

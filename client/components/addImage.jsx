@@ -15,6 +15,8 @@ export default class AddImage extends React.Component{
     }
 
     handleChange(e){
+        e.preventDefault();
+        console.log(e.target.files);
         if (e.target.files[0] !== undefined) {
             this.setState({ imageFile: e.target.files[0], uploading: true });
         } else {
@@ -43,11 +45,11 @@ export default class AddImage extends React.Component{
             <form>
                 <Col className="col-sm-auto offset-sm-1">
                     <Card className="mr-auto" style={{ width: '18rem' }}>
-                        <CardImg width="100%" src="https://bolde.in/uploads/business_imageFile/default_business.jpg"/>
+                        <CardImg width="100%" src="/images/business_default_image.jpg"/>
                     </Card>
                 </Col>
                 <Col className="offset-1" md={5}>
-                    <FormGroup onSubmit={this.addImage} enctype={"multipart/form-data"}>
+                    <FormGroup onSubmit={this.addImage} encType={"multipart/form-data"}>
                         <Label for="imageToUpload">{this.state.imageFile ? this.state.imageFile.name : "Add Image"}</Label>
                             <CustomInput type="file" name="imageToUpload" id="imageToUpload" onChange={this.handleChange}/>
                             <Button type="submit" color="info" name="submit" value="uploadFile">
