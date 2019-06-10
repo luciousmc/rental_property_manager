@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Button, Link} from 'reactstrap';
+import { Container, Row, Col, Button} from 'reactstrap';
 
 
 export default class Footer extends React.Component{
@@ -24,7 +24,6 @@ export default class Footer extends React.Component{
                         <h5>About us</h5>
                         <ul>
                             <li><a href="#">Meet the Team!</a></li>
-                            <li><a href="#">Contact us</a></li>
                         </ul>
                     </Col>
                     <Col className="col-md-3">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 05, 2019 at 02:02 AM
+-- Generation Time: Jun 10, 2019 at 10:16 PM
 -- Server version: 5.7.26-0ubuntu0.18.04.1
 -- PHP Version: 7.2.17-0ubuntu0.18.04.1
 
@@ -63,7 +63,7 @@ CREATE TABLE `properties` (
 -- Dumping data for table `properties`
 --
 
-INSERT INTO `properties` (`id`, `property_name`, `street_address`, `city`, `state`, `zip`, `sqft`, `property_type`, `manager_contact`, `manger_phone`, `parking_spaces`) VALUES
+INSERT INTO `properties` (`id`, `property_name`, `street_address`, `city`, `state`, `zip`, `sqft`, `property_type`, `manager_contact`, `manager_phone`, `parking_spaces`) VALUES
 (1, 'vista complex', '23002 El Toro Road', 'irvine', 'ca', '91101', 20000, 'Multi Unit', 'Joe', '8008888888', 30);
 
 -- --------------------------------------------------------
@@ -116,6 +116,19 @@ CREATE TABLE `tenant_images` (
   `id` mediumint(8) UNSIGNED NOT NULL,
   `tenants_id` mediumint(8) UNSIGNED NOT NULL,
   `images_id` mediumint(8) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tenant_requests`
+--
+
+CREATE TABLE `tenant_requests` (
+  `id` mediumint(8) UNSIGNED NOT NULL,
+  `tenant_phone` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
+  `tenant_email` varchar(35) COLLATE utf8_unicode_ci NOT NULL,
+  `repair_request` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -187,6 +200,12 @@ ALTER TABLE `tenant_images`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tenant_requests`
+--
+ALTER TABLE `tenant_requests`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `units`
 --
 ALTER TABLE `units`
@@ -226,6 +245,11 @@ ALTER TABLE `tenants`
 -- AUTO_INCREMENT for table `tenant_images`
 --
 ALTER TABLE `tenant_images`
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tenant_requests`
+--
+ALTER TABLE `tenant_requests`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `units`
