@@ -67,9 +67,17 @@ export default (props)=> {
             </Row>
             <Container>
                 <Col>
-                    <h4>
+                <Row>
+                    <h5 className="mr-5 ">
                         <a href={`/add-unit/${props.propertyDetail.id}`}>+ Add Unit</a>
-                    </h4>
+                    </h5>
+                    <h5>
+                        <a href={`/add-unit/${props.propertyDetail.id}`}>+ Add Tenant</a>
+                    </h5>
+                </Row>
+                </Col>
+                <Col>
+                    
                 </Col>
             </Container>
             <Container>

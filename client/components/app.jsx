@@ -10,7 +10,7 @@ import  AddProperty  from './add-property-page';
 import  TenantMain from './tenant-main-page';
 import TenantOwner from './tenant-owner-page';
 import AddUnit from './add-unit-page';
-
+import AddTenant from './add-tenants-page';
 export default class App extends React.Component{
     constructor(props) {
         super(props);
@@ -33,6 +33,8 @@ export default class App extends React.Component{
                         <Route path="/tenant-main" component ={TenantMain} />                    
                         <Route path="/add-unit/:id" component ={AddUnit} />
                         <Route path="/tenant-owner" component ={TenantOwner} />
+                        <Route path="/add-tenant" component ={AddTenant} />
+
                     </Switch>
                 </Router>
                 <Row>
