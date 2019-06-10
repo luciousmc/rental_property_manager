@@ -16,7 +16,7 @@ export default (props)=> {
                             <a className="detail-link p-2 my-1" href="/manager-main">Property Summary</a>
                         </Col>
                         <Col>
-                            <a className="detail-link p-2 my-1" href={`/add-unit/${props.propertyDetail.id}`}>Add Unit</a>
+                            <a className="detail-link p-2 my-1" href={`/property/${props.propertyDetail.id}/add-unit`}>Add Unit</a>
                         </Col>
                         <Col>
                             <a className="detail-link p-2 my-1" href="#">Maintenence</a>
@@ -68,16 +68,13 @@ export default (props)=> {
             <Container>
                 <Col>
                 <Row>
-                    <h5 className="mr-5 ">
-                        <a href={`/add-unit/${props.propertyDetail.id}`}>+ Add Unit</a>
+                    <h5 className="mr-5">
+                        <a href={`/property/${props.propertyDetail.id}/add-unit`}>+ Add Unit</a>
                     </h5>
                     <h5>
                         <a href={`/add-tenant/${props.propertyDetail.id}`}>+ Add Tenant</a>
                     </h5>
                 </Row>
-                </Col>
-                <Col>
-                    
                 </Col>
             </Container>
             <Container>
