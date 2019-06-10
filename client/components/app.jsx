@@ -33,7 +33,7 @@ export default class App extends React.Component{
                         <Route path="/tenant-main" component ={TenantMain} />                    
                         <Route exact path="/property/:id/add-unit/" component ={AddUnit} />
                         <Route path="/tenant-owner" component ={TenantOwner} />
-                        <Route path="/add-tenant" component ={AddTenant} />
+                        <Route path="/property/:id/add-tenant" component ={AddTenant} />
 
                     </Switch>
                 </Router>
