@@ -1,7 +1,6 @@
 import React from 'react';
-import { Col, Row, Button, Form, FormGroup, Label, Input, CustomInput} from 'reactstrap';
+import { Col, Row, Button, Form, FormGroup, Label, Input} from 'reactstrap';
 import { Link } from 'react-router-dom';
-// import { Link } from '.react-router';
 
 export default class AddUnit extends React.Component{
     constructor(props){
@@ -53,15 +52,6 @@ export default class AddUnit extends React.Component{
                 <h1 className="mx-auto mb-4">Add Unit</h1>
                 </Row>
                 <Row form>
-                    <Col md={6}>
-                        <FormGroup>
-                            <Label for="propertyName">Property Name</Label>
-                            <Input type="text" name="property" id="property_id" />
-                            
-                        </FormGroup>
-                    </Col>
-                </Row>
-                <Row form>
                     <Col md={4}>
                         <FormGroup>
                             <Label for="unitNum">Unit Number</Label>
@@ -103,10 +93,10 @@ export default class AddUnit extends React.Component{
                     </Col>
                 </Row>
                 <Button className="mr-2" color="primary">
-                    <Link to="manager-main" style={{color: "white"}}>Back</Link>
+                    <Link to="/manager-main" style={{color: "white"}}>Back</Link>
                 </Button>
                 <Button onClick={this.createUnit} color="info">
-                    <Link to="manager-main"style={{color: "white"}} >Submit</Link>
+                    <Link to="/manager-main" style={{color: "white"}} >Submit</Link>
                     </Button>
                 
             </Form>

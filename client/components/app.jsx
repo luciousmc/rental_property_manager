@@ -10,7 +10,7 @@ import  AddProperty  from './add-property-page';
 import  TenantMain from './tenant-main-page';
 import TenantOwner from './tenant-owner-page';
 import AddUnit from './add-unit-page';
-
+import AddTenant from './add-tenants-page';
 export default class App extends React.Component{
     constructor(props) {
         super(props);
@@ -28,11 +28,13 @@ export default class App extends React.Component{
                     <Switch>
                         <Route exact path="/" component={LandingPage} />
                         <Route path="/manager-main" component={ManagerMain} />
-                        <Route path="/property/:id" component ={PropertyDetailPage} />
+                        <Route exact path="/property/:id" component ={PropertyDetailPage} />
                         <Route path="/add-property" component ={AddProperty} />
                         <Route path="/tenant-main" component ={TenantMain} />                    
-                        <Route path="/add-unit/:id" component ={AddUnit} />
+                        <Route exact path="/property/:id/add-unit/" component ={AddUnit} />
                         <Route path="/tenant-owner" component ={TenantOwner} />
+                        <Route path="/property/:id/add-tenant" component ={AddTenant} />
+
                     </Switch>
                 </Router>
                 <Row>
