@@ -13,7 +13,7 @@ function UnitItems(props){
                     <p>Business: {unit.tenants.business_name ? unit.tenants.business_name : ''}</p>
                     <p>Business Contact: {unit.tenants.contact_name ? unit.tenants.contact_name : ''}</p>
                     <p>Contact Number: {unit.tenants.tenant_phone ? unit.tenants.tenant_phone : ''}</p>
-                    <p>Rent: ${Math.ceil(unit.rent * 1).toFixed(2)}</p>
+                    <p>Rent: ${Math.ceil(unit.rent).toFixed(2)}</p>
                 </ToastBody>
             </Toast>
         </Col>
