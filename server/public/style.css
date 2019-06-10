@@ -30,7 +30,6 @@ body {
     height: 10vh;
 }
 .property-summary-header, .details-header {
-    /* height: 10vh; */
     background: grey;
     color:white;
 }
