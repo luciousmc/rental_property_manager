@@ -85,7 +85,7 @@ export default class AddProperty extends React.Component {
             state: this.state.state,
             zip: this.state.zip,
             sqft: this.state.sqft,
-            property_type: 'Multi Unit',
+            property_type: this.state.propertyType,
             manager_contact: this.state.managerContact,
             manager_phone: this.state.managerPhone,
             parking_spaces: this.state.parking
@@ -185,7 +185,7 @@ export default class AddProperty extends React.Component {
               <Link to="/manager-main" style={{color: "white"}}>Go Back</Link>
             </Button>
             <Button  onClick={this.addProperty} propertyName={""} color="info">
-              <Link to={"/add-unit-page"} style={{color: "white"}}>Add Units</Link>
+              <Link to={"/manager-main"} style={{color: "white"}}>Submit</Link>
               
             </Button>
             

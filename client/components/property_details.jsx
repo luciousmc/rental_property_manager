@@ -1,25 +1,12 @@
 import React from 'react';
 import {Container, Row, Col, NavItem, Nav, NavLink, CardImg, FormGroup, CustomInput, Label, Card} from 'reactstrap';
 import UnitItems from './unit_items';
+import AddImage from './addImage';
 
 export default (props)=> {
     let image = null;
     if (!props.propertyDetail.image){
-       image = (
-           <form>
-               <Col className="col-sm-auto offset-sm-1">
-                       <Card className="mr-auto" style={{ width: '18rem' }}>
-                           <CardImg width="100%" src="https://bolde.in/uploads/business_images/default_business.jpg"/>
-                       </Card>
-               </Col>
-               <Col md={5}>
-                   <FormGroup>
-                       <Label for="image_upload">Add Property Image</Label>
-                       <CustomInput type="file" name="image_file" id="image_upload" />
-                   </FormGroup>
-               </Col>
-           </form>
-    );
+       image = <AddImage propId={props.propertyDetail.id}/>;
     } else {
         image = (
             <Col>
@@ -33,14 +20,14 @@ export default (props)=> {
                 <h1 className="property-detail-header mx-auto">{props.propertyDetail.street_address}</h1>
             </Row>
             <Row>
-            <Col className="details-header danger text-center py-2">
+            <Col className="details-header text-center py-2">
                 <Container>
                     <Nav pills>
                         <Col>
-                            <a className="detail-link p-2 my-1" href="#">Property Summary</a>
+                            <a className="detail-link p-2 my-1" href="/manager-main">Property Summary</a>
                         </Col>
                         <Col>
-                            <a className="detail-link p-2 my-1" href="#">Unit Info</a>
+                            <a className="detail-link p-2 my-1" href={`/add-unit/${props.propertyDetail.id}`}>Add Unit</a>
                         </Col>
                         <Col>
                             <a className="detail-link p-2 my-1" href="#">Maintenence</a>
@@ -54,38 +41,48 @@ export default (props)=> {
             </Row>
             <Row>
                 {image}
-                <Col>
+
+                <Col className="p-5">
+
                     <Row>
-                        <h4>Property: {props.propertyDetail.property_name}</h4>
+                        <h5>Property: {props.propertyDetail.property_name}</h5>
                     </Row>
                     <Row>
-                        <h4>Address: {props.propertyDetail.street_address} {props.propertyDetail.city}, {props.propertyDetail.state} {props.propertyDetail.zip}</h4>
+                        <h5>Address: {props.propertyDetail.street_address} {props.propertyDetail.city}, {props.propertyDetail.state} {props.propertyDetail.zip}</h5>
                     </Row>
                     <Row>
-                        <h4>Property Type: {props.propertyDetail.property_type}</h4>
+                        <h5>Property Type: {props.propertyDetail.property_type}</h5>
                     </Row>
                     <Row>
-                        <h4>Units: {props.propertyDetail.units ? props.propertyDetail.units.length : ''}</h4>
+                        <h5>Units: {props.propertyDetail.units ? props.propertyDetail.units.length : ''}</h5>
                     </Row>
                     <Row>
-                        <h4>Square ft: {props.propertyDetail.sqft}</h4>
+                        <h5>Square ft: {props.propertyDetail.sqft}</h5>
                     </Row>
                     <Row>
-                        <h4>Parking Spaces: {props.propertyDetail.parking_spaces} </h4>
+                        <h5>Parking Spaces: {props.propertyDetail.parking_spaces} </h5>
                     </Row>
                     <Row>
-                        <h4>Manager Name: {props.propertyDetail.manager_contact} </h4>
+                        <h5>Manager Name: {props.propertyDetail.manager_contact} </h5>
                     </Row>
                     <Row>
-                        <h4>Manager Number: {props.propertyDetail.manager_phone} </h4>
+                        <h5>Manager Number: {props.propertyDetail.manager_phone} </h5>
                     </Row>
                 </Col>
             </Row>
             <Row>
-                <Col>
-                    <h1 className="text-center">Unit Details</h1>
+                <Col className="mb-5">
+                    <h1 className="text-center details-header">Unit Details</h1>
+
                 </Col>
             </Row>
+            <Container>
+                <Col>
+                    <h4>
+                        <a href={`/add-unit/${props.propertyDetail.id}`}>+ Add Unit</a>
+                    </h4>
+                </Col>
+            </Container>
             <Container>
                 <Row>
                     <UnitItems unitList={props.unitList} />

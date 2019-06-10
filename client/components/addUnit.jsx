@@ -32,7 +32,7 @@ export default class AddUnit extends React.Component{
     createUnit(event){
         event.preventDefault();
         let data = {
-            property_id: 2,
+            property_id: this.props.propertyID,
             unit_number: this.state.unit_number,
             sqft: this.state.sqft,
             rent: this.state.rent,
@@ -102,13 +102,13 @@ export default class AddUnit extends React.Component{
                         </FormGroup>
                     </Col>
                 </Row>
-                <Button className="mr-2" color="danger">
-                    <Link to="add-property" style={{color: "white"}}>Back to Add Property</Link>
+                <Button className="mr-2" color="primary">
+                    <Link to="manager-main" style={{color: "white"}}>Back</Link>
                 </Button>
-                <Button color="info">
-                    <Link to="manager-main"style={{color: "white"}} >Create New Property</Link>
+                <Button onClick={this.createUnit} color="info">
+                    <Link to="manager-main"style={{color: "white"}} >Submit</Link>
                     </Button>
-                <Button onClick={this.createUnit} >Submit</Button>
+                
             </Form>
         );
     }
