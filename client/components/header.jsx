@@ -17,7 +17,7 @@ export default class Header extends React.Component{
       }
       render() {
         return (
-          <header className="col mb-5">
+          <header className="col">
             <Navbar color="danger" light>
               <NavbarBrand href="/" className="text-white mr-auto">Moore Properties</NavbarBrand>
               <div className="text-white mr-4">Hello Howie!</div>

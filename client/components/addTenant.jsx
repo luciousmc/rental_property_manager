@@ -6,15 +6,15 @@ export default class AddTenant extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            business_name: '',
-            contact_name: '',
-            tenant_phone: '',
-            tenant_email: '',
-            move_in_date: '',
-            lease_end_date: '',
-            rent_due_date: '',
-            unit_number: '',
-            rent: ''
+            business_name: 'Leos Bounce House',
+            contact_name: 'Leo',
+            tenant_phone: '8675309',
+            tenant_email: 'leo@leo.com',
+            move_in_date: '2019-06-10',
+            lease_end_date: '2019-06-15',
+            rent_due_date: '2019-06-12',
+            unit_number: '100',
+            rent: '5'
         };
         this.createTenant = this.createTenant.bind(this);
     }
