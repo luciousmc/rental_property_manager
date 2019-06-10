@@ -6,6 +6,8 @@ startup();
 $input = file_get_contents('php://input');
 $_POST = json_decode($input, true);
 
+print_r($_POST);
+
 $pID = $_POST['property_id'];
 $unitNum = $_POST['unit_number'];
 $sqft = $_POST['sqft'];

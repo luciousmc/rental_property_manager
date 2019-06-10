@@ -49,7 +49,7 @@ body {
 .manager-hero, .tenant-hero {
     background: none;
     position:relative;
-    margin:0;
+    /* margin:0; */
 }
 .manager-hero::before, .tenant-hero::before {
     background: whitesmoke;

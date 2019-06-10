@@ -10,9 +10,9 @@ function UnitItems(props){
                     Unit {unit.unitNumber}
                 </ToastHeader>
                 <ToastBody>
-                    <p>Business: {unit.tenants.business_name}</p>
-                    <p>Business Contact: {unit.tenants.contact_name}</p>
-                    <p>Contact Number: {unit.tenants.tenant_phone}</p>
+                    <p>Business: {unit.tenants.business_name ? unit.tenants.business_name : ''}</p>
+                    <p>Business Contact: {unit.tenants.contact_name ? unit.tenants.contact_name : ''}</p>
+                    <p>Contact Number: {unit.tenants.tenant_phone ? unit.tenants.tenant_phone : ''}</p>
                     <p>Rent: ${Math.ceil(unit.rent / 100).toFixed(2)}</p>
                 </ToastBody>
             </Toast>
