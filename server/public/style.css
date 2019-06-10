@@ -7,6 +7,9 @@ body {
 .header-bar {
     height: 2vh;
 }
+.landing-intro {
+    text-align: justify;
+}
 .content-container {
     min-height: 75vh;
 }
