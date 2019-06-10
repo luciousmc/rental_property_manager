@@ -13,7 +13,7 @@ export default class AddTenant extends React.Component{
             move_in_date: '',
             lease_end_date: '',
             rent_due_date: '',
-            unit_number: 'Unit Number',
+            unit_number: '',
             rent: ''
         };
         this.createTenant = this.createTenant.bind(this);

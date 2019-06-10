@@ -72,7 +72,7 @@ export default (props)=> {
                         <a href={`/add-unit/${props.propertyDetail.id}`}>+ Add Unit</a>
                     </h5>
                     <h5>
-                        <a href={`/add-unit/${props.propertyDetail.id}`}>+ Add Tenant</a>
+                        <a href={`/add-tenant/${props.propertyDetail.id}`}>+ Add Tenant</a>
                     </h5>
                 </Row>
                 </Col>
