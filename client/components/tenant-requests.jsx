@@ -6,45 +6,45 @@ export default class TenantRequest extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            property_id: '',
-            unit_number: '',
-            sqft: '',
-            rent: '',
-            status: 'Vacant'
+            tenant_phone: '',
+            tenant_email: '',
+            repair_request: ''
         };
-        this.createUnit = this.createUnit.bind(this);
+        this.createRepairRequest = this.createRepairRequest.bind(this);
     }
 
-    handleUnitChange(e){
-        this.setState({ unit_number: e.target.value });
+    handleTenantPhone(e){
+        this.setState({ tenant_phone: e.target.value });
     }
-    handleSqftChange(e){
-        this.setState({ sqft: e.target.value });
+    handleTenantEmail(e){
+        this.setState({ tenant_email: e.target.value });
     }
-    handleRentChange(e){
-        this.setState({ rent: e.target.value });
+    handleRepairRequest(e){
+        this.setState({ repair_request: e.target.value });
     }
-    handleStatusChange(e){
-        this.setState({ status: e.target.value });
+    handleClearButton(){
+        this.setState({ 
+            tenant_phone: '',
+            tenant_email: '',
+            repair_request: '' 
+        });
     }
 
-    createUnit(event){
+    createRepairRequest(event){
         event.preventDefault();
         let data = {
-            property_id: this.props.propertyID,
-            unit_number: this.state.unit_number,
-            sqft: this.state.sqft,
-            rent: this.state.rent,
-            status: this.state.status
+            tenant_phone: this.state.tenant_phone,
+            tenant_email: this.state.tenant_email,
+            repair_request: this.state.repair_request
             };
-        fetch('/api/unit/add_unit.php', {
+        fetch('/api/tenants/tenant-repair-request.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         })
-
-            .then(res => res.json());
+            .then(res => res.json())
     }
+    
     render(){
         return(
             <div>
@@ -74,60 +74,42 @@ export default class TenantRequest extends React.Component{
                     </NavItem>
                 </Nav>
             </Row>
+            <Row>
+            <Container>
             <Container>
             <Form>
-                <Row>
-                <h1 className="mx-auto mb-4">Submit Maintenance Request</h1>
-                </Row>
-                <Row form>
-                    <Col md={6}>
-                        <FormGroup>
-                            <Label for="propertyName">Property Name</Label>
-                            <Input type="text" name="property" id="property_id" />
-                            
-                        </FormGroup>
-                    </Col>
-                </Row>
-                <Row form>
-                    <Col md={4}>
-                        <FormGroup>
-                            <Label for="unitNum">Unit Number</Label>
-                            <Input type="text" name="unit" id="unit_id"   />
-                        </FormGroup>
-                    </Col>
-                    
-                </Row>
                 <Row form>
                 <Col md={4}>
                         <FormGroup>
                             <Label for="phone">Phone</Label>
-                            <Input type="text" name="phone"  />
+                            <Input type="text" value={this.state.tenant_phone} onChange={this.handleTenantPhone.bind(this)} placeholder="i.e. 800-444-3032" />
                         </FormGroup>
                 </Col>
                 <Col md={4}>
                         <FormGroup>
                             <Label for="email">Email</Label>
-                            <Input type="text" name="email"  />
+                            <Input type="text" value={this.state.tenant_email} onChange={this.handleTenantEmail.bind(this)} placeholder="i.e. Howie@propmanagement.com" />
                         </FormGroup>
                 </Col>
                 </Row>
                 <Row>
                 <Col md={8}>
                         <FormGroup>
-                            <Label for="rent">Repair Request</Label>
-                            <Input type="textarea" name="request"  />
+                            <Label for="repair">Repair Request</Label>
+                            <Input type="textarea" value={this.state.repair_request} onChange={this.handleRepairRequest.bind(this)} placeholder="i.e. Ceiling Fan Does Not Work." />
                         </FormGroup>
                 </Col>
                 </Row>
-                <Button className="mr-2" color="primary">
-                    <Link to="manager-main" style={{color: "white"}}>Back</Link>
+                <Button className="mr-2" color="primary" onChange={this.handleClearButton} style={{color: "white"}}>
+                    Cancel
                 </Button>
-                <Button onClick={this.createUnit} color="info">
-                    <Link to="manager-main"style={{color: "white"}} >Submit</Link>
-                    </Button>
+                <Button onClick={this.createRepairRequest} color="info">
+                    <Link to="tenant-request"style={{color: "white"}} >Submit</Link>
+                </Button>
             </Form>
             </Container>
-
+            </Container>
+            </Row>
             </div>
         );
     }
