@@ -10,7 +10,7 @@ export default class AddUnit extends React.Component{
             unit_number: '',
             sqft: '',
             rent: '',
-            status: ''
+            status: 'Vacant'
         };
         this.createUnit = this.createUnit.bind(this);
     }
