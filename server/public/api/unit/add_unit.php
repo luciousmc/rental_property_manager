@@ -15,7 +15,7 @@ $rent = $_POST['rent'];
 $status = $_POST['status'];
 
 $query = "INSERT INTO `units` (`property_id`, `unit_number`, `sqft`, `rent`, `status`)
-VALUES ('$pID', '$unitNum', '$sqft', '$rent', '$status')";
+                            VALUES ('$pID', '$unitNum', '$sqft', '$rent', '$status')";
 
 $result = mysqli_query($conn, $query);
 if(!$result){
