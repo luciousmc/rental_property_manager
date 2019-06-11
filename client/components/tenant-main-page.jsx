@@ -45,7 +45,10 @@ export default class TenantMain extends React.Component{
                                     <NavLink href="/tenant-owner">Property Information</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="#">Request Repairs</NavLink>
+                                    <NavLink href="/tenant-request">Request Repairs</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink href="#">Message Center</NavLink>
                                 </NavItem>
                             </Nav>
                         </Row>
