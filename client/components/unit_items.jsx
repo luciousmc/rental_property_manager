@@ -9,7 +9,7 @@ function UnitItems(props){
         if (unit.status === 'Vacant'){
             return (
                 <Col sm="4" className="mb-2">
-                    <Toast key={unit.tenants.id}>
+                    <Toast key={unit.tenants.id} className="toast-unit">
                         <ToastHeader>
                             Unit {unit.unitNumber}
                         </ToastHeader>
@@ -23,7 +23,7 @@ function UnitItems(props){
         }
         return (
         <Col sm="4" className="mb-2">
-            <Toast key={unit.tenants.id}>
+            <Toast key={unit.tenants.id} className="toast-unit">
                 <ToastHeader>
                     Unit {unit.unitNumber}
                 </ToastHeader>

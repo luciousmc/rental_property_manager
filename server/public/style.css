@@ -42,6 +42,12 @@ body {
     text-shadow: 1px 1px 5px black;
     transition: .3s;
 }
+.toast-unit{
+    transition:.2s
+}
+.toast-unit:hover {
+    transform: translateY(-7%);
+}
 .vacant {
     font-size: 4rem;
     position: relative;
