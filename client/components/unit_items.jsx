@@ -15,7 +15,7 @@ function UnitItems(props){
                         </ToastHeader>
                         <ToastBody>
                             <p className="vacant text-muted">Vacant</p>
-                            <p>Rent: ${Math.ceil(unit.rent).toFixed(2)}</p>
+                            <p className="text-center"><a href={`/property/${props.propertyID}/unit/${unit.unit_id}/add-tenant`}>+ Add Tenant</a></p>
                         </ToastBody>
                     </Toast>
                 </Col>

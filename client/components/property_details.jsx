@@ -79,7 +79,7 @@ export default (props)=> {
             </Container>
             <Container>
                 <Row>
-                    <UnitItems unitList={props.unitList} />
+                    <UnitItems unitList={props.unitList} propertyID={props.propertyDetail.id} />
                 </Row>
             </Container>
         </div>
