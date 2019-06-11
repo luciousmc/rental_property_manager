@@ -49,6 +49,7 @@ export default class AddTenant extends React.Component{
         e.preventDefault();
         debugger;
         let tenantData = {
+            unit_id: this.match.params.unitID,
             business_name: this.state.business_name,
             contact_name: this.state.contact_name,
             tenant_phone: this.state.tenant_phone,

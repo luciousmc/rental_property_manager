@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, ToastBody, Toast, ToastHeader } from 'reactstrap';
+import { Container, Row, Col, ToastBody, Toast, ToastHeader, NavLink } from 'reactstrap';
 
 function UnitItems(props){
     if(props.unitList === undefined) return <h1>Loading...</h1>
@@ -15,7 +15,7 @@ function UnitItems(props){
                         </ToastHeader>
                         <ToastBody>
                             <p className="vacant text-muted">Vacant</p>
-                            <p className="text-center"><a href={`/property/${props.propertyID}/unit/${unit.unit_id}/add-tenant`}>+ Add Tenant</a></p>
+                            <p className="text-center"><a style={{ fontSize: 15 }} href={`/property/${props.propertyID}/unit/${unit.unit_id}/add-tenant`}>+ Add Tenant</a></p>
                         </ToastBody>
                     </Toast>
                 </Col>
