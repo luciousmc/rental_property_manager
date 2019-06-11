@@ -8,6 +8,7 @@ export default class PropertyDetailPage extends React.Component{
         this.state = {
             property: {},
             units: [],
+            tenants: []
         }
     }
     componentDidMount(){
@@ -19,14 +20,14 @@ export default class PropertyDetailPage extends React.Component{
             .then(response=>response.json())
             .then(propertyDetailsAll=>{
                 console.log('the full property details are as follows: ', propertyDetailsAll);
-                this.setState({ property: propertyDetailsAll, units: propertyDetailsAll.units }, console.log('property units after setstate ', this.state))
+                this.setState({ property: propertyDetailsAll, units: propertyDetailsAll.units, tenants: propertyDetailsAll }, console.log('property units after setstate ', this.state))
             })
     }
     render(){
         console.log('the unitlist is : ', this.state.property.units);
         return(
             <React.Fragment>
-                <PropertyDetails propertyDetail={this.state.property} unitList={this.state.property.units} />
+                <PropertyDetails propertyDetail={this.state.property} unitList={this.state.units} />
             </React.Fragment>
         );
     }

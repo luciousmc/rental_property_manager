@@ -6,18 +6,34 @@ export default class AddTenant extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            business_name: 'Leos Bounce House',
-            contact_name: 'Leo',
-            tenant_phone: '8675309',
-            tenant_email: 'leo@leo.com',
-            move_in_date: '2019-06-10',
-            lease_end_date: '2019-06-15',
-            rent_due_date: '2019-06-12',
-            unit_number: '100',
-            rent: '5'
+            unitsAvailable: [],
+            business_name: '',
+            contact_name: '',
+            tenant_phone: '99999999999',
+            tenant_email: 'test@test.com',
+            move_in_date: '2019-06-11',
+            lease_end_date: '2019-06-11',
+            rent_due_date: '2019-06-11',
+            unit_number: '',
+            
         };
         this.createTenant = this.createTenant.bind(this);
     }
+
+    componentDidMount() {
+        const { propertyID } = this.props;
+        this.getPropertyDetails(propertyID);
+    }
+
+    getPropertyDetails(id){
+        fetch(`/api/property/property_details.php?id=${id}`)
+            .then(response=>response.json())
+            .then(propertyDetailsAll=>{
+                console.log('the full property details are as follows: ', propertyDetailsAll);
+                this.setState({ unitsAvailable: propertyDetailsAll.units }, console.log('property units after setstate ', this.state))
+            })
+    }
+
     handleBusName(e){
         this.setState({ business_name: e.target.value});
     }
@@ -39,12 +55,13 @@ export default class AddTenant extends React.Component{
     handleRentDue(e){
         this.setState({ rent_due_date: e.target.value});
     }
-    handleUnitNum(e){
-        this.setState({ unit_number: e.target.value});
+    handleUnitID(e){
+        debugger;
+        this.setState({ unit_ID: e.target.value});
     }
-    handleRent(e){
-        this.setState({ rent: e.target.value});
-    }
+    // handleRent(e){
+    //     this.setState({ rent: e.target.value});
+    // }
     createTenant(e){
         e.preventDefault();
         debugger;
@@ -57,17 +74,31 @@ export default class AddTenant extends React.Component{
             move_in_date: this.state.move_in_date,
             lease_end_date: this.state.lease_end_date,
             rent_due_date: this.state.rent_due_date,
-            unit_number: this.state.unit_number,
-            rent: this.state.rent
+            unit_ID: this.state.unit_ID,
+            // rent: this.state.rent
         }
-    fetch('/api/unit/add_tenant.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(tenantData)
-    })
+        fetch('/api/unit/add_tenant.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(tenantData)
+        })
 
-        .then(res => res.json(tenantData));
-}
+        .then(res => res.json());
+    }
+
+    generateAvailableUnits() {
+        const vacantUnits = this.state.unitsAvailable.filter((unit) => {
+            return unit.status === 'Vacant';
+        });
+
+        const unitSelections = vacantUnits.map((unit, index) => {
+            return <option key={index} value={unit.unit_id}>{unit.unitNumber}</option>
+        });
+
+        return (
+            unitSelections
+        )
+    }
 
     render(){
         return(
@@ -108,19 +139,10 @@ export default class AddTenant extends React.Component{
                 <Col md={4}>
                         <FormGroup>
                             <Label for="unitNum">Unit #</Label>
-                            <Input type="select" name="unit_number" id="unit_number" onChange={this.handleUnitNum.bind(this)} placeholder="" >
-                            <option value={'select one'}>Select One</option>
-                                <option value={'100'}>100</option>
-                                <option value={'200'}>200</option>
-                                <option value={'300'}>300</option>
-                                <option value={'400'}>400</option>
-                                <option value={'500'}>500</option>
-                                <option value={'600'}>600</option>
-                                <option value={'700'}>700</option>
-                                <option value={'800'}>800</option>
-                                <option value={'900'}>900</option>
-
-                                </Input>
+                            <Input type="select" name="unit_number" id="unit_number" onChange={this.handleUnitID.bind(this)} placeholder="" >
+                                <option value={'select one'}>Select One</option>
+                                { this.generateAvailableUnits() }
+                            </Input>
                         </FormGroup>
                 </Col>
                 <Col md={4}>
@@ -135,16 +157,8 @@ export default class AddTenant extends React.Component{
                             <Input type="date" name="leaseEnd" id="lease_end_date" value={this.state.lease_end_date} onChange={this.handleLeaseEnd.bind(this)} placeholder=""/>
                         </FormGroup>
                     </Col>
-                   
                 </Row>
                 <Row form>
-               
-                    <Col md={4}>
-                        <FormGroup>
-                            <Label for="rentAmount">Rent</Label>
-                            <Input type="text" name="rent" id="rent" value={this.state.rent} onChange={this.handleRent.bind(this)} placeholder="$"/>
-                        </FormGroup>
-                    </Col>
                     <Col md={4}>
                         <FormGroup>
                             <Label for="rentDue">Rent Due</Label>

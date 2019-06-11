@@ -35,8 +35,10 @@ export default class App extends React.Component{
                         <Route path="/tenant-main" component ={TenantMain} />                    
                         <Route exact path="/property/:id/add-unit/" component ={AddUnit} />
                         <Route path="/tenant-owner" component ={TenantOwner} />
-                        <Route path="/property/:propID/unit/:unitID/add-tenant" component ={AddTenant} />
+                        {/* <Route path="/property/:propID/unit/:unitID/add-tenant" component ={AddTenant} /> */}
                         <Route path="/tenant-request" component ={TenantRequest} />
+                        <Route path="/property/:id/add-tenant" component ={AddTenant} />
+                        {/* <Route path="/add-modal" component ={AddModal} /> */}
                     </Switch>
                 </Router>
                 <Row>
