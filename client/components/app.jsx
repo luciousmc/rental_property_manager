@@ -12,6 +12,7 @@ import TenantOwner from './tenant-owner-page';
 import AddUnit from './add-unit-page';
 import AddTenant from './add-tenants-page';
 import TenantRequest from './tenant-requests';
+import AddModal from './add-modal';
 
 export default class App extends React.Component{
     constructor(props) {
@@ -38,7 +39,7 @@ export default class App extends React.Component{
                         {/* <Route path="/property/:propID/unit/:unitID/add-tenant" component ={AddTenant} /> */}
                         <Route path="/tenant-request" component ={TenantRequest} />
                         <Route path="/property/:id/add-tenant" component ={AddTenant} />
-                        {/* <Route path="/add-modal" component ={AddModal} /> */}
+                        <Route path="/add-modal" component ={AddModal} />
                     </Switch>
                 </Router>
                 <Row>
