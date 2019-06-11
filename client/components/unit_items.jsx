@@ -2,8 +2,26 @@ import React from 'react';
 import { Container, Row, Col, ToastBody, Toast, ToastHeader } from 'reactstrap';
 
 function UnitItems(props){
-    if(!props.unitList) return <h1>Loading...</h1>
-    const list = props.unitList.map(unit=>(
+    if(props.unitList === undefined) return <h1>Loading...</h1>
+
+    const list = props.unitList.map(unit=>{
+        console.log('unit.status is: ', unit);
+        if (unit.status === 'Vacant'){
+            return (
+                <Col sm="4" className="mb-2">
+                    <Toast key={unit.tenants.id}>
+                        <ToastHeader>
+                            Unit {unit.unitNumber}
+                        </ToastHeader>
+                        <ToastBody>
+                            <p className="vacant text-muted">Vacant</p>
+                            <p>Rent: ${Math.ceil(unit.rent).toFixed(2)}</p>
+                        </ToastBody>
+                    </Toast>
+                </Col>
+            );
+        }
+        return (
         <Col sm="4" className="mb-2">
             <Toast key={unit.tenants.id}>
                 <ToastHeader>
@@ -17,7 +35,7 @@ function UnitItems(props){
                 </ToastBody>
             </Toast>
         </Col>
-    ))
+    )})
     return list;
 };
 
