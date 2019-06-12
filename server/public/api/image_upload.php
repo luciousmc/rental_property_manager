@@ -23,10 +23,10 @@ $imageFileType = strtolower(pathinfo($file_path,PATHINFO_EXTENSION));
 //    }
 //}
 
-if (file_exists($file_path)) {
-    echo "Sorry, file already exists.";
-    $uploadOk = 0;
-}
+//if (file_exists($file_path)) {
+//    echo "Sorry, file already exists.";
+//    $uploadOk = 0;
+//}
 
 if ($_FILES["imageToUpload"]["size"] > 5000000) {
     echo "Sorry, your file is too large.";
