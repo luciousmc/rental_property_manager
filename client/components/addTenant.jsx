@@ -14,7 +14,7 @@ export default class AddTenant extends React.Component{
             move_in_date: '2019-06-11',
             lease_end_date: '2019-06-11',
             rent_due_date: '2019-06-11',
-            unit_number: '',
+            unit_ID: '',
             
         };
         this.createTenant = this.createTenant.bind(this);
@@ -56,7 +56,6 @@ export default class AddTenant extends React.Component{
         this.setState({ rent_due_date: e.target.value});
     }
     handleUnitID(e){
-        debugger;
         this.setState({ unit_ID: e.target.value});
     }
     // handleRent(e){
@@ -64,7 +63,6 @@ export default class AddTenant extends React.Component{
     // }
     createTenant(e){
         e.preventDefault();
-        debugger;
         let tenantData = {
             business_name: this.state.business_name,
             contact_name: this.state.contact_name,
