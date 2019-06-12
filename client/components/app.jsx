@@ -12,9 +12,7 @@ import TenantOwner from './tenant-owner-page';
 import AddUnit from './add-unit-page';
 import AddTenant from './add-tenants-page';
 import TenantRequest from './tenant-requests';
-//import AddImage from './image-component-page';
-import AddModal from './add-modal';
-
+import ManagerReview from './manager-requests';
 
 export default class App extends React.Component{
     constructor(props) {
@@ -42,8 +40,7 @@ export default class App extends React.Component{
                         <Route path="/tenant-request" component ={TenantRequest} />
                         {/*<Route path="/property/:id/image-component" component ={AddImage} />*/}
                         <Route path="/property/:id/add-tenant" component ={AddTenant} />
-                        <Route path="/add-modal" component ={AddModal} />
-
+                        <Route path="/property/:id/manager-review" component ={ManagerReview} />
                     </Switch>
                 </Router>
                 <Row>

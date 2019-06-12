@@ -13,9 +13,9 @@ startup();
 //     $idClause = $id;
 // }
 
-$idClause = 1;
+$idClause = 13;
 
-$query = "SELECT business_name, contact_name, tenant_phone, tenant_email, move_in_date, lease_end_date, rent_due_date, unit_number, rent 
+$query = "SELECT business_name, contact_name, tenant_phone, tenant_email, move_in_date, lease_end_date, rent_due_date, u.unit_number, rent 
 FROM `tenants` AS t 
 JOIN `units` AS u 
 JOIN `properties` AS p 

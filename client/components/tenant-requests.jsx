@@ -8,7 +8,7 @@ export default class TenantRequest extends React.Component{
         this.state = {
             tenant_phone: '',
             tenant_email: '',
-            tenant_id: 1,
+            tenant_id: 13,
             repair_request: ''
         };
         this.createRepairRequest = this.createRepairRequest.bind(this);
@@ -30,7 +30,7 @@ export default class TenantRequest extends React.Component{
             repair_request: '' 
         });
     }
-
+    
     createRepairRequest(event){
         event.preventDefault();
         let data = {
@@ -46,7 +46,7 @@ export default class TenantRequest extends React.Component{
         })
             .then(res => res.json())
     }
-    
+
     render(){
         return(
             <div>
@@ -106,7 +106,7 @@ export default class TenantRequest extends React.Component{
                     Cancel
                 </Button>
                 <Button onClick={this.createRepairRequest} color="info">
-                    <Link to="tenant-request"style={{color: "white"}} >Submit</Link>
+                    <Link to="tenant-main"style={{color: "white"}} >Submit</Link>
                 </Button>
             </Form>
             </Container>
