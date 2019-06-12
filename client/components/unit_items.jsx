@@ -29,7 +29,7 @@ class UnitItems extends React.Component{
                             </ToastHeader>
                             <ToastBody>
                                 <p className="vacant text-muted">Vacant</p>
-                                <p className="text-center"><a style={{ fontSize: 15 }} href={`/property/${this.props.propertyID}/unit/${unit.unit_id}/add-tenant`}>+ Add Tenant</a></p>
+                                <p className="text-center"><a style={{ fontSize: 15 }} href={`/property/${this.props.propertyID}/add-tenant`}>+ Add Tenant</a></p>
                             </ToastBody>
                         </Toast>
                     </Col>
