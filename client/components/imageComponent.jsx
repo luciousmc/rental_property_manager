@@ -1,7 +1,5 @@
 import React from 'react';
-import {Col, Row, Button, Form, FormGroup, Label, Input, CustomInput, Card, CardImg} from 'reactstrap';
-import {NavLink, Link } from 'react-router-dom';
-// import { Link } from '.react-router';
+import {Col, Button, FormGroup, Label, CustomInput, Card, CardImg} from 'reactstrap';
 
 export default class AddImage extends React.Component{
     constructor(props){
@@ -16,7 +14,6 @@ export default class AddImage extends React.Component{
 
     handleChange(e){
         e.preventDefault();
-        console.log(e.target.files);
         if (e.target.files[0] !== undefined) {
             this.setState({ imageFile: e.target.files[0], uploading: true });
         } else {
@@ -25,11 +22,8 @@ export default class AddImage extends React.Component{
     }
     addImage(e){
         e.preventDefault();
-        //console.log('add image call');
-        let formData = new FormData(this.state.imageFile);//e.target.files[0]);
-        this.props ? console.log(this.props.propId) : console.log('hit');
+        let formData = new FormData(this.state.imageFile);
         formData.append('property_id', this.props.propId);
-        console.log(formData);
         fetch('/api/image_upload.php',{
             method: 'POST',
             headers: {'Content-Type':'multipart/form-data'},
@@ -37,7 +31,6 @@ export default class AddImage extends React.Component{
         })
             .then((res) => {
                 res.json();
-                console.log(res);
             })
     }
 
@@ -55,7 +48,6 @@ export default class AddImage extends React.Component{
                         <CustomInput type="file" name="imageToUpload" id="imageToUpload" onChange={this.handleChange}/>
                         <Button type="submit" color="info" name="submit" value="uploadFile">
                             Upload
-                            {/*<NavLink to="manager-main" style={{color: "white"}} >Uploads</NavLink>*/}
                         </Button>
                     </FormGroup>
                 </Col>

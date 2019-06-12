@@ -23,7 +23,6 @@ export default class AddProperty extends React.Component {
 
       };
       this.handleChange = this.handleChange.bind(this);
-      // this.handleClick = this.handleClick.bind(this);
       this.addProperty = this.addProperty.bind(this);
       this.handlePropName = this.handlePropName.bind(this);
       this.handlePropType = this.handlePropType.bind(this);
@@ -70,12 +69,8 @@ export default class AddProperty extends React.Component {
     handleChange(e){
         this.setState({value: e.target.value})
     }
-    // handleClick(e){
-    //     alert('a new property was added');
-    //     e.preventDefault();
-    // }
+   
     addProperty(e){
-      debugger;
       e.preventDefault();
 
         let data = {
@@ -181,13 +176,16 @@ export default class AddProperty extends React.Component {
             </FormGroup>
           </Col>
           </Row>
-            <Button className="mr-2" color="primary">
-              <Link to="/manager-main" style={{color: "white"}}>Go Back</Link>
-            </Button>
-            <Button  onClick={this.addProperty}  color="info">
-              <Link to={"/manager-main"} style={{color: "white"}}>Submit</Link>
-              
-            </Button>
+            <Link to="/manager-main" style={{color: "white"}}>
+                <Button className="mr-2" color="primary">
+                  Go Back
+                </Button>
+            </Link>
+            <Link to={"/manager-main"} style={{color: "white"}}>
+                <Button  onClick={this.addProperty}  color="info">
+                  Submit
+                </Button>
+            </Link>
             
         </Form>
     );

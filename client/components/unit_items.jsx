@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Spinner, Col, ToastBody, Toast, ToastHeader, Button, Modal, ModalHeader, ModalFooter, ModalBody } from 'reactstrap';
+import { Row, Spinner, Col, ToastBody, Toast, ToastHeader, Button, Modal, ModalHeader, ModalFooter, ModalBody } from 'reactstrap';
 
 class UnitItems extends React.Component{
     constructor(props){
@@ -19,13 +19,12 @@ class UnitItems extends React.Component{
         if(this.props.unitList === undefined) return <h1 className="text-center"><Spinner color="danger" /></h1>
 
         const list = this.props.unitList.map(unit=>{
-            console.log('unit.status is: ', unit);
             if (unit.status === 'Vacant'){
                 return (
                     <Col sm="4" className="mb-2">
                         <Toast key={unit.tenants.id} className="toast-unit">
                             <ToastHeader>
-                            <h4 className="text-center">Unit {unit.unitNumber}</h4>
+                                <h4 className="text-center">Unit {unit.unitNumber}</h4>
                             </ToastHeader>
                             <ToastBody>
                                 <p className="vacant text-muted">Vacant</p>

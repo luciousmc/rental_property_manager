@@ -25,9 +25,11 @@ export default class TenantMain extends React.Component{
             <div>
                 <Container>
                     <Row className="col-8 offset-2">
+                    <Link to="/" style={{color: "white"}}>
                         <Button size="sm" color="primary">
-                            <Link to="/" style={{color: "white"}}>Back to Main Page</Link>
+                            Back to Main Page
                         </Button>
+                    </Link>
                     </Row>
                     </Container>
                     <Row className="col-7 offset-4">
@@ -46,9 +48,6 @@ export default class TenantMain extends React.Component{
                                 </NavItem>
                                 <NavItem>
                                     <NavLink href="/tenant-request">Request Repairs</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink href="#">Message Center</NavLink>
                                 </NavItem>
                             </Nav>
                         </Row>

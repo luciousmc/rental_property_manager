@@ -1,8 +1,6 @@
 import React from 'react';
-import {Col, Row, Button, Form, FormGroup, Label, Input, CustomInput, Card, CardImg} from 'reactstrap';
+import {Col, Button, FormGroup, Label, CustomInput, Card, CardImg} from 'reactstrap';
 import axios from 'axios';
-import {NavLink, Link } from 'react-router-dom';
-// import { Link } from '.react-router';
 
 export default class AddImage extends React.Component{
     constructor(props){
@@ -16,8 +14,6 @@ export default class AddImage extends React.Component{
     }
 
     handleChange(e){
-        // e.preventDefault();
-        // console.log(e.target.files[0]);
         if (e.target.files[0] !== undefined) {
             this.setState({ imageFile: e.target.files[0], uploading: true });
         } else {
@@ -26,15 +22,10 @@ export default class AddImage extends React.Component{
     }
     addImage(event){
         event.preventDefault();
-        //console.log(event);
 
         let formData = new FormData();
         formData.append('imageToUpload', this.state.imageFile, this.state.imageFile.name);
         formData.append('property_id', this.props.propId);
-        // for (var value of formData.values()) {
-        //     console.log(value);
-        // }
-
 
         axios.post('/api/image_upload.php', formData, {
             headers:{
@@ -44,21 +35,6 @@ export default class AddImage extends React.Component{
             .then(res => {
                res.json();
             });
-        //event.preventDefault();
-        //console.log('add image call',  this.state.imageFile);
-        // let formData = new FormData(event.target);
-        // this.props ? console.log(this.props.propId) : console.log('hit');
-        //formData.append('property_id', this.props.propId);
-        // console.log(formData.property_id);
-        // fetch('/api/image_upload.php',{
-        //     method: 'POST',
-        //     //headers: {'Content-Type':'multipart/form-data'},
-        //     body: formData
-        // })
-        // .then((res) => {
-        //     res.json();
-        //     console.log(res);
-        // })
     }
 
     render(){
@@ -76,7 +52,6 @@ export default class AddImage extends React.Component{
                             <input type = "hidden" name = "upload" value = "true"/>
                             <Button type="submit" color="info" name="submit" value="uploadFile">
                                 Upload
-                                {/*<NavLink to="manager-main" style={{color: "white"}} >Uploads</NavLink>*/}
                             </Button>
                     </FormGroup>
                 </Col>

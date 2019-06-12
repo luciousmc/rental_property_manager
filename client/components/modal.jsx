@@ -18,7 +18,6 @@ export default class AddModal extends React.Component {
     render(){
         return(
             <div>
-            {/* <Button color="primary" onClick={this.toggleModal}>{this.props.toggleButton}</Button> */}
             <Modal isOpen={this.state.modal} modalTransition={{ timeout: 600 }} backdropTransition={{ timeout: 1200 }}
             toggleModal={this.toggleModal} className={this.props.className}>
             <ModalHeader toggleModal={this.toggleModal}>Tenant Details</ModalHeader> 

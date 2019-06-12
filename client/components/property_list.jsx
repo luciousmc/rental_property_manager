@@ -26,9 +26,11 @@ class PropertyList extends React.Component{
             <div>
                 
                 <Row>
-                <Button size="sm" color="primary">
-                <Link to="/" style={{color: "white"}}>Back to Main Page</Link>
-                </Button>
+                <Link to="/" style={{color: "white"}}>
+                    <Button size="sm" color="primary">
+                        Back to Main Page
+                    </Button>
+                </Link>
                 </Row>
                 <Row>
                     <h1 className="mx-auto mb-4">Your Properties</h1>
@@ -41,10 +43,7 @@ class PropertyList extends React.Component{
                                     <NavLink href="/add-property">Add Property</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="#">Remove Property</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink href="#">Manage Property</NavLink>
+                                    <NavLink href="/property/requests">Tenant Repair Requests</NavLink>
                                 </NavItem>
                             </Nav>
                         </Row>

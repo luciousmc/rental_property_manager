@@ -52,9 +52,11 @@ export default class TenantRequest extends React.Component{
             <div>
             <Container>
                 <Row className="col-8 offset-2">
-                    <Button size="sm" color="primary">
-                        <Link to="/" style={{color: "white"}}>Back to Main Page</Link>
-                    </Button>
+                    <Link to="/" style={{color: "white"}}>
+                        <Button size="sm" color="primary">
+                            Back to Main Page
+                        </Button>
+                    </Link>
                 </Row>
             </Container>
                 <Row className="col-7 offset-4">
@@ -70,9 +72,6 @@ export default class TenantRequest extends React.Component{
                     </NavItem>
                     <NavItem>
                         <NavLink className='active' href="/tenant-request">Request Repairs</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink href="#">Message Center</NavLink>
                     </NavItem>
                 </Nav>
             </Row>
@@ -105,9 +104,11 @@ export default class TenantRequest extends React.Component{
                 <Button className="mr-2" color="primary" onChange={this.handleClearButton} style={{color: "white"}}>
                     Cancel
                 </Button>
-                <Button onClick={this.createRepairRequest} color="info">
-                    <Link to="tenant-main"style={{color: "white"}} >Submit</Link>
-                </Button>
+                <Link to="tenant-main"style={{color: "white"}} >
+                    <Button onClick={this.createRepairRequest} color="info">
+                        Submit
+                    </Button>
+                </Link>
             </Form>
             </Container>
             </Container>

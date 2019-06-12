@@ -9,11 +9,11 @@ export default class AddTenant extends React.Component{
             unitsAvailable: [],
             business_name: '',
             contact_name: '',
-            tenant_phone: '99999999999',
-            tenant_email: 'test@test.com',
-            move_in_date: '2019-06-11',
-            lease_end_date: '2019-06-11',
-            rent_due_date: '2019-06-11',
+            tenant_phone: '',
+            tenant_email: '',
+            move_in_date: '',
+            lease_end_date: '',
+            rent_due_date: '',
             unit_ID: '',
             
         };
@@ -29,8 +29,7 @@ export default class AddTenant extends React.Component{
         fetch(`/api/property/property_details.php?id=${id}`)
             .then(response=>response.json())
             .then(propertyDetailsAll=>{
-                console.log('the full property details are as follows: ', propertyDetailsAll);
-                this.setState({ unitsAvailable: propertyDetailsAll.units }, console.log('property units after setstate ', this.state))
+                this.setState({ unitsAvailable: propertyDetailsAll.units })
             })
     }
 
@@ -58,9 +57,6 @@ export default class AddTenant extends React.Component{
     handleUnitID(e){
         this.setState({ unit_ID: e.target.value});
     }
-    // handleRent(e){
-    //     this.setState({ rent: e.target.value});
-    // }
     createTenant(e){
         e.preventDefault();
         let tenantData = {
@@ -72,7 +68,6 @@ export default class AddTenant extends React.Component{
             lease_end_date: this.state.lease_end_date,
             rent_due_date: this.state.rent_due_date,
             unit_ID: this.state.unit_ID,
-            // rent: this.state.rent
         }
         fetch('/api/unit/add_tenant.php', {
             method: 'POST',
@@ -163,13 +158,16 @@ export default class AddTenant extends React.Component{
                         </FormGroup>
                     </Col>
                 </Row>
-                
-                <Button className="mr-2" color="primary">
-                    <Link to="/manager-main" style={{color: "white"}}>Back</Link>
-                </Button>
-                <Button onClick={this.createTenant} color="info">
-                    <Link to="/manager-main" style={{color: "white"}} >Submit</Link>
+                <Link to="/manager-main" style={{color: "white"}}>
+                    <Button className="mr-2" color="primary">
+                        Back
                     </Button>
+                </Link>
+                <Link to="/manager-main" style={{color: "white"}} >
+                    <Button onClick={this.createTenant} color="info">
+                        Submit
+                    </Button>
+                </Link>
                 
             </Form>
         );
