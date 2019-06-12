@@ -3,7 +3,7 @@ require_once('../credentials.php');
 require_once('../functions.php');
 startup();
 
-$query = "SELECT DISTINCT p.street_address, t.unit_number, t.unit_id, r.tenant_phone, r.tenant_email, r.repair_request 
+$query = "SELECT DISTINCT p.street_address, u.unit_number, t.unit_id, r.tenant_phone, r.tenant_email, r.repair_request 
 FROM `tenant_requests` AS r
 JOIN `properties` AS p 
 JOIN `tenants` AS t 
@@ -19,7 +19,6 @@ if (!$result) {
 
 while ($row = mysqli_fetch_assoc($result)) {
     $requestData = [
-        'unit_id' => $row['unit_id'],
         'street_address' => $row['street_address'],
         'unit_number' => $row['unit_number'],
         'tenant_email' => $row['tenant_email'],
