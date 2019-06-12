@@ -8,7 +8,7 @@ export default class TenantRequest extends React.Component{
         this.state = {
             tenant_phone: '',
             tenant_email: '',
-            tenant_id: 13,
+            tenant_id: 1,
             repair_request: ''
         };
         this.createRepairRequest = this.createRepairRequest.bind(this);
