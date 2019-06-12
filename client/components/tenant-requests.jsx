@@ -8,6 +8,7 @@ export default class TenantRequest extends React.Component{
         this.state = {
             tenant_phone: '',
             tenant_email: '',
+            tenant_id: 1,
             repair_request: ''
         };
         this.createRepairRequest = this.createRepairRequest.bind(this);
@@ -35,7 +36,8 @@ export default class TenantRequest extends React.Component{
         let data = {
             tenant_phone: this.state.tenant_phone,
             tenant_email: this.state.tenant_email,
-            repair_request: this.state.repair_request
+            repair_request: this.state.repair_request,
+            tenant_id: this.state.tenant_id
             };
         fetch('/api/tenants/tenant-repair-request.php', {
             method: 'POST',

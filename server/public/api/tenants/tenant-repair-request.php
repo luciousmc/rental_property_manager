@@ -8,9 +8,10 @@ $_POST = json_decode($input, true);
 $tenantPhone = $_POST['tenant_phone'];
 $tenantEmail = $_POST['tenant_email'];
 $repairRequest = $_POST['repair_request'];
+$tenantID = $_POST['tenant_id'];
 
-$query = "INSERT INTO `tenant_requests` (`tenant_phone`, `tenant_email`, `repair_request`)
-VALUES ('$tenantPhone', '$tenantEmail', '$repairRequest')";
+$query = "INSERT INTO `tenant_requests` (`tenant_phone`, `tenant_email`, `repair_request`, `tenant_id`)
+VALUES ('$tenantPhone', '$tenantEmail', '$repairRequest', '$tenantID')";
 
 $result = mysqli_query($conn, $query);
 
