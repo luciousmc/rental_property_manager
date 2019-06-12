@@ -118,7 +118,7 @@ export default class AddProperty extends React.Component {
             <Label for="select">Property Type</Label>
               <Input type="select" name="property_type" id="property_type" value={this.state.propertyType} onChange={this.handlePropType}>
                 <option>Choose One</option>
-                <option>Multi-Unit</option>
+                <option>Multi Unit</option>
                 <option>Single Unit</option>
               </Input>
             </FormGroup>
@@ -184,7 +184,7 @@ export default class AddProperty extends React.Component {
             <Button className="mr-2" color="primary">
               <Link to="/manager-main" style={{color: "white"}}>Go Back</Link>
             </Button>
-            <Button  onClick={this.addProperty} propertyName={""} color="info">
+            <Button  onClick={this.addProperty}  color="info">
               <Link to={"/manager-main"} style={{color: "white"}}>Submit</Link>
               
             </Button>

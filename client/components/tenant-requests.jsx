@@ -8,6 +8,7 @@ export default class TenantRequest extends React.Component{
         this.state = {
             tenant_phone: '',
             tenant_email: '',
+            tenant_id: 13,
             repair_request: ''
         };
         this.createRepairRequest = this.createRepairRequest.bind(this);
@@ -29,13 +30,14 @@ export default class TenantRequest extends React.Component{
             repair_request: '' 
         });
     }
-
+    
     createRepairRequest(event){
         event.preventDefault();
         let data = {
             tenant_phone: this.state.tenant_phone,
             tenant_email: this.state.tenant_email,
-            repair_request: this.state.repair_request
+            repair_request: this.state.repair_request,
+            tenant_id: this.state.tenant_id
             };
         fetch('/api/tenants/tenant-repair-request.php', {
             method: 'POST',
@@ -44,7 +46,7 @@ export default class TenantRequest extends React.Component{
         })
             .then(res => res.json())
     }
-    
+
     render(){
         return(
             <div>
@@ -104,7 +106,7 @@ export default class TenantRequest extends React.Component{
                     Cancel
                 </Button>
                 <Button onClick={this.createRepairRequest} color="info">
-                    <Link to="tenant-request"style={{color: "white"}} >Submit</Link>
+                    <Link to="tenant-main"style={{color: "white"}} >Submit</Link>
                 </Button>
             </Form>
             </Container>

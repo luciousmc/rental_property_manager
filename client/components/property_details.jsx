@@ -1,8 +1,19 @@
 import React from 'react';
-import {Container, Row, Col, NavItem, Nav, NavLink, CardImg} from 'reactstrap';
+import {Container, Row, Col, NavItem, Nav, NavLink, CardImg, FormGroup, CustomInput, Label, Card} from 'reactstrap';
 import UnitItems from './unit_items';
+import AddImage from './addImage';
 
 export default (props)=> {
+    let image = null;
+    if (!props.propertyDetail.image){
+       image = <AddImage propId={props.propertyDetail.id}/>;
+    } else {
+        image = (
+            <Col>
+                <CardImg src={props.propertyDetail.image}/>
+            </Col>);
+    }
+
     return (
         <div>
             <Row>
@@ -22,17 +33,17 @@ export default (props)=> {
                             <a className="detail-link p-2 my-1" href="#">Maintenence</a>
                         </Col>
                         <Col>
-                            <a className="detail-link p-2 my-1" href="#">Repair Requests</a>
+                            <a className="detail-link p-2 my-1" href={`/property/${props.propertyDetail.id}/manager-review`}>Repair Requests</a>
                         </Col>
                     </Nav>
                 </Container>
             </Col>
             </Row>
             <Row>
-                <Col>
-                    <CardImg src={props.propertyDetail.image}/>
-                </Col>
+                {image}
+
                 <Col className="p-5">
+
                     <Row>
                         <h5>Property: {props.propertyDetail.property_name}</h5>
                     </Row>

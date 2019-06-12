@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 10, 2019 at 10:16 PM
+-- Generation Time: Jun 12, 2019 at 07:00 PM
 -- Server version: 5.7.26-0ubuntu0.18.04.1
 -- PHP Version: 7.2.17-0ubuntu0.18.04.1
 
@@ -64,7 +64,10 @@ CREATE TABLE `properties` (
 --
 
 INSERT INTO `properties` (`id`, `property_name`, `street_address`, `city`, `state`, `zip`, `sqft`, `property_type`, `manager_contact`, `manager_phone`, `parking_spaces`) VALUES
-(1, 'vista complex', '23002 El Toro Road', 'irvine', 'ca', '91101', 20000, 'Multi Unit', 'Joe', '8008888888', 30);
+(1, 'vista complex', '23002 El Toro Road', 'irvine', 'ca', '91101', 20000, 'Multi Unit', 'Joe', '8008888888', 30),
+(6, 'vista', 'apple street', 'irvine', 'ca', '91010', 123, 'Multi Unit', 'john', '5555555', 10),
+(7, 'testvista', 'mapplepumpkin', 'irvine', 'ca', '91234', 2345, 'Multi Unit', 'makertest', '55555555', 20),
+(8, 'space station', '234567', 'irvine', 'ca', '92222', 25999, 'Multi Unit', 'megatron', '55555555', 5);
 
 -- --------------------------------------------------------
 
@@ -75,8 +78,18 @@ INSERT INTO `properties` (`id`, `property_name`, `street_address`, `city`, `stat
 CREATE TABLE `property_images` (
   `id` mediumint(8) UNSIGNED NOT NULL,
   `property_id` mediumint(8) UNSIGNED NOT NULL,
-  `images_id` mediumint(8) UNSIGNED NOT NULL
+  `url` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `property_images`
+--
+
+INSERT INTO `property_images` (`id`, `property_id`, `url`) VALUES
+(2, 1, 'https://tinyurl.com/y6eu9ldc'),
+(7, 7, '/api/uploads/char2.png'),
+(8, 6, '/api/uploads/char1.png'),
+(9, 8, '/api/uploads/char1.png');
 
 -- --------------------------------------------------------
 
@@ -93,18 +106,17 @@ CREATE TABLE `tenants` (
   `tenant_email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `move_in_date` date NOT NULL,
   `lease_end_date` date NOT NULL,
-  `rent_due_date` date NOT NULL,
-  `monthly_rent` smallint(5) UNSIGNED NOT NULL,
-  `unit_number` varchar(10) COLLATE utf8_unicode_ci NOT NULL
+  `rent_due_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `tenants`
 --
 
-INSERT INTO `tenants` (`id`, `unit_id`, `business_name`, `contact_name`, `tenant_phone`, `tenant_email`, `move_in_date`, `lease_end_date`, `rent_due_date`, `monthly_rent`, `unit_number`) VALUES
-(1, 1, 'Nick Inc', 'Nike Gordan', '5555555555', 'nike@gmail.com', '2003-01-19', '2003-04-20', '2004-01-19', 2200, '100B'),
-(2, 1, 'Howie Inc', 'Howie Gordan', '6666666666', 'Hiwifusion@howie.com', '2003-01-19', '2003-04-20', '2004-01-19', 1800, '100A');
+INSERT INTO `tenants` (`id`, `unit_id`, `business_name`, `contact_name`, `tenant_phone`, `tenant_email`, `move_in_date`, `lease_end_date`, `rent_due_date`) VALUES
+(1, 1, 'Nick Inc', 'Nike Gordan', '5555555555', 'howie@props.com', '2003-01-19', '2003-04-20', '2004-01-19'),
+(13, 10, 'jacks', 'jackie', '99999999999', 'test@test.com', '2019-06-11', '2019-06-11', '2019-06-11'),
+(14, 11, 'jacky', 'jack', '99999999999', 'test@test.com', '2019-06-11', '2019-06-11', '2019-06-11');
 
 -- --------------------------------------------------------
 
@@ -131,6 +143,15 @@ CREATE TABLE `tenant_requests` (
   `repair_request` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `tenant_requests`
+--
+
+INSERT INTO `tenant_requests` (`id`, `tenant_phone`, `tenant_email`, `repair_request`) VALUES
+(1, '55555555', 'howie@props.com', 'testing'),
+(2, '234567', 'howie@som.com', 'Fix this'),
+(3, '6268187142', 'qsshorty@gmail.com', 'add a unit number');
+
 -- --------------------------------------------------------
 
 --
@@ -151,7 +172,9 @@ CREATE TABLE `units` (
 --
 
 INSERT INTO `units` (`id`, `property_id`, `unit_number`, `sqft`, `rent`, `status`) VALUES
-(1, 1, '100A', 2000, 3500, 'Vacant');
+(1, 1, '100A', 2000, 3500, 'Vacant'),
+(10, 6, '999', 1234, 5000, 'Occupied'),
+(11, 6, '56677', 4567, 555, 'Occupied');
 
 -- --------------------------------------------------------
 
@@ -230,17 +253,17 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT for table `properties`
 --
 ALTER TABLE `properties`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `property_images`
 --
 ALTER TABLE `property_images`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `tenants`
 --
 ALTER TABLE `tenants`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `tenant_images`
 --
@@ -250,12 +273,12 @@ ALTER TABLE `tenant_images`
 -- AUTO_INCREMENT for table `tenant_requests`
 --
 ALTER TABLE `tenant_requests`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `units`
 --
 ALTER TABLE `units`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `unit_images`
 --

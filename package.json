@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Learning-Fuze/c319_rental_property#readme",
   "dependencies": {
+    "axios": "0.19.0",
     "bootstrap": "4.3.1",
     "chart.js": "2.8.0",
     "jquery": "3.4.1",
