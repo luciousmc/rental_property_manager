@@ -29,7 +29,7 @@ export default class TenantRequest extends React.Component{
             repair_request: '' 
         });
     }
-
+    
     createRepairRequest(event){
         event.preventDefault();
         let data = {
@@ -44,7 +44,7 @@ export default class TenantRequest extends React.Component{
         })
             .then(res => res.json())
     }
-    
+
     render(){
         return(
             <div>
@@ -104,7 +104,7 @@ export default class TenantRequest extends React.Component{
                     Cancel
                 </Button>
                 <Button onClick={this.createRepairRequest} color="info">
-                    <Link to="tenant-request"style={{color: "white"}} >Submit</Link>
+                    <Link to="tenant-main"style={{color: "white"}} >Submit</Link>
                 </Button>
             </Form>
             </Container>

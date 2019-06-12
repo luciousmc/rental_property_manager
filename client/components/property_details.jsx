@@ -22,7 +22,7 @@ export default (props)=> {
                             <a className="detail-link p-2 my-1" href="#">Maintenence</a>
                         </Col>
                         <Col>
-                            <a className="detail-link p-2 my-1" href="#">Repair Requests</a>
+                            <a className="detail-link p-2 my-1" href={`/property/${props.propertyDetail.id}/manager-review`}>Repair Requests</a>
                         </Col>
                     </Nav>
                 </Container>

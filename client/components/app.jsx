@@ -12,6 +12,7 @@ import TenantOwner from './tenant-owner-page';
 import AddUnit from './add-unit-page';
 import AddTenant from './add-tenants-page';
 import TenantRequest from './tenant-requests';
+import ManagerReview from './manager-requests';
 
 export default class App extends React.Component{
     constructor(props) {
@@ -37,6 +38,7 @@ export default class App extends React.Component{
                         <Route path="/tenant-owner" component ={TenantOwner} />
                         <Route path="/property/:id/add-tenant" component ={AddTenant} />
                         <Route path="/tenant-request" component ={TenantRequest} />
+                        <Route path="/property/:id/manager-review" component ={ManagerReview} />
 
                     </Switch>
                 </Router>
