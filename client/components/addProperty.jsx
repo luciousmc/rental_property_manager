@@ -118,7 +118,7 @@ export default class AddProperty extends React.Component {
             <Label for="select">Property Type</Label>
               <Input type="select" name="property_type" id="property_type" value={this.state.propertyType} onChange={this.handlePropType}>
                 <option>Choose One</option>
-                <option>Multi-Unit</option>
+                <option>Multi Unit</option>
                 <option>Single Unit</option>
               </Input>
             </FormGroup>
