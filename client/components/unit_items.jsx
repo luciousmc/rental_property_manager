@@ -49,7 +49,7 @@ class UnitItems extends React.Component{
                     </ToastBody>
                 </Toast>
                 <div>
-                    <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                    <Modal isOpen={this.state.modal} toggle={this.toggle} className="unit-details-modal">
                     <ModalHeader toggle={this.toggle}>Unit {unit.unitNumber} - {unit.tenants.business_name}</ModalHeader>
                     <ModalBody>
                         <Row>
