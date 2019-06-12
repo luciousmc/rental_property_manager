@@ -23,9 +23,18 @@ if(!$result){
     print(mysqli_error($conn));
     exit();
 }
+$query1 = "UPDATE `units` SET `status` = 'Occupied' WHERE `units`.`id` = $u_id";
+
+    $updateResult = mysqli_query($conn, $query1);
+    if(!$updateResult){
+        print(mysqli_error($conn));
+        exit();
+    }
 print(json_encode(
     [
         'result' => true,
     ]
 ));
+
+
 
