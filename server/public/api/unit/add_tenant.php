@@ -5,7 +5,7 @@ startup();
 $input = file_get_contents('php://input');
 $tenant = json_decode($input, true);
 
-$u_id = $tenant['unit_ID'];
+//$u_id = $tenant['unit_ID'];
 $businessName = $tenant['business_name'];
 $contactName = $tenant['contact_name'];
 $tenantPhone = $tenant['tenant_phone'];
