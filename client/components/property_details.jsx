@@ -82,15 +82,15 @@ export default (props)=> {
                     <h5 className="mr-5">
                         <a href={`/property/${props.propertyDetail.id}/add-unit`}>+ Add Unit</a>
                     </h5>
-                    <h5>
-                        <a href={`/property/${props.propertyDetail.id}/add-tenant`}>+ Add Tenant</a>
-                    </h5>
+                    {/*<h5>*/}
+                    {/*    <a href={`/property/${props.propertyDetail.id}/add-tenant`}>+ Add Tenant</a>*/}
+                    {/*</h5>*/}
                 </Row>
                 </Col>
             </Container>
             <Container>
                 <Row>
-                    <UnitItems unitList={props.unitList} />
+                    <UnitItems unitList={props.unitList} propertyID={props.propertyDetail.id} />
                 </Row>
             </Container>
         </div>

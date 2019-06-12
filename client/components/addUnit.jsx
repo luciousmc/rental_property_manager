@@ -30,6 +30,7 @@ export default class AddUnit extends React.Component{
 
     createUnit(event){
         event.preventDefault();
+        
         let data = {
             property_id: this.props.propertyID,
             unit_number: this.state.unit_number,
