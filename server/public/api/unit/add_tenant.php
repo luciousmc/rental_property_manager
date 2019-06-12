@@ -23,7 +23,7 @@ if(!$result){
     print(mysqli_error($conn));
     exit();
 }
-$query1 = "UPDATE `units` SET `status` = 'Occupied' WHERE `units`.`id` = $u_id";
+$query1 = "UPDATE `units` SET `status` = 'Occupied' WHERE `units`.`id` = $unit_ID";
 
     $updateResult = mysqli_query($conn, $query1);
     if(!$updateResult){
