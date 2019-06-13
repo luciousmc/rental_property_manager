@@ -31,7 +31,7 @@ export default class Footer extends React.Component{
                     </Col>
                 </Row>
             </Container>
-            <div className="footer-copyright">
+            <div color="dark" className="footer-copyright">
                 <p>© 2019 Moore Properties </p>
             </div>
         </footer>

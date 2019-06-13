@@ -18,7 +18,7 @@ export default class Header extends React.Component{
       render() {
         return (
           <header className="col">
-            <Navbar color="danger" light>
+            <Navbar color="danger">
               <NavbarBrand href="/" className="text-white mr-auto">Moore Properties</NavbarBrand>
               <div className="text-white mr-4">Hello Howie!</div>
               <NavbarToggler onClick={this.toggleNavbar} className="mr-2" /><Badge color="primary mb-4"></Badge>
