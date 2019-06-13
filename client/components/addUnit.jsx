@@ -93,12 +93,16 @@ export default class AddUnit extends React.Component{
                         </FormGroup>
                     </Col>
                 </Row>
-                <Button className="mr-2" color="primary">
-                    <Link to="/manager-main" style={{color: "white"}}>Back</Link>
-                </Button>
-                <Button onClick={this.createUnit} color="info">
-                    <Link to="/manager-main" style={{color: "white"}} >Submit</Link>
+                <Link to="/manager-main" style={{color: "white"}}>
+                    <Button className="mr-2" color="primary">
+                        Back
                     </Button>
+                </Link>
+                <Link to="/manager-main" style={{color: "white"}} >
+                    <Button onClick={this.createUnit} color="info">
+                        Submit
+                    </Button>
+                </Link>
                 
             </Form>
         );

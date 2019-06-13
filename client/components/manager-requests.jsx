@@ -27,11 +27,6 @@ export default class ManagerReview extends React.Component{
             <div>
                 <Container>
                 <Row>
-                    <Button size="md" color="primary" style={{marginTop: '20px'}}>
-                        <Link to="/manager-main" style={{color: "white"}}>Back </Link>
-                    </Button>
-                </Row>
-                <Row>
                     <h1 className="mx-auto mb-4">Your Repair Requests</h1>
                 </Row>
                 <Row>

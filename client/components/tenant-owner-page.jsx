@@ -1,6 +1,5 @@
 import React from 'react';
-import { Row, Container, Nav, NavItem, NavLink, Button } from 'reactstrap';
-import {Link} from 'react-router-dom';
+import { Row, Container, Nav, NavItem, NavLink, Col } from 'reactstrap';
 
 export default class TenantOwner extends React.Component{
     constructor(props){
@@ -23,35 +22,36 @@ export default class TenantOwner extends React.Component{
     render(){
         return(
             <div>
-                <Container>
-                    <Row className="col-8 offset-2">
-                        <Button size="sm" color="primary">
-                            <Link to="/" style={{color: "white"}}>Back to Main Page</Link>
-                        </Button>
+                    <Row>
+                        <h3 className="display-4 property-detail-header mx-auto">{this.state.ownerInfo.business_name} Portal </h3>
                     </Row>
-                </Container>
-                    <Row className="col-7 offset-4">
-                        <h1>Your Tenant Info</h1>
+                    <Row>
+                        <h3 className="property-detail-header mx-auto">{this.state.ownerInfo.street_address}, Unit {this.state.ownerInfo.unit_number} </h3>
                     </Row>
-                
-                <Row>
+                    <Row>
+                    <Col className="details-header text-center py-2">
                     <Container>
-                        <Row className="col-8 offset-2">
-                            <Nav tabs>
-                                <NavItem>
-                                    <NavLink href="/tenant-main">Tenant Summary</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className='active' href="/tenant-owner">Property Information</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink href="/tenant-request">Request Repairs</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink href="#">Message Center</NavLink>
-                                </NavItem>
-                            </Nav>
-                        </Row>
+                    <Nav pills>
+                        <Col>
+                            <NavItem>
+                                <NavLink style={{color: "white"}} href="/tenant-main">Tenant Summary</NavLink>
+                            </NavItem>
+                        </Col>
+                        <Col>
+                            <NavItem>
+                                <NavLink className='active' href="/tenant-owner">Property Information</NavLink>
+                            </NavItem>
+                        </Col>
+                        <Col>
+                            <NavItem>
+                                <NavLink style={{color: "white"}} href="/tenant-request">Request Repairs</NavLink>
+                            </NavItem>
+                        </Col>
+                    </Nav>
+                    </Container>
+                    </Col>
+                    </Row>
+                    <Container>
                         <Row className='col-4 offset-2'><h4>Contact Information: </h4></Row>
                         <Row className='col-4 offset-4'>
                             <div className='col-sm-auto'>
@@ -92,7 +92,6 @@ export default class TenantOwner extends React.Component{
                             </div>
                         </Row>
                     </Container>
-                </Row>
             </div>
         );
     }

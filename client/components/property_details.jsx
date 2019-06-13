@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Row, Col, NavItem, Nav, NavLink, CardImg, FormGroup, CustomInput, Label, Card} from 'reactstrap';
+import {Container, Row, Col, Nav, CardImg} from 'reactstrap';
 import UnitItems from './unit_items';
 import AddImage from './addImage';
 
@@ -28,9 +28,6 @@ export default (props)=> {
                         </Col>
                         <Col>
                             <a className="detail-link p-2 my-1" href={`/property/${props.propertyDetail.id}/add-unit`}>Add Unit</a>
-                        </Col>
-                        <Col>
-                            <a className="detail-link p-2 my-1" href="#">Maintenence</a>
                         </Col>
                         <Col>
                             <a className="detail-link p-2 my-1" href={`/property/${props.propertyDetail.id}/manager-review`}>Repair Requests</a>
@@ -82,9 +79,6 @@ export default (props)=> {
                     <h5 className="mr-5">
                         <a style={{color: 'white', textShadow: 20 }} href={`/property/${props.propertyDetail.id}/add-unit`}>+ Add Unit</a>
                     </h5>
-                    {/*<h5>*/}
-                    {/*    <a href={`/property/${props.propertyDetail.id}/add-tenant`}>+ Add Tenant</a>*/}
-                    {/*</h5>*/}
                 </Row>
                 </Col>
             </Container>
