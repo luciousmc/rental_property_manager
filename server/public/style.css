@@ -84,7 +84,9 @@ body {
     bottom:0;
     opacity: .7;
 }
-.modal-dialog {
-    width: 1200px;
-    height: 800px;
+.unit-details-modal {
+    right: 50%;
+    width: 1000px;
+    height: 60%;
+    margin: auto;
 }
