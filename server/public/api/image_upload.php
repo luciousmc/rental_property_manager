@@ -13,21 +13,21 @@ if (!(is_dir($target_dir))) {
 }
 $imageFileType = strtolower(pathinfo($file_name,PATHINFO_EXTENSION));
 
-//if(isset($_POST["submit"])) {
-//    $check = getimagesize($_FILES["imageToUpload"]["tmp_name"]);
-//    if($check !== false) {
-//        echo "File is an image - " . $check["mime"] . ".";
-//        $uploadOk = 1;
-//    } else {
-//        echo "File is not an image.";
-//        $uploadOk = 0;
-//    }
-//}
+if(isset($_POST["submit"])) {
+    $check = getimagesize($_FILES["imageToUpload"]["tmp_name"]);
+    if($check !== false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
+}
 
-//if (file_exists($file_path)) {
-//    echo "Sorry, file already exists.";
-//    $uploadOk = 0;
-//}
+if (file_exists($file_name)) {
+    echo "Sorry, file already exists.";
+    $uploadOk = 0;
+}
 
 if ($_FILES["imageToUpload"]["size"] > 5000000) {
     echo "Sorry, your file is too large.";
@@ -53,8 +53,4 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
-
-
-
-
 ?>
