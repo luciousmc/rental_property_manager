@@ -24,9 +24,9 @@ export default class App extends React.Component{
     render(){
         return(
             <React.Fragment>
-                <Row>
-                    <Header/> 
-                </Row>
+            <Row>
+                <Header/>
+            </Row>
                 <Router>
                     <Switch>
                         <Route exact path="/" component={LandingPage} />
