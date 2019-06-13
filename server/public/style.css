@@ -84,3 +84,9 @@ body {
     bottom:0;
     opacity: .7;
 }
+.unit-details-modal {
+    right: 50%;
+    width: 1000px;
+    height: 60%;
+    margin: auto;
+}
