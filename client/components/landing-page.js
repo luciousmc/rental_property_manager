@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export const LandingPage = ()=>(
     <React.Fragment>
-        <Container fluid className="background">   
+        <Container fluid className="background"> 
         <Jumbotron fluid>
             
             <div className="display-2 text-center">
@@ -16,6 +16,7 @@ export const LandingPage = ()=>(
                 </div>
             </Container>
         </Jumbotron>
+        </Container> 
         <Jumbotron className="manager-hero">
             <Container>
                 <Row style={{marginBottom: '40px'}}>
@@ -36,6 +37,8 @@ export const LandingPage = ()=>(
                 </Row>
             </Container>
         </Jumbotron>
+        <Container fluid className="background"> 
+
         <Jumbotron className="tenant-hero">
             <Container>
                 <Row >

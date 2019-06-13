@@ -2,11 +2,6 @@ body {
     min-height: 100vh;
     min-width: 100vw;
     background-color: rgba(0,0,0.5,0.3);
-    ; 
-    
-    /* background: lightgrey; */
-    /* background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(200,200,200,0)),url(https://cdn.turnkeyvr.com/www/images/homeowner/homeowner-hero.jpg);
-    background-size: cover; */
 }
 .header-bar {
     height: 2vh;
@@ -20,7 +15,6 @@ body {
     
 }
 .manager-icon, .tenant-icon {
-    
     width: 65%;
 }
 .tenant-icon {
@@ -75,7 +69,6 @@ body {
 .manager-hero, .tenant-hero {
     background: none;
     position:relative;
-    /* margin:0; */
 }
 .manager-hero::before, .tenant-hero::before {
     position: absolute;
@@ -88,17 +81,20 @@ body {
     right:0;
     bottom:0;
     opacity: .1;
+    
+}
+.tenant-hero{
+    margin: 0;
+
 }
 .display-2 {
     color: white;
 }
 .jumbotron {
-    width: 100%;
-    background-color: rgba(0,0,0.5,0.3);
-    padding-left: 20%;
-    padding-right: 20%;
-    margin: 1;
-    margin-bottom: 0;
+    background-color: rgba(1, 1, 2, 0.65);
+    margin-right: 20%;
+    margin-left: 20%;
+    border-radius: 15px;
 }
 .col{
     color: white;
@@ -110,6 +106,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    opacity:
 }
 ::-webkit-scrollbar { 
     display: none; 
