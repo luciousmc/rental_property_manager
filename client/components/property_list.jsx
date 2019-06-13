@@ -29,13 +29,10 @@ class PropertyList extends React.Component{
                 </Row>
                 <Row>
                     <Container>
-                        <Row className="col-8 offset-2">
+                        <Row className="col-8 offset-3">
                             <Nav tabs>
-                            <NavItem>
-                                    <NavLink href="/add-property">Add Property</NavLink>
-                                </NavItem>
                                 <NavItem>
-                                    <NavLink href="#">Remove Property</NavLink>
+                                    <NavLink href="/add-property">Add Property</NavLink>
                                 </NavItem>
                             </Nav>
                         </Row>
