@@ -69,7 +69,7 @@ export default (props)=> {
                 <Col>
                 <Row>
                     <h5 className="mr-5">
-                        <a href={`/property/${props.propertyDetail.id}/add-unit`}>+ Add Unit</a>
+                        <a style={{color: 'white', textShadow: 20 }} href={`/property/${props.propertyDetail.id}/add-unit`}>+ Add Unit</a>
                     </h5>
                     {/*<h5>*/}
                     {/*    <a href={`/property/${props.propertyDetail.id}/add-tenant`}>+ Add Tenant</a>*/}

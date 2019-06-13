@@ -1,6 +1,12 @@
 body {
     min-height: 100vh;
-    background: lightgrey;
+    background-image: url("/images/chicago_skyline1.gif");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* background: lightgrey; */
     /* background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(200,200,200,0)),url(https://cdn.turnkeyvr.com/www/images/homeowner/homeowner-hero.jpg);
     background-size: cover; */
 }
@@ -8,10 +14,12 @@ body {
     height: 2vh;
 }
 .landing-intro {
+    color: white;
     text-align: justify;
 }
 .content-container {
     min-height: 75vh;
+    
 }
 .manager-icon, .tenant-icon {
     
@@ -72,7 +80,6 @@ body {
     /* margin:0; */
 }
 .manager-hero::before, .tenant-hero::before {
-    background: whitesmoke;
     position: absolute;
     content:"";
     display:block;
@@ -82,5 +89,17 @@ body {
     left:0;
     right:0;
     bottom:0;
-    opacity: .7;
+    opacity: .1;
+}
+.display-2 {
+    color: white;
+}
+.jumbotron {
+    background-color: rgba(0,0,0.5,0.3);
+}
+.col{
+    color: white;
+}
+.button{
+    
 }
