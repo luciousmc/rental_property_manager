@@ -18,7 +18,7 @@ function PropertyListItem(props){
                 <Card className="property-card" key={property.id} onClick={()=>window.location = "/property/"+property.id}>
                     <Row>
                         <Col sm="4">
-                            <CardImg src={property.image} className="property-img" />
+                            <CardImg src={property.image ? property.image : "/images/business_default_image.jpg"} className="property-img" />
                         </Col>
                         <Col sm="8">
                             <CardBody>

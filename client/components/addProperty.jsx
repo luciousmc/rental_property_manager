@@ -184,7 +184,7 @@ export default class AddProperty extends React.Component {
             <Button className="mr-2" color="primary">
               <Link to="/manager-main" style={{color: "white"}}>Go Back</Link>
             </Button>
-            <Button  onClick={this.addProperty} propertyName={""} color="info">
+            <Button  onClick={this.addProperty}  color="info">
               <Link to={"/manager-main"} style={{color: "white"}}>Submit</Link>
               
             </Button>

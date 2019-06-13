@@ -15,7 +15,7 @@ startup();
 
 $idClause = 1;
 
-$query = "SELECT property_name, street_address, city, 'state', zip, 'sqft', parking_spaces, manager_contact, manager_phone 
+$query = "SELECT property_name, street_address, city, p.state, zip, p.sqft, parking_spaces, manager_contact, manager_phone 
 FROM `properties` AS p 
 JOIN `units` AS u 
 JOIN `tenants` AS t 
