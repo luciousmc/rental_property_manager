@@ -38,7 +38,6 @@ export default class App extends React.Component{
                         <Route path="/tenant-owner" component ={TenantOwner} />
                         <Route path="/tenant-request" component ={TenantRequest} />
                         <Route path="/property/:id/add-tenant" component ={AddTenant} />
-                        <Route path="/manager-main/requests" component ={ManagerReview} /> // my change
                         <Route path="/property/:id/manager-review" component ={ManagerReview} />
                     </Switch>
                 </Router>

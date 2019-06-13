@@ -5,7 +5,6 @@ startup();
 
 $input = file_get_contents('php://input');
 $_POST = json_decode($input, true);
-// print($_POST);
 $pName = $_POST['property_name'];
 $street = $_POST['street_address'];
 $city = $_POST['city'];

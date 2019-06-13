@@ -3,19 +3,9 @@ require_once('../credentials.php');
 require_once('../functions.php');
 startup();
 
-
-//Keep to Hard-Code for Later Features
-// $id = $_GET['id'];
-
-// if(empty($_GET['id'])){
-//     $idClause = '';
-// } else {
-//     $idClause = $id;
-// }
-
 $idClause = 1;
 
-$query = "SELECT property_name, street_address, city, p.state, zip, p.sqft, parking_spaces, manager_contact, manager_phone 
+$query = "SELECT u.unit_number, business_name, property_name, street_address, city, p.state, zip, p.sqft, parking_spaces, manager_contact, manager_phone 
 FROM `properties` AS p 
 JOIN `units` AS u 
 JOIN `tenants` AS t 
@@ -30,6 +20,8 @@ if (!$result) {
 
 while ($row = mysqli_fetch_assoc($result)) {
     $propertyData = [
+        'unit_number' => $row['unit_number'],
+        'business_name' => $row['business_name'],
         'property_name' => $row['property_name'],
         'street_address' => $row['street_address'],
         'city' => $row['city'],

@@ -24,14 +24,6 @@ class PropertyList extends React.Component{
     render(){
         return(
             <div>
-                
-                <Row>
-                <Link to="/" style={{color: "white"}}>
-                    <Button size="sm" color="primary">
-                        Back to Main Page
-                    </Button>
-                </Link>
-                </Row>
                 <Row>
                     <h1 className="mx-auto mb-4">Your Properties</h1>
                 </Row>
@@ -43,7 +35,7 @@ class PropertyList extends React.Component{
                                     <NavLink href="/add-property">Add Property</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="/property/requests">Tenant Repair Requests</NavLink>
+                                    <NavLink href="#">Remove Property</NavLink>
                                 </NavItem>
                             </Nav>
                         </Row>

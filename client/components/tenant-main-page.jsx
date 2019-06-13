@@ -1,6 +1,5 @@
 import React from 'react';
-import { Row, Container, Nav, NavItem, NavLink, Button } from 'reactstrap';
-import {Link} from 'react-router-dom';
+import { Row, Container, Nav, NavItem, NavLink, Col } from 'reactstrap';
 
 export default class TenantMain extends React.Component{
     constructor(props){
@@ -23,72 +22,70 @@ export default class TenantMain extends React.Component{
     render(){
         return(
             <div>
-                <Container>
-                    <Row className="col-8 offset-2">
-                    <Link to="/" style={{color: "white"}}>
-                        <Button size="sm" color="primary">
-                            Back to Main Page
-                        </Button>
-                    </Link>
-                    </Row>
-                    </Container>
-                    <Row className="col-7 offset-4">
-                        <h1>Your Tenant Info</h1>
-                    </Row>
-                
                 <Row>
-                    <Container>
-                        <Row className="col-8 offset-2">
-                            <Nav tabs>
-                                <NavItem>
-                                    <NavLink className='active' href="/tenant-main">Tenant Summary</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink href="/tenant-owner">Property Information</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink href="/tenant-request">Request Repairs</NavLink>
-                                </NavItem>
-                            </Nav>
-                        </Row>
-                        <Row className='col-4 offset-2'><h4>Contact Information: </h4></Row>
-                        <Row className='col-4 offset-4'>
-                            <div className='col-sm-auto'>
-                                <b>Business Name:</b> {this.state.tenantInfo.business_name}
-                            </div>
-                            <div className='col-sm-auto'>
-                                <b>Contact Name: </b> {this.state.tenantInfo.contact_name}
-                            </div>
-                            <div className='col-sm-auto'>
-                                <b>Tenant Phone: </b> {this.state.tenantInfo.tenant_phone}
-                            </div>
-                            <div className='col-sm-auto'>
-                                <b>Tenant Email: </b> {this.state.tenantInfo.tenant_email}
-                            </div>
-                        </Row>
-                        <Row className='col-4 offset-2'><h4>Important Dates: </h4></Row>
-                        <Row className='col-4 offset-4'>
-                            <div className='col-auto'>
-                                <b>Move in Date: </b> {this.state.tenantInfo.move_in_date}
-                            </div>
-                            <div className='col-auto'>
-                                <b>Lease End Date: </b> {this.state.tenantInfo.lease_end_date}
-                            </div>
-                            <div className='col-auto'>
-                                <b>Rent Due Date: </b> {this.state.tenantInfo.rent_due_date}
-                            </div>
-                        </Row>
-                        <Row className='col-4 offset-2'><h4>Home Information: </h4></Row>
-                        <Row className='col-4 offset-4'>
-                            <div className='col-auto'>
-                                <b>Monthly Rent: </b> ${this.state.tenantInfo.rent}
-                            </div>
-                            <div className='col-auto'>
-                                <b>Unit Number: </b> {this.state.tenantInfo.unit_number}
-                            </div>
-                        </Row>
-                    </Container>
+                    <h3 className="display-4 property-detail-header mx-auto">{this.state.tenantInfo.business_name} Portal</h3>
                 </Row>
+                <Row>
+                    <h3 className="property-detail-header mx-auto">{this.state.tenantInfo.street_address}, Unit {this.state.tenantInfo.unit_number}</h3>
+                </Row>
+                <Row>
+                <Col className="details-header text-center py-2">
+                <Container>
+                <Nav pills >
+                    <Col>
+                        <NavItem>
+                            <NavLink className='active' href="/tenant-main">Tenant Summary</NavLink>
+                        </NavItem>
+                    </Col>
+                    <Col>
+                        <NavItem>
+                            <NavLink style={{color: "white"}} href="/tenant-owner">Property Information</NavLink>
+                        </NavItem>
+                    </Col>
+                    <Col>
+                        <NavItem>
+                            <NavLink style={{color: "white"}} href="/tenant-request">Request Repairs</NavLink>
+                        </NavItem>
+                    </Col>
+                </Nav>
+                </Container>
+                </Col>
+                </Row>
+                <Container>
+                <Row className='col-4 offset-2'><h4>Home Information: </h4></Row>
+                    <Row className='col-4 offset-4'>
+                        <div className='col-auto'>
+                            <b>Monthly Rent: </b> ${this.state.tenantInfo.rent}
+                        </div>
+                        <div className='col-auto'>
+                            <b>Unit Number: </b> {this.state.tenantInfo.unit_number}
+                        </div>
+                    </Row>
+                    <Row className='col-4 offset-2'><h4>Contact Information: </h4></Row>
+                    <Row className='col-4 offset-4'>
+                        <div className='col-sm-auto'>
+                            <b>Contact Name: </b> {this.state.tenantInfo.contact_name}
+                        </div>
+                        <div className='col-sm-auto'>
+                            <b>Tenant Phone: </b> {this.state.tenantInfo.tenant_phone}
+                        </div>
+                        <div className='col-sm-auto'>
+                            <b>Tenant Email: </b> {this.state.tenantInfo.tenant_email}
+                        </div>
+                    </Row>
+                    <Row className='col-4 offset-2'><h4>Important Dates: </h4></Row>
+                    <Row className='col-4 offset-4'>
+                        <div className='col-auto'>
+                            <b>Move in Date: </b> {this.state.tenantInfo.move_in_date}
+                        </div>
+                        <div className='col-auto'>
+                            <b>Lease End Date: </b> {this.state.tenantInfo.lease_end_date}
+                        </div>
+                        <div className='col-auto'>
+                            <b>Rent Due Date: </b> {this.state.tenantInfo.rent_due_date}
+                        </div>
+                    </Row>
+                </Container>
             </div>
         );
     }
