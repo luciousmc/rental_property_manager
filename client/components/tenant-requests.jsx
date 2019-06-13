@@ -50,44 +50,42 @@ export default class TenantRequest extends React.Component{
     render(){
         return(
             <div>
+            <Row>
+                <h1 className="property-detail-header mx-auto">Request Repairs</h1>
+            </Row>
+            <Row>
+            <Col className="details-header text-center py-2">
             <Container>
-                <Row className="col-8 offset-2">
-                    <Button size="sm" color="primary">
-                        <Link to="/" style={{color: "white"}}>Back to Main Page</Link>
-                    </Button>
-                </Row>
-            </Container>
-                <Row className="col-7 offset-4">
-                    <h1>Your Tenant Info</h1>
-                </Row>
-                <Row className="col-8 offset-2">
-                <Nav tabs>
+            <Nav pills>
+                <Col>
                     <NavItem>
-                        <NavLink href="/tenant-main">Tenant Summary</NavLink>
+                        <NavLink style={{color: "white"}} href="/tenant-main">Tenant Summary</NavLink>
                     </NavItem>
+                </Col>
+                <Col>
                     <NavItem>
-                        <NavLink href="/tenant-owner">Property Information</NavLink>
+                        <NavLink style={{color: "white"}} href="/tenant-owner">Property Information</NavLink>
                     </NavItem>
+                </Col>
+                <Col>
                     <NavItem>
                         <NavLink className='active' href="/tenant-request">Request Repairs</NavLink>
                     </NavItem>
-                    <NavItem>
-                        <NavLink href="#">Message Center</NavLink>
-                    </NavItem>
-                </Nav>
+                </Col>
+            </Nav>
+            </Container>
+            </Col>
             </Row>
-            <Row>
             <Container>
-            <Container>
-            <Form>
+            <Form className='col-8 offset-2'>
                 <Row form>
-                <Col md={4}>
+                <Col md={6}>
                         <FormGroup>
                             <Label for="phone">Phone</Label>
                             <Input type="text" value={this.state.tenant_phone} onChange={this.handleTenantPhone.bind(this)} placeholder="i.e. 800-444-3032" />
                         </FormGroup>
                 </Col>
-                <Col md={4}>
+                <Col md={6}>
                         <FormGroup>
                             <Label for="email">Email</Label>
                             <Input type="text" value={this.state.tenant_email} onChange={this.handleTenantEmail.bind(this)} placeholder="i.e. Howie@propmanagement.com" />
@@ -95,7 +93,7 @@ export default class TenantRequest extends React.Component{
                 </Col>
                 </Row>
                 <Row>
-                <Col md={8}>
+                <Col md={12}>
                         <FormGroup>
                             <Label for="repair">Repair Request</Label>
                             <Input type="textarea" value={this.state.repair_request} onChange={this.handleRepairRequest.bind(this)} placeholder="i.e. Ceiling Fan Does Not Work." />
@@ -105,13 +103,13 @@ export default class TenantRequest extends React.Component{
                 <Button className="mr-2" color="primary" onChange={this.handleClearButton} style={{color: "white"}}>
                     Cancel
                 </Button>
-                <Button onClick={this.createRepairRequest} color="info">
-                    <Link to="tenant-main"style={{color: "white"}} >Submit</Link>
-                </Button>
+                <Link to="tenant-main"style={{color: "white"}} >
+                    <Button onClick={this.createRepairRequest} color="info">
+                        Submit
+                    </Button>
+                </Link>
             </Form>
             </Container>
-            </Container>
-            </Row>
             </div>
         );
     }
