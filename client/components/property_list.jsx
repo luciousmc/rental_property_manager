@@ -26,17 +26,18 @@ class PropertyList extends React.Component{
             <div>
                 <Row>
                     <Col className="header-background">
-                        <h1 className="text-center mx-auto mb-4">Your Properties</h1>
+                        <h1 className="text-center" style={{'margin-top':'5%'}}>Your Properties</h1>
                     </Col>
                 </Row>
                 <Row className="col-8 offset-2">
                     <Container>
                         <Row className='my-5'>
                             <PropertyListItem propertyList={this.state.properties} setView={this.props.setView} />
-                        </Row>
-                            <Link to="/add-property" style={{color: 'white'}}>
-                                <Button size='lg' className='col-4 offset-3' color="info">Add Property</Button>
+                            <Link to="/add-property" style={{color: 'white', margin:'auto'}}>
+                                <Button size='lg' color="info">Add Property</Button>
                             </Link>
+                        </Row>
+
                     </Container>
                 </Row>
             </div>

@@ -97,7 +97,7 @@ export default class AddTenant extends React.Component{
             <React.Fragment>
                 <Row>
                     <Col className="header-background">
-                        <h1 className="property-detail-header mx-auto text-center">Add Tenant</h1>
+                        <h1 className="property-detail-header text-center" style={{'margin-top':'5%'}}>Add Tenant</h1>
                     </Col>
                 </Row>
                 <div className="form-container col-8 offset-2">

@@ -100,7 +100,7 @@ export default class AddProperty extends React.Component {
         <React.Fragment>
             <Row>
                 <Col className="header-background">
-                    <h1 className="text-center mx-auto mb-4">Add Property</h1>
+                    <h1 className="property-detail-header text-center" style={{'margin-top':'5%'}}>Add Property</h1>
                 </Col>
             </Row>
             <div className="form-container col-8 offset-2">

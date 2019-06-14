@@ -51,7 +51,7 @@ export default class AddUnit extends React.Component{
             <React.Fragment>
                 <Row>
                     <Col className="header-background">
-                        <h1 className="property-detail-header mx-auto text-center">Add Unit</h1>
+                        <h1 className="text-center property-detail-header" style={{'margin-top':'5%'}}>Add Unit</h1>
                     </Col>
                 </Row>
                 <Row>
