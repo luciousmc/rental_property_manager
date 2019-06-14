@@ -173,6 +173,7 @@ export default class AddTenant extends React.Component{
 
                     </Form>
                 </div>
+                <div className='tempHeight'></div>
             </React.Fragment>
         );
     }
