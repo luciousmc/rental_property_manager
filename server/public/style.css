@@ -6,6 +6,13 @@ body {
 .header-bar {
     height: 2vh;
 }
+.header-background {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/images/header_background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 170px;
+}
+
 .landing-intro {
     color: white;
     text-align: justify;
@@ -30,7 +37,9 @@ body {
     width: 200px;
 }
 .property-detail-header {
+    color: white;
     height: 10vh;
+    text-shadow: 1px 1px 5px black;
 }
 .property-summary-header, .details-header {
     background: grey;

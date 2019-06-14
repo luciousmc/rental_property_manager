@@ -49,6 +49,7 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["imageToUpload"]["tmp_name"], $file_name)) {
         $query = "INSERT INTO `property_images`(`property_id`, `url`) VALUES ('$property','$path')";
         $result = mysqli_query($conn, $query);
+
         echo "The file $file_name has been uploaded.";
     } else {
         echo "Sorry, there was an error uploading your file.";

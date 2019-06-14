@@ -17,7 +17,10 @@ export default (props)=> {
     return (
         <div>
             <Row>
-                <h1 className="property-detail-header mx-auto">{props.propertyDetail.street_address}</h1>
+                <Col className="header-background">
+                    <h1 className="property-detail-header text-center display-3">{props.propertyDetail.property_name}</h1>
+                    <h1 className="property-detail-header text-center display-5">{props.propertyDetail.street_address}</h1>
+                </Col> 
             </Row>
             <Row>
             <Col className="details-header text-center py-2">
