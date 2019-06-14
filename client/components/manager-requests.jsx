@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Container, Button } from 'reactstrap';
+import {Row, Container, Button, Col, Nav} from 'reactstrap';
 import ManagerListItem from './manager-request-item';
 import {Link} from 'react-router-dom';
 
@@ -23,21 +23,31 @@ export default class ManagerReview extends React.Component{
     }
 
     render(){
+        console.log(this.props.match.params.id);
         return(
-            <div>
-                <Container>
+            <React.Fragment>
                 <Row>
                     <h1 className="mx-auto mb-4">Your Repair Requests</h1>
                 </Row>
                 <Row>
-                    <Container>
+                    <Col className="details-header text-center py-2">
+                        <Nav pills>
+                            <Col>
+                                <a className="detail-link p-2 my-1" href={`/property/${this.props.match.params.id}`}>Property Summary</a>
+                            </Col>
+                            <Col>
+                                <a className="detail-link p-2 my-1" href={`/property/${this.props.match.params.id}/add-unit`}>Add Unit</a>
+                            </Col>
+                            <Col>
+                                <a className="detail-link p-2 my-1" href={`/property/${this.props.match.params.id}/manager-review`}>Repair Requests</a>
+                            </Col>
+                        </Nav>
+                    </Col>
+                </Row>
                         <Row>
                             <ManagerListItem managerList={this.state.requests} setView={this.props.setView}/>
                         </Row>
-                    </Container>
-                </Row>
-                </Container>
-            </div>
+            </React.Fragment>
         );
     }
 }

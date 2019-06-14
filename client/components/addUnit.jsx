@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Row, Button, Form, FormGroup, Label, Input} from 'reactstrap';
+import {Col, Row, Button, Form, FormGroup, Label, Input, Nav} from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 export default class AddUnit extends React.Component{
@@ -29,7 +29,7 @@ export default class AddUnit extends React.Component{
     }
 
     createUnit(event){
-        event.preventDefault();
+        // event.preventDefault();
         
         let data = {
             property_id: this.props.propertyID,
@@ -48,10 +48,27 @@ export default class AddUnit extends React.Component{
     }
     render(){
         return(
-            <Form>
+            <React.Fragment>
                 <Row>
-                <h1 className="mx-auto mb-4">Add Unit</h1>
+                    <h1 className="property-detail-header mx-auto">Add Unit</h1>
                 </Row>
+                <Row>
+                    <Col className="details-header text-center py-2">
+                            <Nav pills>
+                                <Col>
+                                    <a className="detail-link p-2 my-1" href={`/property/${this.props.propertyID}`}>Property Summary</a>
+                                </Col>
+                                <Col>
+                                    <a className="detail-link p-2 my-1" href={`/property/${this.props.propertyID}/add-unit`}>Add Unit</a>
+                                </Col>
+                                <Col>
+                                    <a className="detail-link p-2 my-1" href={`/property/${this.props.propertyID}/manager-review`}>Repair Requests</a>
+                                </Col>
+                            </Nav>
+                    </Col>
+                </Row>
+
+            <Form>
                 <Row form>
                     <Col md={4}>
                         <FormGroup>
@@ -93,18 +110,25 @@ export default class AddUnit extends React.Component{
                         </FormGroup>
                     </Col>
                 </Row>
-                <Link to="/manager-main" style={{color: "white"}}>
-                    <Button className="mr-2" color="primary">
-                        Back
-                    </Button>
+                <Link to={{pathname:"/property/"+ this.props.propertyID}} style={{color: "white"}}>
+                    <Button className="mr-2" color="primary">Back</Button>
                 </Link>
-                <Link to="/manager-main" style={{color: "white"}} >
-                    <Button onClick={this.createUnit} color="info">
-                        Submit
-                    </Button>
+                <Link to={{pathname:"/property/"+ this.props.propertyID}} style={{color: "white"}}>
+                    <Button onClick={this.createUnit} color="info">Submit</Button>
                 </Link>
+                {/*<Link to="/manager-main" style={{color: "white"}}>*/}
+                {/*    <Button className="mr-2" color="primary">*/}
+                {/*        Back*/}
+                {/*    </Button>*/}
+                {/*</Link>*/}
+                {/*<Link to="/manager-main" style={{color: "white"}} >*/}
+                {/*    <Button onClick={this.createUnit} color="info">*/}
+                {/*        Submit*/}
+                {/*    </Button>*/}
+                {/*</Link>*/}
                 
             </Form>
+            </React.Fragment>
         );
     }
 }

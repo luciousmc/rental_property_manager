@@ -12,7 +12,7 @@ if (!(is_dir($target_dir))) {
     mkdir($target_dir);
 }
 
-$imageFileType = strtolower(pathinfo($file_path,PATHINFO_EXTENSION));
+$imageFileType = strtolower(pathinfo($file_name,PATHINFO_EXTENSION));
 
 // if(isset($_POST["submit"])) {
 //    $check = getimagesize($_FILES["imageToUpload"]["tmp_name"]);
@@ -49,7 +49,7 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["imageToUpload"]["tmp_name"], $file_name)) {
         $query = "INSERT INTO `property_images`(`property_id`, `url`) VALUES ('$property','$path')";
         $result = mysqli_query($conn, $query);
-        echo "The file ". basename( $_FILES["imageToUpload"]["tmp_name"]). " has been uploaded.";
+        echo "The file $file_name has been uploaded.";
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
