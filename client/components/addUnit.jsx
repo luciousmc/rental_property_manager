@@ -67,67 +67,56 @@ export default class AddUnit extends React.Component{
                             </Nav>
                     </Col>
                 </Row>
+                <Form className='my-5'>
+                    <Row form>
+                        <Col md={4}>
+                            <FormGroup>
+                                <Label for="unitNum">Unit Number</Label>
+                                <Input type="text" name="unit" id="unit_id"  value={this.state.unit_number} onChange={this.handleUnitChange.bind(this)} placeholder="" />
+                            </FormGroup>
+                        </Col>
+                        <Col md={4}>
+                            <FormGroup>
+                                <Label for="units">Sq ft.</Label>
+                                <Input type="text" name="units" id="units" value={this.state.sqft} onChange={this.handleSqftChange.bind(this)} placeholder="" />
+                            </FormGroup>
+                        </Col>
 
-            <Form>
-                <Row form>
+                    </Row>
+                    <Row form>
                     <Col md={4}>
-                        <FormGroup>
-                            <Label for="unitNum">Unit Number</Label>
-                            <Input type="text" name="unit" id="unit_id"  value={this.state.unit_number} onChange={this.handleUnitChange.bind(this)} placeholder="" />
-                        </FormGroup>
+                            <FormGroup>
+                                <Label for="rent">Monthly Rent</Label>
+                                <Input type="text" name="rent" id="rentAmount" value={this.state.rent} onChange={this.handleRentChange.bind(this)} placeholder="$" />
+                            </FormGroup>
                     </Col>
-                    <Col md={4}>
-                        <FormGroup>
-                            <Label for="units">Sq ft.</Label>
-                            <Input type="text" name="units" id="units" value={this.state.sqft} onChange={this.handleSqftChange.bind(this)} placeholder="" />
-                        </FormGroup>
-                    </Col>
-                    
-                </Row>
-                <Row form>
-                <Col md={4}>
-                        <FormGroup>
-                            <Label for="rent">Monthly Rent</Label>
-                            <Input type="text" name="rent" id="rentAmount" value={this.state.rent} onChange={this.handleRentChange.bind(this)} placeholder="$" />
-                        </FormGroup>
-                </Col>
-                    <Col md={4}>
-                        <FormGroup>
-                            <Label for="rent">Due Date</Label>
-                            <Input type="date" name="rent" id="rentDate" placeholder="" />
-                        </FormGroup>
-                    </Col>
-                </Row>
-                <Row form>
-                    <Col md={4}>
-                        <FormGroup>
-                            <Label for="status">Unit Status</Label>
-                            <Input type="select" name="status" id="status" onChange={this.handleStatusChange.bind(this)}>
-                                <option value={'Vacant'}>Vacant</option>
-                                <option value={'Occupied'}>Occupied</option>
-                                <option value={'Pending'}>Pending</option>
-                            </Input>
-                        </FormGroup>
-                    </Col>
-                </Row>
-                <Link to={{pathname:"/property/"+ this.props.propertyID}} style={{color: "white"}}>
-                    <Button className="mr-2" color="primary">Back</Button>
-                </Link>
-                <Link to={{pathname:"/property/"+ this.props.propertyID}} style={{color: "white"}}>
-                    <Button onClick={this.createUnit} color="info">Submit</Button>
-                </Link>
-                {/*<Link to="/manager-main" style={{color: "white"}}>*/}
-                {/*    <Button className="mr-2" color="primary">*/}
-                {/*        Back*/}
-                {/*    </Button>*/}
-                {/*</Link>*/}
-                {/*<Link to="/manager-main" style={{color: "white"}} >*/}
-                {/*    <Button onClick={this.createUnit} color="info">*/}
-                {/*        Submit*/}
-                {/*    </Button>*/}
-                {/*</Link>*/}
-                
-            </Form>
+                        <Col md={4}>
+                            <FormGroup>
+                                <Label for="rent">Due Date</Label>
+                                <Input type="date" name="rent" id="rentDate" placeholder="" />
+                            </FormGroup>
+                        </Col>
+                    </Row>
+                    <Row form>
+                        <Col md={4}>
+                            <FormGroup>
+                                <Label for="status">Unit Status</Label>
+                                <Input type="select" name="status" id="status" onChange={this.handleStatusChange.bind(this)}>
+                                    <option value={'Vacant'}>Vacant</option>
+                                    <option value={'Occupied'}>Occupied</option>
+                                    <option value={'Pending'}>Pending</option>
+                                </Input>
+                            </FormGroup>
+                        </Col>
+                    </Row>
+                    <Link to={{pathname:"/property/"+ this.props.propertyID}} style={{color: "white"}}>
+                        <Button className="mr-2" color="primary">Back</Button>
+                    </Link>
+                    <Link to={{pathname:"/property/"+ this.props.propertyID}} style={{color: "white"}}>
+                        <Button onClick={this.createUnit} color="info">Submit</Button>
+                    </Link>
+
+                </Form>
             </React.Fragment>
         );
     }

@@ -44,9 +44,9 @@ export default class ManagerReview extends React.Component{
                         </Nav>
                     </Col>
                 </Row>
-                        <Row>
-                            <ManagerListItem managerList={this.state.requests} setView={this.props.setView}/>
-                        </Row>
+                <Row className='my-5'>
+                    <ManagerListItem managerList={this.state.requests} setView={this.props.setView}/>
+                </Row>
             </React.Fragment>
         );
     }

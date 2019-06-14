@@ -36,7 +36,7 @@ class PropertyList extends React.Component{
                                 </NavItem>
                             </Nav>
                         </Row>
-                        <Row>
+                        <Row className='my-5'>
                             <PropertyListItem propertyList={this.state.properties} setView={this.props.setView} />
                         </Row>
                     </Container>
