@@ -23,13 +23,13 @@ export default class TenantMain extends React.Component{
         return(
             <div>
                 <Row>
-                    <h3 className="display-4 property-detail-header mx-auto">{this.state.tenantInfo.business_name} Portal</h3>
+                    <Col className="header-background">
+                        <h1 className="property-detail-header text-center display-3">{this.state.tenantInfo.business_name} Portal</h1>
+                        <h3 className="property-detail-header text-center display-5">{this.state.tenantInfo.street_address}, Unit: {this.state.tenantInfo.unit_number}</h3>
+                    </Col>
                 </Row>
                 <Row>
-                    <h3 className="property-detail-header mx-auto">{this.state.tenantInfo.street_address}, Unit {this.state.tenantInfo.unit_number}</h3>
-                </Row>
-                <Row>
-                <Col className="details-header text-center py-2">
+                    <Col className="details-header text-center py-2">
                 <Container>
                 <Nav pills >
                     <Col>

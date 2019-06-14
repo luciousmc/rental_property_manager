@@ -22,15 +22,15 @@ export default class TenantOwner extends React.Component{
     render(){
         return(
             <div>
-                    <Row>
-                        <h3 className="display-4 property-detail-header mx-auto">{this.state.ownerInfo.business_name} Portal </h3>
-                    </Row>
-                    <Row>
-                        <h3 className="property-detail-header mx-auto">{this.state.ownerInfo.street_address}, Unit {this.state.ownerInfo.unit_number} </h3>
-                    </Row>
-                    <Row>
-                    <Col className="details-header text-center py-2">
-                    <Container>
+                        <Row>
+                            <Col className="header-background">
+                                <h1 className="property-detail-header text-center display-3">{this.state.ownerInfo.business_name} Portal</h1>
+                                <h3 className="property-detail-header text-center display-5">{this.state.ownerInfo.street_address}, Unit: {this.state.ownerInfo.unit_number}</h3>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="details-header text-center py-2">
+                                <Container>
                     <Nav pills>
                         <Col>
                             <NavItem>

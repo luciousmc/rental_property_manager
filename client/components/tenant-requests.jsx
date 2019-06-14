@@ -9,9 +9,22 @@ export default class TenantRequest extends React.Component{
             tenant_phone: '',
             tenant_email: '',
             tenant_id: 1,
-            repair_request: ''
+            repair_request: '',
+            tenantInfo: []
         };
         this.createRepairRequest = this.createRepairRequest.bind(this);
+        this.getTenantInfo = this.getTenantInfo.bind(this);
+    }
+
+    componentDidMount(){
+        this.getTenantInfo();
+    }
+    getTenantInfo(){
+        fetch('/api/tenants/tenant-info.php')
+            .then(response=>response.json())
+            .then(tenantList=>{
+                this.setState({ tenantInfo: tenantList });
+            })
     }
 
     handleTenantPhone(e){
@@ -50,9 +63,12 @@ export default class TenantRequest extends React.Component{
     render(){
         return(
             <div>
-            <Row>
-                <h1 className="property-detail-header mx-auto">Request Repairs</h1>
-            </Row>
+                <Row>
+                    <Col className="header-background">
+                        <h3 className="property-detail-header text-center display-3">Request Repairs </h3>
+                        <h3 className="property-detail-header text-center display-5">{this.state.tenantInfo.street_address}, Unit: {this.state.tenantInfo.unit_number}</h3>
+                    </Col>
+                </Row>
             <Row>
             <Col className="details-header text-center py-2">
             <Container>
