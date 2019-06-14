@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 12, 2019 at 10:41 PM
+-- Generation Time: Jun 14, 2019 at 04:43 PM
 -- Server version: 5.7.26-0ubuntu0.18.04.1
 -- PHP Version: 7.2.17-0ubuntu0.18.04.1
 
@@ -65,7 +65,8 @@ CREATE TABLE `properties` (
 
 INSERT INTO `properties` (`id`, `property_name`, `street_address`, `city`, `state`, `zip`, `sqft`, `property_type`, `manager_contact`, `manager_phone`, `parking_spaces`) VALUES
 (1, 'vista complex', '23002 El Toro Road', 'irvine', 'ca', '91101', 20000, 'Multi Unit', 'Joe', '8008888888', 30),
-(2, 'Spectrum Center', 'Spectrum Drive', 'Irvine', 'CA', '92620', 4000, 'Multi Unit', 'Spencer', '7148182312', 200);
+(2, 'Spectrum Center', 'Spectrum Drive', 'Irvine', 'CA', '92620', 4000, 'Multi Unit', 'Spencer', '7148182312', 200),
+(3, 'Harris Ranch', '2134 Harry Lane', 'Pasadena', 'CA', '91010', 13000, 'Single Unit', 'Mike Harris ', '4542178423', 10);
 
 -- --------------------------------------------------------
 
@@ -109,7 +110,8 @@ CREATE TABLE `tenants` (
 --
 
 INSERT INTO `tenants` (`id`, `unit_id`, `business_name`, `contact_name`, `tenant_phone`, `tenant_email`, `move_in_date`, `lease_end_date`, `rent_due_date`) VALUES
-(1, 1, 'Toro Ice', 'Toro', '99999999999', 'toro@tora.com', '2019-06-11', '2019-06-11', '2019-06-11');
+(1, 1, 'Wonder Bread Racing', 'Ricky Bobby', '5628937321', 'ricky@bobby.com', '2019-06-11', '2019-06-11', '2019-06-11'),
+(2, 2, 'Joes Pool Service', 'Joe Rogan', '2139811234', 'joe@pools.com', '2019-06-29', '2019-06-28', '2019-06-26');
 
 -- --------------------------------------------------------
 
@@ -134,16 +136,19 @@ CREATE TABLE `tenant_requests` (
   `tenant_phone` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
   `tenant_email` varchar(35) COLLATE utf8_unicode_ci NOT NULL,
   `repair_request` text COLLATE utf8_unicode_ci NOT NULL,
-  `tenant_id` mediumint(8) UNSIGNED NOT NULL
+  `tenant_id` mediumint(8) UNSIGNED NOT NULL,
+  `status` enum('Pending','Approved','Denied') COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `tenant_requests`
 --
 
-INSERT INTO `tenant_requests` (`id`, `tenant_phone`, `tenant_email`, `repair_request`, `tenant_id`) VALUES
-(1, '7145627777', 'toro@to.com', 'Please Change Light Bulb', 1),
-(2, '6287148852', 'Toro@toro.com', 'Please Change Ceiling Tiles', 1);
+INSERT INTO `tenant_requests` (`id`, `tenant_phone`, `tenant_email`, `repair_request`, `tenant_id`, `status`) VALUES
+(1, '7145627777', 'ricky@bobby.com', 'Please Change Light Bulb', 1, 'Pending'),
+(2, '6287148852', 'Joe@ro.com', 'Please Change Ceiling Tiles in lobby.', 1, 'Pending'),
+(3, '7824548234', 'mike@me.com', 'A/C is not working, and Summer is here.', 1, 'Pending'),
+(4, '828626723', 'dan@lfz.com', 'Can you fix your figma?', 1, 'Pending');
 
 -- --------------------------------------------------------
 
@@ -165,7 +170,8 @@ CREATE TABLE `units` (
 --
 
 INSERT INTO `units` (`id`, `property_id`, `unit_number`, `sqft`, `rent`, `status`) VALUES
-(1, 1, '100T', 2500, 2500, 'Occupied');
+(1, 1, '100T', 2500, 2500, 'Occupied'),
+(2, 3, '200', 1800, 2000, 'Occupied');
 
 -- --------------------------------------------------------
 
@@ -244,17 +250,17 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT for table `properties`
 --
 ALTER TABLE `properties`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `property_images`
 --
 ALTER TABLE `property_images`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tenants`
 --
 ALTER TABLE `tenants`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tenant_images`
 --
@@ -264,12 +270,12 @@ ALTER TABLE `tenant_images`
 -- AUTO_INCREMENT for table `tenant_requests`
 --
 ALTER TABLE `tenant_requests`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `units`
 --
 ALTER TABLE `units`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `unit_images`
 --

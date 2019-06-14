@@ -97,7 +97,7 @@ export default class AddTenant extends React.Component{
             <React.Fragment>
                 <Row>
                     <Col className="header-background">
-                        <h1 className="property-detail-header text-center" style={{'margin-top':'5%'}}>Add Tenant</h1>
+                        <h1 className="property-detail-header display-3 mt-5 text-center">Add Tenant</h1>
                     </Col>
                 </Row>
                 <div className="form-container col-8 offset-2">
@@ -165,7 +165,7 @@ export default class AddTenant extends React.Component{
                         <Link to={{pathname:"/property/"+ this.props.propertyID}} style={{color: "white"}}>
                             <Button className="mr-2" color="primary">Back</Button>
                         </Link>
-                        <Link to="/manager-main" style={{color: "white"}} >
+                        <Link to={{pathname:"/property/"+ this.props.propertyID}} style={{color: "white"}} >
                             <Button onClick={this.createTenant} color="info">
                                 Submit
                             </Button>
