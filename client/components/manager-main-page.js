@@ -4,12 +4,10 @@ import PropertyList from './property_list';
 
 export default (props)=>(
     <React.Fragment>
-        <Container>
             <Row>
-                <Col className="col-8 offset-2">
+                <div className="col">
                     <PropertyList />
-                </Col>
+                </div>
             </Row>
-        </Container>
     </React.Fragment>
 );

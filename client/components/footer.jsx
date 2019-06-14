@@ -20,15 +20,6 @@ export default class Footer extends React.Component{
                             <li><a href="/tenant-main">Tenant Portal</a></li>
                         </ul>
                     </Col>
-                    <Col className="col-sm-6 col-md-2">
-                        <h5>About us</h5>
-                        <ul>
-                            <li><a href="#">Meet the Team!</a></li>
-                        </ul>
-                    </Col>
-                    <Col className="col-md-3">
-                        <Button className="btn btn-danger">Contact us</Button>
-                    </Col>
                 </Row>
             </Container>
             <div color="dark" className="footer-copyright">

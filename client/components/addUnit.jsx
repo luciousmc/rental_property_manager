@@ -50,7 +50,9 @@ export default class AddUnit extends React.Component{
         return(
             <React.Fragment>
                 <Row>
-                    <h1 className="property-detail-header mx-auto">Add Unit</h1>
+                    <Col className="header-background">
+                        <h1 className="property-detail-header mx-auto text-center">Add Unit</h1>
+                    </Col>
                 </Row>
                 <Row>
                     <Col className="details-header text-center py-2">
@@ -67,6 +69,7 @@ export default class AddUnit extends React.Component{
                             </Nav>
                     </Col>
                 </Row>
+                <div className="form-container col-8 offset-2">
                 <Form className='my-5'>
                     <Row form>
                         <Col md={4}>
@@ -97,18 +100,18 @@ export default class AddUnit extends React.Component{
                             </FormGroup>
                         </Col>
                     </Row>
-                    <Row form>
-                        <Col md={4}>
-                            <FormGroup>
-                                <Label for="status">Unit Status</Label>
-                                <Input type="select" name="status" id="status" onChange={this.handleStatusChange.bind(this)}>
-                                    <option value={'Vacant'}>Vacant</option>
-                                    <option value={'Occupied'}>Occupied</option>
-                                    <option value={'Pending'}>Pending</option>
-                                </Input>
-                            </FormGroup>
-                        </Col>
-                    </Row>
+                    {/*<Row form>*/}
+                    {/*    <Col md={4}>*/}
+                    {/*        <FormGroup>*/}
+                    {/*            <Label for="status">Unit Status</Label>*/}
+                    {/*            <Input type="select" name="status" id="status" onChange={this.handleStatusChange.bind(this)}>*/}
+                    {/*                <option value={'Vacant'}>Vacant</option>*/}
+                    {/*                <option value={'Occupied'}>Occupied</option>*/}
+                    {/*                <option value={'Pending'}>Pending</option>*/}
+                    {/*            </Input>*/}
+                    {/*        </FormGroup>*/}
+                    {/*    </Col>*/}
+                    {/*</Row>*/}
                     <Link to={{pathname:"/property/"+ this.props.propertyID}} style={{color: "white"}}>
                         <Button className="mr-2" color="primary">Back</Button>
                     </Link>
@@ -117,6 +120,7 @@ export default class AddUnit extends React.Component{
                     </Link>
 
                 </Form>
+                </div>
             </React.Fragment>
         );
     }

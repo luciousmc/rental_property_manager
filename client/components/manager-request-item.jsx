@@ -31,10 +31,10 @@ function ManagerListItem(props){
                                     <Col>
                                         <h5 className="text-muted"><b>Tenant Email: </b>{request.tenant_email}</h5>
                                     </Col>
-                                    <Col>
-                                        <button className='btn btn-success'>Approve </button>
-                                        <button className='btn btn-danger'> Reject </button>
-                                    </Col>
+                                    {/*<Col>*/}
+                                    {/*    <button className='btn btn-success'>Approve </button>*/}
+                                    {/*    <button className='btn btn-danger'> Reject </button>*/}
+                                    {/*</Col>*/}
                                 </Row>
                             </CardBody>
                         </Col>

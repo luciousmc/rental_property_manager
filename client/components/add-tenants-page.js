@@ -5,7 +5,7 @@ import AddTenant from './addTenant'
 export default (props)=>(
     <React.Fragment>
         <Row>
-            <div className="form-container col-8 offset-2">
+            <div className="col">
                 <AddTenant  propertyID={props.match.params.id}/>
             </div>
         </Row>

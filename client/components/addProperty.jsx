@@ -71,7 +71,7 @@ export default class AddProperty extends React.Component {
     }
    
     addProperty(e){
-      e.preventDefault();
+      // e.preventDefault();
 
         let data = {
             property_name: this.state.propertyName,
@@ -97,97 +97,101 @@ export default class AddProperty extends React.Component {
 
     render() {
     return (
-      <Form onSubmit={this.addProperty} className='my-5'>
-        <Row>
-        <h1 className="mx-auto mb-4">Add Property</h1>
-        </Row>
-        <Row form>
-          <Col md={8}>
-            <FormGroup>
-              <Label for="property">Property Name</Label>
-              <Input type="text" name="property_name" id="property_name" placeholder="Moore Properties" value={this.state.propertyName} onChange={this.handlePropName} />
-            </FormGroup>
-          </Col>
-          <Col md={4}>
-            <FormGroup>
-            <Label for="select">Property Type</Label>
-              <Input type="select" name="property_type" id="property_type" value={this.state.propertyType} onChange={this.handlePropType}>
-                <option>Choose One</option>
-                <option>Multi Unit</option>
-                <option>Single Unit</option>
-              </Input>
-            </FormGroup>
-          </Col>
-        </Row>
+        <React.Fragment>
+            <Row>
+                <Col className="header-background">
+                    <h1 className="text-center mx-auto mb-4">Add Property</h1>
+                </Col>
+            </Row>
+            <div className="form-container col-8 offset-2">
+              <Form onSubmit={this.addProperty} className='my-5'>
+                <Row form>
+                  <Col md={8}>
+                    <FormGroup>
+                      <Label for="property">Property Name</Label>
+                      <Input type="text" name="property_name" id="property_name" placeholder="Moore Properties" value={this.state.propertyName} onChange={this.handlePropName} />
+                    </FormGroup>
+                  </Col>
+                  <Col md={4}>
+                    <FormGroup>
+                    <Label for="select">Property Type</Label>
+                      <Input type="select" name="property_type" id="property_type" value={this.state.propertyType} onChange={this.handlePropType}>
+                        <option>Choose One</option>
+                        <option>Multi Unit</option>
+                        <option>Single Unit</option>
+                      </Input>
+                    </FormGroup>
+                  </Col>
+                </Row>
 
-        <Row form>
-          <Col md={8}>
-            <FormGroup>
-            <Label for="businessName">Manager Name</Label>
-              <Input type="text" name="manager_contact" id="manager_contact" placeholder="First and Last Name" value={this.state.managerContact} onChange={this.handleMgrContact}/>
-            </FormGroup>
-          </Col>
-          <Col md={4}>
-            <FormGroup>
-            <Label for="BusinessPhone">Phone</Label>
-              <Input type="tel" name="manager_phone" id="manager_phone" placeholder="" value={this.state.managerPhone} onChange={this.handleMgrPhone}/>
-            </FormGroup>
-          </Col>
-        </Row>
-        <Row form>
-          <Col md={12}>
-            <FormGroup>
-              <Label for="address">Street Address</Label>
-              <Input type="text" name="street_address" id="street_address" placeholder="123 main st" value={this.state.streetAddress} onChange={this.handleAddress}/>
-            </FormGroup>
-          </Col>
-          </Row>
-          <Row form>
-          <Col md={6}>
-            <FormGroup>
-              <Label for="city">City</Label>
-              <Input type="text" name="city" id="City" value={this.state.city} onChange={this.handleCity}/>
-            </FormGroup>
-          </Col>
-          <Col md={3}>
-            <FormGroup>
-              <Label for="state">State</Label>
-              <Input type="text" name="state" id="State" value={this.state.state} onChange={this.handleState}/>
-            </FormGroup>
-          </Col>
-          <Col md={3}>
-            <FormGroup>
-              <Label for="zip">Zip</Label>
-              <Input type="text" name="zip" id="Zip" value={this.state.zip} onChange={this.handleZip}/>
-            </FormGroup>  
-          </Col>
-        </Row>
-        <Row form>
-          <Col md={4}>
-            <FormGroup>
-              <Label for="parking">Parking Spaces</Label>
-              <Input type="text" name="parking_spaces" id="parking_spaces" placeholder="# of spots available" value={this.state.parking} onChange={this.handleParking}/>
-            </FormGroup>
-          </Col>
-          <Col md={4}>
-            <FormGroup>
-              <Label for="units">Sq ft.</Label>
-              <Input type="text" name="sqft" id="sqft" placeholder="" value={this.state.sqft} onChange={this.handleSqft}/>
-            </FormGroup>
-          </Col>
-          </Row>
-            <Link to="/manager-main" style={{color: "white"}}>
-                <Button className="mr-2" color="primary">
-                  Go Back
-                </Button>
-            </Link>
-            <Link to={"/manager-main"} style={{color: "white"}}>
-                <Button  onClick={this.addProperty}  color="info">
-                  Submit
-                </Button>
-            </Link>
-            
-        </Form>
+                <Row form>
+                  <Col md={8}>
+                    <FormGroup>
+                    <Label for="businessName">Manager Name</Label>
+                      <Input type="text" name="manager_contact" id="manager_contact" placeholder="First and Last Name" value={this.state.managerContact} onChange={this.handleMgrContact}/>
+                    </FormGroup>
+                  </Col>
+                  <Col md={4}>
+                    <FormGroup>
+                    <Label for="BusinessPhone">Phone</Label>
+                      <Input type="tel" name="manager_phone" id="manager_phone" placeholder="" value={this.state.managerPhone} onChange={this.handleMgrPhone}/>
+                    </FormGroup>
+                  </Col>
+                </Row>
+                <Row form>
+                  <Col md={12}>
+                    <FormGroup>
+                      <Label for="address">Street Address</Label>
+                      <Input type="text" name="street_address" id="street_address" placeholder="123 main st" value={this.state.streetAddress} onChange={this.handleAddress}/>
+                    </FormGroup>
+                  </Col>
+                  </Row>
+                  <Row form>
+                  <Col md={6}>
+                    <FormGroup>
+                      <Label for="city">City</Label>
+                      <Input type="text" name="city" id="City" value={this.state.city} onChange={this.handleCity}/>
+                    </FormGroup>
+                  </Col>
+                  <Col md={3}>
+                    <FormGroup>
+                      <Label for="state">State</Label>
+                      <Input type="text" name="state" id="State" value={this.state.state} onChange={this.handleState}/>
+                    </FormGroup>
+                  </Col>
+                  <Col md={3}>
+                    <FormGroup>
+                      <Label for="zip">Zip</Label>
+                      <Input type="text" name="zip" id="Zip" value={this.state.zip} onChange={this.handleZip}/>
+                    </FormGroup>
+                  </Col>
+                </Row>
+                <Row form>
+                  <Col md={4}>
+                    <FormGroup>
+                      <Label for="parking">Parking Spaces</Label>
+                      <Input type="text" name="parking_spaces" id="parking_spaces" placeholder="# of spots available" value={this.state.parking} onChange={this.handleParking}/>
+                    </FormGroup>
+                  </Col>
+                  <Col md={4}>
+                    <FormGroup>
+                      <Label for="units">Sq ft.</Label>
+                      <Input type="text" name="sqft" id="sqft" placeholder="" value={this.state.sqft} onChange={this.handleSqft}/>
+                    </FormGroup>
+                  </Col>
+                  </Row>
+                    <Link to="/manager-main" style={{color: "white"}}>
+                        <Button className="mr-2" color="primary">
+                          Go Back
+                        </Button>
+                    </Link>
+                    <Link to={"/manager-main"} style={{color: "white"}}>
+                        <Button  onClick={this.addProperty}  color="info">Submit</Button>
+                    </Link>
+
+                </Form>
+            </div>
+        </React.Fragment>
     );
     
   };

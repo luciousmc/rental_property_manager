@@ -23,11 +23,12 @@ export default class ManagerReview extends React.Component{
     }
 
     render(){
-        console.log(this.props.match.params.id);
         return(
             <React.Fragment>
                 <Row>
-                    <h1 className="mx-auto mb-4">Your Repair Requests</h1>
+                    <Col className="header-background">
+                        <h1 className="property-detail-header mx-auto text-center">Your Repair Requests</h1>
+                    </Col>
                 </Row>
                 <Row>
                     <Col className="details-header text-center py-2">

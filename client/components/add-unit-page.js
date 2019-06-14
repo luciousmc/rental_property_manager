@@ -5,7 +5,7 @@ import AddUnit from './addUnit';
 export default (props)=>(
     <React.Fragment>
         <Row>
-            <div className="form-container col-8 offset-2">
+            <div className="col">
                 <AddUnit propertyID={props.match.params.id} />
             </div>
         </Row>
