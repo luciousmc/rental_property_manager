@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Card, CardTitle, CardBody } from 'reactstrap';
 
 function ManagerListItem(props){
+    // this.setStatus
     if (props.managerList.length < 1){
         return(
             <Container>
@@ -11,10 +12,11 @@ function ManagerListItem(props){
             </Container>
         );
     }
+console.log(props);
     const outputList = props.managerList.map(request=>{
         return(
             <Container className="mb-3">
-                <Card className="property-card" key={request.unit_id} >
+                <Card className="property-card" key={request.request_id} >
                     <Row>
                         <Col sm="12">
                             <CardBody>
@@ -31,10 +33,10 @@ function ManagerListItem(props){
                                     <Col>
                                         <h5 className="text-muted"><b>Tenant Email: </b>{request.tenant_email}</h5>
                                     </Col>
-                                    {/*<Col>*/}
-                                    {/*    <button className='btn btn-success'>Approve </button>*/}
-                                    {/*    <button className='btn btn-danger'> Reject </button>*/}
-                                    {/*</Col>*/}
+                                    <Col>
+                                        <button className='btn btn-success' onClick={()=>{props.setStatus(request.request_id,'Approved')}}>Approve </button>{'   '}
+                                        <button className='btn btn-danger' onClick={()=>{props.setStatus(request.request_id,'Denied')}}>Denied </button>
+                                    </Col>
                                 </Row>
                             </CardBody>
                         </Col>

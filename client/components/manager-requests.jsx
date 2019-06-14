@@ -9,6 +9,7 @@ export default class ManagerReview extends React.Component{
         this.state = {
             requests: []
         };
+        this.statusRequestChange = this.statusRequestChange.bind(this);
     }
     componentDidMount(){
         this.getRequests();
@@ -22,7 +23,25 @@ export default class ManagerReview extends React.Component{
             })
     }
 
+    statusRequestChange(id, status){
+        debugger;
+        let requestData = {
+            status: status,
+            request_id: id
+        }
+        fetch('/api/tenants/repair_request_status.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(requestData)
+        })
+        .then(res => {
+            this.setState({requests: this.state.requests.filter((request)=> request.request_id != id)})
+        });
+
+    }
+
     render(){
+        // console.log(this.props);
         return(
             <React.Fragment>
                 <Row>
@@ -46,7 +65,7 @@ export default class ManagerReview extends React.Component{
                     </Col>
                 </Row>
                 <Row className='my-5'>
-                    <ManagerListItem managerList={this.state.requests} setView={this.props.setView}/>
+                    <ManagerListItem managerList={this.state.requests} setView={this.props.setView} setStatus={this.statusRequestChange}/>
                 </Row>
             </React.Fragment>
         );
