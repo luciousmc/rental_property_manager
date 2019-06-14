@@ -126,6 +126,7 @@ export default class TenantRequest extends React.Component{
                 </Link>
             </Form>
             </Container>
+            <div className='tempHeight'></div>
             </div>
         );
     }

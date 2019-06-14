@@ -92,6 +92,7 @@ export default class TenantOwner extends React.Component{
                             </div>
                         </Row>
                     </Container>
+                    <div className='tempHeight'></div>
             </div>
         );
     }
