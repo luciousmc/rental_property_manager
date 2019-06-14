@@ -45,7 +45,7 @@ export default class ManagerReview extends React.Component{
             <React.Fragment>
                 <Row>
                     <Col className="header-background">
-                        <h1 className="property-detail-header text-center" style={{'margin-top':'5%'}}>Your Repair Requests</h1>
+                        <h1 className="property-detail-header text-center display-3 mt-5">Your Repair Requests</h1>
                     </Col>
                 </Row>
                 <Row>

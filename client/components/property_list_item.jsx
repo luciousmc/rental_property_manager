@@ -21,7 +21,7 @@ function PropertyListItem(props){
                             <CardImg src={property.image ? property.image : "/images/business_default_image.jpg"} className="property-img" />
                         </Col>
                         <Col sm="8">
-                            <CardBody>
+                            <CardBody style={{ padding:'13px' }}>
                                 <CardTitle tag="h3">{property.streetAddress}</CardTitle>
                                 <Row>
                                     <Col>

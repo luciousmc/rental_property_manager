@@ -14,6 +14,7 @@ body {
 }
 
 .landing-intro {
+    font-size: 1.5rem;
     color: white;
     text-align: justify;
 }
@@ -34,7 +35,7 @@ body {
     cursor: pointer;
 }
 .property-img {
-    width: 200px;
+    width: 100%;
 }
 .property-detail-header {
     color: white;
@@ -121,11 +122,19 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 250px;
+    height: 200px;
 }
 ::-webkit-scrollbar { 
     display: none; 
 }
 .corners {
     padding: initial;
+}
+.landing-text {
+    font-size: 1.5rem;
+    text-align: justify;
+    width:90%;
+}
+.landing-text-head {
+    width: 90%;
 }

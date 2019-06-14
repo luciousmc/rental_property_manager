@@ -6,12 +6,12 @@ export const LandingPage = ()=>(
     <React.Fragment>
         <Container fluid className='corners'> 
         <Jumbotron fluid>
-            <div className="display-2 text-center">
+            <div className="display-2 text-center mb-5">
                 Moore Properties
             </div>
             <Container>
                 <div className="lead landing-intro">
-                    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+                Moore Property Management, Inc. is a professional real estate company committed to offering the best in property management services to our community. Our success will be measured by our ability to maximize our owner clients return on their investment while providing safe quality housing for our resident clients. We will at the same time strive to provide the best in customer service, business ethics, and innovation, in a superior work atmosphere.xs
                 </div>
             </Container>
         </Jumbotron>
@@ -22,13 +22,13 @@ export const LandingPage = ()=>(
         <Jumbotron className="manager-hero">
                 <Row style={{marginBottom: '40px'}}>
                     <Col>
-                        <Card className="mr-auto" style={{ width: '18rem'}} >
+                        <Card className="mr-auto">
                             <CardImg width="100%" src="images/skyscraper1.jpg" />
                         </Card>
                     </Col>
                     <Col style={{ color: 'white' }}>
-                        <h2 color="white" className="display-4">Property Managers</h2>
-                        <p className="lead">The benefits of using the Property Manager Portal will significantly help organize your investment properties, locate/contact delinquent tenant payments, and measure your overall monthly and annual revenue with maintenance reports.</p>
+                        <h2 color="white" className="display-4 mb-5 landing-text-head">Property Managers</h2>
+                        <p className="lead landing-text mb-5">The benefits of using the Property Manager Portal will significantly help organize your investment properties, locate/contact delinquent tenant payments, and measure your overall monthly and annual revenue with maintenance reports.</p>
                         <Link to="/manager-main" style={{color: 'white'}}>
                             <Button size='lg' className='col-4 offset-3' color="danger">
                             Manager Portal
@@ -42,24 +42,22 @@ export const LandingPage = ()=>(
 
         <Container fluid className='corners'> 
         <Jumbotron className="tenant-hero">
-            <Container>
-                <Row >
-                    <Col  style={{ color: 'white' }}>
-                        <h2 className="display-4">Tenants</h2>
-                        <p className="lead">The Tenant Portal helps to manage your current living situation and make your life a lot easier when it comes to contacting the owner. You can use this portal to view your housing details, request maintenance repairs on the property, and contact the owner when needed.</p>
-                        <Link to="/tenant-main" style={{color: 'white'}}>
-                            <Button size='lg' className='col-4 offset-3' color="danger">
-                            Tenant Portal
-                            </Button>
-                        </Link>
-                    </Col>
-                    <Col>
-                        <Card className="ml-auto" style={{ width: '18rem' }}>
-                            <CardImg width="100%" src="/images/Office_Building.jpg" />
-                        </Card>
-                    </Col>
-                </Row>
-            </Container>
+            <Row >
+                <Col style={{ color: 'white' }}>
+                    <h2 className="display-4 mb-5 text-right landing-text-head">Tenants</h2>
+                    <p className="lead landing-text mb-5">The Tenant Portal helps to manage your current living situation and make your life a lot easier when it comes to contacting the owner. You can use this portal to view your housing details, request maintenance repairs on the property, and contact the owner when needed.</p>
+                    <Link to="/tenant-main" style={{color: 'white'}}>
+                        <Button size='lg' className='col-4 offset-3' color="danger">
+                        Tenant Portal
+                        </Button>
+                    </Link>
+                </Col>
+                <Col>
+                    <Card className="ml-auto">
+                        <CardImg width="100%" src="/images/Office_Building.jpg" />
+                    </Card>
+                </Col>
+            </Row>
         </Jumbotron>
         </Container>
         <Container fluid className="background"></Container>
