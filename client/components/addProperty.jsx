@@ -97,7 +97,7 @@ export default class AddProperty extends React.Component {
 
     render() {
     return (
-      <Form onSubmit={this.addProperty}>
+      <Form onSubmit={this.addProperty} className='my-5'>
         <Row>
         <h1 className="mx-auto mb-4">Add Property</h1>
         </Row>

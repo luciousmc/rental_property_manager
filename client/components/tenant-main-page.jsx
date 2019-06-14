@@ -51,7 +51,7 @@ export default class TenantMain extends React.Component{
                 </Container>
                 </Col>
                 </Row>
-                <Container>
+                <Container className='my-5'>
                 <Row className='col-4 offset-2'><h4>Home Information: </h4></Row>
                     <Row className='col-4 offset-4'>
                         <div className='col-auto'>

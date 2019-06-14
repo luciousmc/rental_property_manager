@@ -94,7 +94,7 @@ export default class AddTenant extends React.Component{
 
     render(){
         return(
-            <Form>
+            <Form className='my-5'>
                 <Row>
                 <h1 className="mx-auto mb-4">Add Tenant</h1>
                 </Row>

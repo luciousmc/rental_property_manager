@@ -48,9 +48,9 @@ export default class AddUnit extends React.Component{
     }
     render(){
         return(
-            <Form>
+            <Form className='my-5'>
                 <Row>
-                <h1 className="mx-auto mb-4">Add Unit</h1>
+                <h1 className="mx-auto my-4">Add Unit</h1>
                 </Row>
                 <Row form>
                     <Col md={4}>

@@ -31,7 +31,7 @@ export default class ManagerReview extends React.Component{
                 </Row>
                 <Row>
                     <Container>
-                        <Row>
+                        <Row className='my-5'>
                             <ManagerListItem managerList={this.state.requests} setView={this.props.setView}/>
                         </Row>
                     </Container>

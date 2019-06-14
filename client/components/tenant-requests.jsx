@@ -77,7 +77,7 @@ export default class TenantRequest extends React.Component{
             </Col>
             </Row>
             <Container>
-            <Form className='col-8 offset-2'>
+            <Form className='col-8 offset-2 my-5'>
                 <Row form>
                 <Col md={6}>
                         <FormGroup>

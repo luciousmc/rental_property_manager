@@ -75,7 +75,7 @@ export default (props)=> {
             </Row>
             <Container>
                 <Col>
-                <Row>
+                <Row >
                     <h5 className="mr-5">
                         <a style={{color: 'white', textShadow: 20 }} href={`/property/${props.propertyDetail.id}/add-unit`}>+ Add Unit</a>
                     </h5>
