@@ -26,7 +26,7 @@ class PropertyList extends React.Component{
             <div>
                 <Row>
                     <Col className="header-background">
-                        <h1 className="text-center" style={{'margin-top':'5%'}}>Your Properties</h1>
+                        <h1 className="text-center property-detail-header display-3 mt-5">Your Properties</h1>
                     </Col>
                 </Row>
                 <Row className="col-8 offset-2">

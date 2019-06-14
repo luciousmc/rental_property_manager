@@ -51,11 +51,11 @@ body {
     text-shadow: 1px 1px 5px black;
     transition: .3s;
 }
-.unit-link:hover{
+/* .unit-link:hover{
     text-decoration: none;
     color:red;
     cursor: pointer;
-}
+} */
 .toast-unit{
     transition:.2s
 }

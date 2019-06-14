@@ -26,7 +26,7 @@ export const LandingPage = ()=>(
                             <CardImg width="100%" src="images/skyscraper1.jpg" />
                         </Card>
                     </Col>
-                    <Col>
+                    <Col style={{ color: 'white' }}>
                         <h2 color="white" className="display-4">Property Managers</h2>
                         <p className="lead">The benefits of using the Property Manager Portal will significantly help organize your investment properties, locate/contact delinquent tenant payments, and measure your overall monthly and annual revenue with maintenance reports.</p>
                         <Link to="/manager-main" style={{color: 'white'}}>
@@ -44,7 +44,7 @@ export const LandingPage = ()=>(
         <Jumbotron className="tenant-hero">
             <Container>
                 <Row >
-                    <Col>
+                    <Col  style={{ color: 'white' }}>
                         <h2 className="display-4">Tenants</h2>
                         <p className="lead">The Tenant Portal helps to manage your current living situation and make your life a lot easier when it comes to contacting the owner. You can use this portal to view your housing details, request maintenance repairs on the property, and contact the owner when needed.</p>
                         <Link to="/tenant-main" style={{color: 'white'}}>

@@ -24,7 +24,7 @@ class UnitItems extends React.Component{
                     <Col sm="4" className="mb-2">
                         <Toast key={unit.tenants.id} className="toast-unit">
                             <ToastHeader>
-                                <h4 className="unit-link" onClick={this.toggle}>Unit {unit.unitNumber}</h4>
+                                <h4 className="unit-link">Unit {unit.unitNumber}</h4>
                             </ToastHeader>
                             <ToastBody>
                                 <p>Business: {unit.tenants.business_name ? unit.tenants.business_name : ''}</p>
