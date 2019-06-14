@@ -3,9 +3,26 @@ body {
     min-width: 100vw;
     background-color: rgba(0,0,0.5,0.3);
 }
+/* .logo {
+    background: #dc3545 url('/images/600px-Metro-M.svg.png') no-repeat;
+    width: 10%;
+    height: 100px;
+    background-size: contain;
+}
+.logo:hover {
+    cursor: pointer;
+} */
 .header-bar {
     height: 2vh;
 }
+.header-background {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/images/header_background.jpg');
+    /* background-image: url('/images/building3.jpg'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 150px;
+}
+
 .landing-intro {
     color: white;
     text-align: justify;
@@ -31,6 +48,7 @@ body {
 }
 .property-detail-header {
     height: 10vh;
+    text-shadow: 1px 1px 5px black;
 }
 .property-summary-header, .details-header {
     background: grey;

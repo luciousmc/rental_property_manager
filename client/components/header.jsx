@@ -20,6 +20,8 @@ export default class Header extends React.Component{
           <header className="col">
             <Navbar color="danger">
               <NavbarBrand href="/" className="text-white mr-auto">Moore Properties</NavbarBrand>
+              {/* <div className="logo" onClick={()=>window.location('/')}></div> */}
+
             </Navbar>
           </header>
         );
