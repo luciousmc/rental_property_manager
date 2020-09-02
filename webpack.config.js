@@ -38,7 +38,7 @@ module.exports = {
     proxy: {
       '/api': {
         changeOrigin: true,
-        target: 'http://localhost/c319_rental_property/server/public'
+        target: 'http://localhost/rental_property_manager/server/public'
       }
     }
   }
