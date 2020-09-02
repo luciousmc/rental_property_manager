@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Learning-Fuze/c319_rental_property.git"
+    "url": "git+https://github.com/Learning-Fuze/rental_property_manager.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Learning-Fuze/c319_rental_property/issues"
+    "url": "https://github.com/Learning-Fuze/rental_property_manager/issues"
   },
-  "homepage": "https://github.com/Learning-Fuze/c319_rental_property#readme",
+  "homepage": "https://github.com/Learning-Fuze/rental_property_manager#readme",
   "dependencies": {
     "axios": "0.19.0",
     "bootstrap": "4.3.1",

@@ -18,6 +18,8 @@ class PropertyList extends React.Component{
         .then(response=>response.json())
         .then(propertyList=>{
             this.setState({ properties: propertyList });
+        }).catch(err => {
+            console.log({err});
         })
     }
 
